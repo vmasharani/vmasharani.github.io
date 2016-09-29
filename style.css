@@ -1,0 +1,30 @@
+body{
+  margin:0;
+  padding:0;
+
+}
+
+h1{
+  margin:0;
+  padding:0;
+}
+
+div{
+  width:100%;
+  height:100%;
+  padding:0;
+  margin:0;
+  background-color:#d9e6e6;
+}
+
+div.yellow{
+  background-color:#ddb32a;
+}
+
+div.blanket{
+  background-color:#0000ff;
+}
+
+div.brown{
+  background-color:#ba906a;
+}

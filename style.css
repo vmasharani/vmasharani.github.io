@@ -21,6 +21,7 @@ li.album{
 
 li.label{
   width:180px;
+  margin:2% 2% 2% 2%;
 }
 
 @media(min-width:700px){

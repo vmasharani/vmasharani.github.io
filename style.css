@@ -16,14 +16,14 @@ li{
 @media(min-width:700px){
   li.album{
     width:85%;
-    padding: 0 1% 0 0;
+    padding: 0 0 0 0;
   }
 }
 
 @media(min-width:0px) and (max-width:699px){
   li.album{
-    width:95%;
-    padding: 0 1% 0 0;
+    width:96%;
+    padding: 0 0 0 0;
   }
 }
 
@@ -84,12 +84,12 @@ img.equalheight{
 ul{
   list-style-type: none;
   margin: 100px 0 100px 0;
-  padding: 0px 40px 0px 40px;
+  padding: 0 0 0 0;
 }
 
 div{
   width:100%;
-  padding:0;
+  padding:0px 0px 0px 0px;
   overflow:auto;
 }
 
@@ -117,4 +117,8 @@ div.center{
 
 div.spacer{
   height:40%;
+}
+
+div.labelwrapper{
+  padding: 0px 10% 0 0;
 }

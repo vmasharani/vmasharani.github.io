@@ -29,7 +29,7 @@ li{
 
 
 li.label{
-  width:180px;
+  width:185px;
   margin:2% 3% 2% 3%;
 }
 
@@ -120,5 +120,5 @@ div.spacer{
 }
 
 div.labelwrapper{
-  padding: 0px 10% 0 0;
+  margin: 0 0 0 0;
 }

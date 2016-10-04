@@ -30,6 +30,10 @@ li.towelphoto{
   width:80%;
 }
 
+li.illustration{
+  width:400px;
+  margin:0 2% 0 2%;
+}
 img{
   width:inherit;
 }

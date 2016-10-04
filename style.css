@@ -15,6 +15,7 @@ li{
 
 li.album{
   width:98%;
+  padding: 0 1% 0 0;
 }
 
 
@@ -22,8 +23,16 @@ li.label{
   width:180px;
 }
 
-li.towelphoto{
-  width:85%;
+@media(min-width:700px){
+  li.towelphoto{
+    width:85%;
+  }
+}
+
+@media(min-width:0px) and (max-width:699px){
+  li.towelphoto{
+    width:99%;
+  }
 }
 
 @media (min-width:500px){

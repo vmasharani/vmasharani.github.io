@@ -13,34 +13,13 @@ li{
   display:inline-block;
 }
 
+li.album{
+  width:98%;
+}
 
-/*@media (min-width:600px){*/
-  li.album{
-    width:98%;
-  }
-
-  /*li.tracklist{
-    height:600px;
-  }*/
-/*}*/
-
-/*@media (min-width:0px) and (max-width:599px){
-  li.album{
-    height:300px;
-    margin-right:10%;
-  }
-
-  li.tracklist{
-    height:300px;
-  }
-
-  img.equalheight{
-      height:inherit;
-  }
-}*/
 
 li.label{
-  width:200px;
+  width:180px;
 }
 
 li.towelphoto{

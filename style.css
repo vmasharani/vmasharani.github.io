@@ -16,8 +16,7 @@ li{
 
 /*@media (min-width:600px){*/
   li.album{
-    width:100%;
-    margin-right:10%;
+    width:98%;
   }
 
   /*li.tracklist{
@@ -48,16 +47,16 @@ li.towelphoto{
   width:85%;
 }
 
-@media (min-width:600px){
+@media (min-width:500px){
   li.illustration{
     width:400px;
     margin:0 2% 0 2%;
   }
 }
 
-@media (min-width:0px) and (max-width:599px){
+@media (min-width:0px) and (max-width:499px){
   li.illustration{
-    width:200px;
+    width:300px;
     margin:0 2% 0 2%;
   }
 }

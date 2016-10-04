@@ -14,7 +14,7 @@ li{
 }
 
 li.album{
-  width:98%;
+  width:90%;
   padding: 0 1% 0 0;
 }
 
@@ -26,33 +26,42 @@ li.label{
 
 @media(min-width:700px){
   li.towelphoto{
-    width:85%;
+    width:75%;
   }
 }
 
 @media(min-width:0px) and (max-width:699px){
   li.towelphoto{
-    width:99%;
+    width:90%;
   }
 }
 
-@media (min-width:500px){
+@media (min-width:600px){
   li.illustration{
     width:400px;
     margin:0 2% 0 2%;
   }
 }
 
-@media (min-width:0px) and (max-width:499px){
+@media (min-width:0px) and (max-width:599px){
   li.illustration{
     width:300px;
     margin:0 2% 0 2%;
   }
 }
 
-li.gym{
-  width:85%;
-  margin:20px 0 20px 0;
+@media (min-width:600px){
+  li.gym{
+    width:75%;
+    margin:20px 0 20px 0;
+  }
+}
+
+@media (min-width:0) and (max-width:599px){
+  li.gym{
+    width:100%;
+    margin:20px 0 20px 0;
+  }
 }
 
 img{

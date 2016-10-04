@@ -34,6 +34,12 @@ li.illustration{
   width:400px;
   margin:0 2% 0 2%;
 }
+
+li.gym{
+  width:70%;
+  margin:20px 0 20px 0;
+}
+
 img{
   width:inherit;
 }
@@ -44,6 +50,7 @@ img.equalheight{
 
 ul{
   list-style-type: none;
+  margin: 100px 0 100px 0;
 }
 
 div{

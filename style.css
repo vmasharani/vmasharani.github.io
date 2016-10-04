@@ -84,7 +84,7 @@ img.equalheight{
 ul{
   list-style-type: none;
   margin: 100px 0 100px 0;
-  padding: 0px 0px 0px 0px;
+  padding: 0px 40px 0px 40px;
 }
 
 div{
@@ -116,5 +116,5 @@ div.center{
 }
 
 div.spacer{
-  height:70%;
+  height:40%;
 }

@@ -11,7 +11,27 @@ h1{
 
 li{
   display:inline-block;
+}
+
+li.album{
+  height:600px;
+  margin-right:10%;
+}
+
+li.label{
   width:200px;
+}
+
+li.tracklist{
+  height:600px;
+}
+
+img{
+  width:inherit;
+}
+
+img.equalheight{
+    height:inherit;
 }
 
 ul{

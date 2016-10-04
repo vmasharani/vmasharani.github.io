@@ -26,6 +26,10 @@ li.tracklist{
   height:600px;
 }
 
+li.towelphoto{
+  width:80%;
+}
+
 img{
   width:inherit;
 }

@@ -122,13 +122,3 @@ div.spacer{
 div.labelwrapper{
   margin: 0 0 0 0;
 }
-
-button{
-  padding:50px;
-  border: 1px grey outset;
-  background-color:#519d50;
-}
-
-button:hover{
-  background-color: #ddb32a;
-}

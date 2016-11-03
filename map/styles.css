@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'Atlas-Grotesk-Bold';
+  src: local("AtlasGrotesk-Bold"); }
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+div.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Atlas-Grotesk-Bold';
+  font-size: 4vw; }
+  div.container::after {
+    clear: both;
+    content: "";
+    display: block; }
+
+div.element {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%; }
+  div.element:last-child {
+    margin-right: 0; }
+
+/*# sourceMappingURL=styles.css.map */

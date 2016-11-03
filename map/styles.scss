@@ -1,9 +1,16 @@
 @font-face{
-  font-family:'Atlas-Grotesk-Bold';
-  src:url('/AtlasGrotesk/AtlasGrotesk-Bold.otf');
+  font-family: 'Atlas-Grotesk-Bold';
+  src: local('AtlasGrotesk-Bold');
 }
 
-div{
-  font-family:'Atlas-Grotesk-Bold';
+@import "neat/neat";
 
+div.container {
+  @include outer-container;
+  font-family:'Atlas-Grotesk-Bold';
+  font-size:4vw;
+}
+
+div.element {
+  @include span-columns(6);
 }

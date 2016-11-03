@@ -8,9 +8,17 @@
 div.container {
   @include outer-container;
   font-family:'Atlas-Grotesk-Bold';
-  font-size:4vw;
+  font-size:42px;
 }
 
-div.element {
-  @include span-columns(6);
+div.home {
+  @include span-columns(4);
+}
+
+div.navwrapper{
+  @include span-columns(5);
+}
+
+div.navitem{
+  @include span-columns(1 of 5);
 }

@@ -12,18 +12,34 @@ div.container {
   margin-left: auto;
   margin-right: auto;
   font-family: 'Atlas-Grotesk-Bold';
-  font-size: 4vw; }
+  font-size: 42px; }
   div.container::after {
     clear: both;
     content: "";
     display: block; }
 
-div.element {
+div.home {
   float: left;
   display: block;
   margin-right: 2.35765%;
-  width: 48.82117%; }
-  div.element:last-child {
+  width: 31.76157%; }
+  div.home:last-child {
+    margin-right: 0; }
+
+div.navwrapper {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 40.29137%; }
+  div.navwrapper:last-child {
+    margin-right: 0; }
+
+div.navitem {
+  float: left;
+  display: block;
+  margin-right: 5.85151%;
+  width: 15.31879%; }
+  div.navitem:last-child {
     margin-right: 0; }
 
 /*# sourceMappingURL=styles.css.map */

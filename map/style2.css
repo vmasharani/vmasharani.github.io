@@ -1,0 +1,8 @@
+@font-face{
+  font-family: 'Atlas-Grotesk-Bold';
+  src: local('AtlasGrotesk-Bold');
+}
+
+div{
+  font-family:'Atlas-Grotesk-Bold';
+}

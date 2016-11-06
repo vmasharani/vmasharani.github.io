@@ -11,8 +11,7 @@ div.container {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  font-family: 'Atlas-Grotesk-Bold';
-  font-size: 42px; }
+  font-family: 'Atlas-Grotesk-Bold'; }
   div.container::after {
     clear: both;
     content: "";
@@ -22,7 +21,8 @@ div.home {
   float: left;
   display: block;
   margin-right: 2.35765%;
-  width: 31.76157%; }
+  width: 31.76157%;
+  font-size: 40pt; }
   div.home:last-child {
     margin-right: 0; }
 
@@ -38,7 +38,8 @@ div.navitem {
   float: left;
   display: block;
   margin-right: 5.85151%;
-  width: 15.31879%; }
+  width: 15.31879%;
+  font-size: 12pt; }
   div.navitem:last-child {
     margin-right: 0; }
 

@@ -1,46 +1,145 @@
 @font-face {
-  font-family: 'Atlas-Grotesk-Bold';
-  src: local("AtlasGrotesk-Bold"); }
+  font-family: 'AtlasGrotesk-Bold';
+  src: local("AtlasGrotesk-Bold");
+  font-family: 'AtlasGrotesk-Regular';
+  src: local("AtlasGrotesk-Regular");
+  font-family: 'PortraitCond-Light';
+  src: local("PortraitCond-Light");
+  font-family: 'PortraitText-RegularItalic';
+  src: local("PortraitText-RegularItalic"); }
 html {
   box-sizing: border-box; }
 
 *, *::after, *::before {
   box-sizing: inherit; }
 
-div.container {
+body:before {
+  background-image: -webkit-linear-gradient(left, transparent 0, #eee 0, #eee 10.35992%, transparent 10.35992%, transparent 12.80573%, #eee 12.80573%, #eee 23.16565%, transparent 23.16565%, transparent 25.61145%, #eee 25.61145%, #eee 35.97137%, transparent 35.97137%, transparent 38.41718%, #eee 38.41718%, #eee 48.7771%, transparent 48.7771%, transparent 51.2229%, #eee 51.2229%, #eee 61.58282%, transparent 61.58282%, transparent 64.02863%, #eee 64.02863%, #eee 74.38855%, transparent 74.38855%, transparent 76.83435%, #eee 76.83435%, #eee 87.19427%, transparent 87.19427%, transparent 89.64008%, #eee 89.64008%, #eee 100%, transparent 100%);
+  background-image: -moz-linear-gradient(left, transparent 0, #eee 0, #eee 10.35992%, transparent 10.35992%, transparent 12.80573%, #eee 12.80573%, #eee 23.16565%, transparent 23.16565%, transparent 25.61145%, #eee 25.61145%, #eee 35.97137%, transparent 35.97137%, transparent 38.41718%, #eee 38.41718%, #eee 48.7771%, transparent 48.7771%, transparent 51.2229%, #eee 51.2229%, #eee 61.58282%, transparent 61.58282%, transparent 64.02863%, #eee 64.02863%, #eee 74.38855%, transparent 74.38855%, transparent 76.83435%, #eee 76.83435%, #eee 87.19427%, transparent 87.19427%, transparent 89.64008%, #eee 89.64008%, #eee 100%, transparent 100%);
+  background-image: -ms-linear-gradient(left, transparent 0, #eee 0, #eee 10.35992%, transparent 10.35992%, transparent 12.80573%, #eee 12.80573%, #eee 23.16565%, transparent 23.16565%, transparent 25.61145%, #eee 25.61145%, #eee 35.97137%, transparent 35.97137%, transparent 38.41718%, #eee 38.41718%, #eee 48.7771%, transparent 48.7771%, transparent 51.2229%, #eee 51.2229%, #eee 61.58282%, transparent 61.58282%, transparent 64.02863%, #eee 64.02863%, #eee 74.38855%, transparent 74.38855%, transparent 76.83435%, #eee 76.83435%, #eee 87.19427%, transparent 87.19427%, transparent 89.64008%, #eee 89.64008%, #eee 100%, transparent 100%);
+  background-image: -o-linear-gradient(left, transparent 0, #eee 0, #eee 10.35992%, transparent 10.35992%, transparent 12.80573%, #eee 12.80573%, #eee 23.16565%, transparent 23.16565%, transparent 25.61145%, #eee 25.61145%, #eee 35.97137%, transparent 35.97137%, transparent 38.41718%, #eee 38.41718%, #eee 48.7771%, transparent 48.7771%, transparent 51.2229%, #eee 51.2229%, #eee 61.58282%, transparent 61.58282%, transparent 64.02863%, #eee 64.02863%, #eee 74.38855%, transparent 74.38855%, transparent 76.83435%, #eee 76.83435%, #eee 87.19427%, transparent 87.19427%, transparent 89.64008%, #eee 89.64008%, #eee 100%, transparent 100%);
+  background-image: linear-gradient(to left, transparent 0, #eee 0, #eee 10.35992%, transparent 10.35992%, transparent 12.80573%, #eee 12.80573%, #eee 23.16565%, transparent 23.16565%, transparent 25.61145%, #eee 25.61145%, #eee 35.97137%, transparent 35.97137%, transparent 38.41718%, #eee 38.41718%, #eee 48.7771%, transparent 48.7771%, transparent 51.2229%, #eee 51.2229%, #eee 61.58282%, transparent 61.58282%, transparent 64.02863%, #eee 64.02863%, #eee 74.38855%, transparent 74.38855%, transparent 76.83435%, #eee 76.83435%, #eee 87.19427%, transparent 87.19427%, transparent 89.64008%, #eee 89.64008%, #eee 100%, transparent 100%);
+  content: "";
+  display: inline-block;
+  height: 100%;
+  left: 0;
+  margin: 0 auto;
+  max-width: 1200px;
+  opacity: 0.4;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  width: 100%;
+  z-index: -1; }
+
+.container {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  font-family: 'Atlas-Grotesk-Bold'; }
-  div.container::after {
+  font-family: 'AtlasGrotesk-Regular'; }
+  .container::after {
     clear: both;
     content: "";
     display: block; }
 
-div.home {
+.home {
   float: left;
   display: block;
-  margin-right: 2.35765%;
-  width: 31.76157%;
-  font-size: 40pt; }
-  div.home:last-child {
+  margin-right: 2.4458%;
+  width: 35.97137%;
+  font-size: 40pt;
+  margin-top: 25px; }
+  .home:last-child {
+    margin-right: 0; }
+  .home img {
+    width: 100%; }
+
+.navwrapper {
+  display: block;
+  float: left;
+  display: block;
+  margin-right: 2.4458%;
+  width: 61.58282%;
+  margin-right: 0; }
+  .navwrapper::after {
+    clear: both;
+    content: "";
+    display: block; }
+  .navwrapper:last-child {
     margin-right: 0; }
 
-div.navwrapper {
+.navitem {
   float: left;
   display: block;
-  margin-right: 2.35765%;
-  width: 40.29137%; }
-  div.navwrapper:last-child {
+  margin-right: 3.97156%;
+  width: 16.82275%;
+  font-size: 12pt;
+  text-align: right;
+  margin-top: 80px; }
+  .navitem:last-child {
     margin-right: 0; }
+  .navitem a {
+    text-decoration: none;
+    color: black; }
+  .navitem:hover {
+    text-decoration: underline; }
 
-div.navitem {
+.content {
   float: left;
   display: block;
-  margin-right: 5.85151%;
-  width: 15.31879%;
-  font-size: 12pt; }
-  div.navitem:last-child {
+  margin-right: 2.4458%;
+  width: 100%;
+  display: block;
+  padding-left: 60px; }
+  .content:last-child {
     margin-right: 0; }
+  .content::after {
+    clear: both;
+    content: "";
+    display: block; }
+  .content h3 {
+    font-family: 'PortraitCond-Light';
+    font-size: 21pt; }
+
+.eventfeed {
+  float: left;
+  display: block;
+  margin-right: 2.4458%;
+  width: 48.7771%;
+  overflow-y: scroll;
+  height: 400px; }
+  .eventfeed:last-child {
+    margin-right: 0; }
+  .eventfeed .feedcontent img {
+    width: 50%; }
+  .eventfeed .feedcontent h1 {
+    font-family: 'AtlasGrotesk-Regular';
+    font-weight: normal;
+    font-size: 24pt;
+    color: #5284ff;
+    line-height: 60%; }
+  .eventfeed .feedcontent h2 {
+    font-family: 'PortraitText-RegularItalic';
+    font-size: 14pt;
+    line-height: 60%; }
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px; }
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5); }
+
+::-webkit-scrollbar-track {
+  background-color: #f8f8f9; }
+
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #f8f8f9; }
+
+::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #5284ff; }
 
 /*# sourceMappingURL=styles.css.map */

@@ -1,25 +1,124 @@
+$visual-grid: true !default;
+$column: 4.2358em !default;
+$gutter: 1em;
+$grid-columns: 8;
+$color-blue:#5284ff;
+
+
 @font-face{
-  font-family: 'Atlas-Grotesk-Bold';
+  font-family: 'AtlasGrotesk-Bold';
   src: local('AtlasGrotesk-Bold');
+
+  font-family: 'AtlasGrotesk-Regular';
+  src: local('AtlasGrotesk-Regular');
+
+  font-family: 'PortraitCond-Light';
+  src: local('PortraitCond-Light');
+
+  font-family:'PortraitText-RegularItalic';
+  src:local('PortraitText-RegularItalic');
 }
 
 @import "neat/neat";
 
-div.container {
-  @include outer-container;
-  font-family:'Atlas-Grotesk-Bold';
+.container {
+  @include outer-container(1200px);
+  font-family:'AtlasGrotesk-Regular';
 }
 
-div.home {
-  @include span-columns(4);
+.home {
+  @include span-columns(3);
   font-size:40pt;
+  margin-top:25px;
+  img{
+    @include fill-parent;
+  }
 }
 
-div.navwrapper{
+.navwrapper{
+  @include row();
   @include span-columns(5);
+  //@include shift(1);
+  @include omega();
+
 }
 
-div.navitem{
+.navitem{
   @include span-columns(1 of 5);
   font-size:12pt;
+  text-align:right;
+  margin-top:80px;
+  a{
+    text-decoration:none;
+    color:black;
+  }
+  &:hover{
+    text-decoration:underline;
+  }
+}
+
+.content{
+  @include span-columns(8);
+  @include row();
+  padding-left:60px;
+  h3{
+    font-family:'PortraitCond-Light';
+    font-size:21pt;
+  }
+}
+
+.eventfeed{
+    @include span-columns(4 of 8);
+    overflow-y: scroll;
+    height:400px;
+
+
+
+
+
+    .feedcontent{
+      img{
+        width:50%;
+      }
+      h1{
+        font-family:'AtlasGrotesk-Regular';
+        font-weight:normal;
+        font-size:24pt;
+        color:$color-blue;
+        line-height:60%;
+      }
+      h2{
+        font-family:'PortraitText-RegularItalic';
+        font-size:14pt;
+        line-height:60%;
+
+      }
+    }
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
+::-webkit-scrollbar-track
+{
+	background-color: #f8f8f9;
+}
+
+::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #f8f8f9;
+}
+
+::-webkit-scrollbar-thumb
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: $color-blue;
 }

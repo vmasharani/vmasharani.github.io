@@ -1,6 +1,8 @@
 @font-face {
   font-family: 'AtlasGrotesk-Bold';
   src: local("AtlasGrotesk-Bold");
+  font-family: 'AtlasGrotesk-Medium';
+  src: local("AtlasGrotesk-Medium");
   font-family: 'AtlasGrotesk-Regular';
   src: local("AtlasGrotesk-Regular");
   font-family: 'PortraitCond-Light';
@@ -84,22 +86,45 @@ body:before {
   .navitem:hover {
     text-decoration: underline; }
 
+.contheaderswrapper {
+  float: left;
+  display: block;
+  margin-right: 2.4458%;
+  width: 100%;
+  display: block; }
+  .contheaderswrapper:last-child {
+    margin-right: 0; }
+  .contheaderswrapper::after {
+    clear: both;
+    content: "";
+    display: block; }
+
+.contheaders {
+  float: left;
+  display: block;
+  margin-right: 2.4458%;
+  width: 48.7771%;
+  padding-left: 60px; }
+  .contheaders:last-child {
+    margin-right: 0; }
+  .contheaders h3 {
+    font-family: 'PortraitCond-Light';
+    font-size: 21pt; }
+    .contheaders h3 .right {
+      margin-left: 51.2229%; }
+
 .content {
   float: left;
   display: block;
   margin-right: 2.4458%;
   width: 100%;
-  display: block;
-  padding-left: 60px; }
+  display: block; }
   .content:last-child {
     margin-right: 0; }
   .content::after {
     clear: both;
     content: "";
     display: block; }
-  .content h3 {
-    font-family: 'PortraitCond-Light';
-    font-size: 21pt; }
 
 .eventfeed {
   float: left;
@@ -107,7 +132,8 @@ body:before {
   margin-right: 2.4458%;
   width: 48.7771%;
   overflow-y: scroll;
-  height: 400px; }
+  height: 400px;
+  padding-left: 60px; }
   .eventfeed:last-child {
     margin-right: 0; }
   .eventfeed .feedcontent img {
@@ -122,6 +148,38 @@ body:before {
     font-family: 'PortraitText-RegularItalic';
     font-size: 14pt;
     line-height: 60%; }
+
+.resourcefeed {
+  float: left;
+  display: block;
+  margin-right: 2.4458%;
+  width: 48.7771%;
+  overflow-y: scroll;
+  height: 400px;
+  padding-left: 60px; }
+  .resourcefeed:last-child {
+    margin-right: 0; }
+  .resourcefeed h1 {
+    font-family: 'AtlasGrotesk-Regular';
+    font-size: 16pt;
+    line-height: 70%; }
+    .resourcefeed h1 a {
+      text-decoration: none;
+      color: #000;
+      background-image: linear-gradient(#fff 50%, #5284ff 50%);
+      background-repeat: repeat-x;
+      background-position: 0 15px;
+      background-size: 4px 8px; }
+  .resourcefeed h2 {
+    font-family: 'PortraitText-RegularItalic';
+    font-size: 14pt;
+    line-height: 70%; }
+  .resourcefeed h3 {
+    font-family: 'AtlasGrotesk-Medium';
+    font-size: 8pt;
+    color: #999b9e;
+    text-transform: uppercase;
+    line-height: 70%; }
 
 ::-webkit-scrollbar {
   -webkit-appearance: none;

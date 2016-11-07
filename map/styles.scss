@@ -3,11 +3,16 @@ $column: 4.2358em !default;
 $gutter: 1em;
 $grid-columns: 8;
 $color-blue:#5284ff;
+$text: #333;
+
 
 
 @font-face{
   font-family: 'AtlasGrotesk-Bold';
   src: local('AtlasGrotesk-Bold');
+
+  font-family: 'AtlasGrotesk-Medium';
+  src: local('AtlasGrotesk-Medium');
 
   font-family: 'AtlasGrotesk-Regular';
   src: local('AtlasGrotesk-Regular');
@@ -57,24 +62,35 @@ $color-blue:#5284ff;
   }
 }
 
-.content{
+.contheaderswrapper{
   @include span-columns(8);
   @include row();
+
+}
+
+.contheaders{
+  @include span-columns(4 of 8);
   padding-left:60px;
   h3{
     font-family:'PortraitCond-Light';
     font-size:21pt;
-  }
+    .right{
+      @include shift(4);
+    }
 }
+}
+
+.content{
+  @include span-columns(8);
+  @include row();
+}
+
 
 .eventfeed{
     @include span-columns(4 of 8);
     overflow-y: scroll;
     height:400px;
-
-
-
-
+    padding-left:60px;
 
     .feedcontent{
       img{
@@ -94,6 +110,43 @@ $color-blue:#5284ff;
 
       }
     }
+}
+
+.resourcefeed{
+  @include span-columns(4 of 8);
+  overflow-y:scroll;
+  height:400px;
+  padding-left:60px;
+  h1{
+    font-family:'AtlasGrotesk-Regular';
+    font-size:16pt;
+    line-height:70%;
+    a{
+      text-decoration:none;
+      color:#000;
+      background-image: linear-gradient(#fff 50%, $color-blue 50%);
+      background-repeat: repeat-x;
+      background-position: 0 15px;
+      background-size: 4px 8px;
+        &:hover {
+        }
+    }
+  }
+
+
+  h2{
+    font-family:'PortraitText-RegularItalic';
+    font-size:14pt;
+    line-height:70%;
+  }
+  h3{
+    font-family:'AtlasGrotesk-Medium';
+    font-size:8pt;
+    color:#999b9e;
+    text-transform:uppercase;
+    line-height:70%;
+
+  }
 }
 
 ::-webkit-scrollbar {

@@ -83,8 +83,8 @@ body:before {
   .navitem a {
     text-decoration: none;
     color: black; }
-  .navitem:hover {
-    text-decoration: underline; }
+    .navitem a:hover {
+      text-decoration: underline; }
 
 .contheaderswrapper {
   float: left;
@@ -170,6 +170,8 @@ body:before {
       background-repeat: repeat-x;
       background-position: 0 15px;
       background-size: 4px 8px; }
+      .resourcefeed h1 a:hover {
+        background-image: none; }
   .resourcefeed h2 {
     font-family: 'PortraitText-RegularItalic';
     font-size: 14pt;

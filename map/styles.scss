@@ -56,9 +56,9 @@ $text: #333;
   a{
     text-decoration:none;
     color:black;
-  }
-  &:hover{
-    text-decoration:underline;
+    &:hover{
+      text-decoration:underline;
+    }
   }
 }
 
@@ -129,6 +129,7 @@ $text: #333;
       background-position: 0 15px;
       background-size: 4px 8px;
         &:hover {
+          background-image:none;
         }
     }
   }

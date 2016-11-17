@@ -1,68 +1,63 @@
-$visual-grid: true !default;
+$visual-grid: false !default;
 @import "grid-settings";
+@import "typefaces";
 @import "neat/neat"; // or "neat" when in Rails
+@import "nav.scss";
+
 $color-blue:#5284ff;
 $color-lightgrey:#c2c4c6;
+$color-offwhite:#f8f8f9;
+$color-midgrey:#999b9e;
+$color-offblack:#232021;
 $text: #333;
+$feedheights:500px;
+$scrollcorner:4px;
 
-$link-color:white;
-$link-hover:#00aedb;
-$link-vertical-padding:15px;      //Controls Menu top & bottom padding
-$link-horizontal-padding:20px;    //Contols Menu left & right padding
-$menu-background:#353535;        //Control Menu Color Scheme
+// $link-color:black;
+// $link-hover:black;
+// $link-vertical-padding:15px;      //Controls Menu top & bottom padding
+// $link-horizontal-padding:20px;    //Contols Menu left & right padding
+// $menu-background:white;        //Control Menu Color Scheme
 
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}
+}
 
 body{
   margin:0;
   padding:0;
 }
 
-@font-face{
-  font-family: 'AtlasGrotesk-Bold';
-  src: local('AtlasGrotesk-Bold');
-}
-
-@font-face{
-  font-family: 'AtlasGrotesk-Medium';
-  src: local('AtlasGrotesk-Medium');
-}
-
-@font-face{
-  font-family: 'AtlasGrotesk-Regular';
-  src: local('AtlasGrotesk-Regular');
-}
-
-@font-face{
-    font-family: 'PortraitCond-Light';
-    src: local('PortraitCond-Light');
-}
-
-@font-face{
-  font-family:'PortraitText-Regular';
-  src:local('PortraitText-Regular');
-}
-
-@font-face{
-  font-family:'PortraitText-RegularItalic';
-  src:local('PortraitText-RegularItalic');
-}
-
-
 .container {
   @include outer-container(100%);
   font-family:'AtlasGrotesk-Regular';
-
 }
 
 .home {
 
   @include media($mobile) { // As defined in _grid-settings.scss
-    @include span-columns(2);
-    @include shift(1);
+    @include span-columns(6);
+    // @include shift(1);
+    background-image:url('images/logo-large-1.png');
+    background-color:white;
+    background-size:contain;
+    background-position:center;
+    position:fixed;
+    top:0;
+    padding-top:20px;
+    margin-top:0px;
+    height:80px;
+    background-repeat:no-repeat;
+    border-bottom:1px solid $color-offblack;
+  }
+
+  @include media($tablet){
     background-image:url('images/logo-large-1.png');
     background-size:contain;
-    height:100px;
-    background-repeat:no-repeat;
+    background-position:center;
   }
   @include span-columns(3);
   font-size:40pt;
@@ -76,201 +71,45 @@ body{
   }
 }
 
+// @mixin breakpoint($point) {
+//   @if $point == 715 {
+//     @media (max-width: 715px) { @content; }
+//   }
+//   @else if $point == another-break-point {
+//     @media (max-width: 0) { @content; }
+//   }
+// }
+
 .navwrapper{
-  @include row();
   @include span-columns(5);
-  //@include shift(1);
+  @include row();
+
   @include omega();
+  @include media($mobile){
+    display:none;
+  }
+  @include media($tablet){
+    display:none;
+  }
 
   li{
     @include span-columns(1 of 5);
     font-size:12pt;
     text-align:right;
+    float:left;
     margin-top:80px;
-    padding-right:5px;
+    margin-right:0;
+    padding-right:14px;
     a{
       text-decoration:none;
-      color:black;
+      color:$color-offblack;
       &:hover{
         text-decoration:underline;
       }
     }
   }
+  // margin-right:12px;
 }
-
-nav{
-  @include media($tablet) {
-  margin:65px 0 0 0;
-  max-height:0;
-  overflow:hidden;
-  transition: all 0.5s ease;
-  }
-}
-
-nav ul {
-  margin:0;
-  list-style:none;
-
-   @include media($tablet) {
-	    margin:0;
-      padding:0;
-	    box-shadow:0px 1px 3px rgba(0,0,0,.7);
-	    z-index:15;
-    }
-
-  li {
-    float:left;
-    position:relative;
-    z-index:1;
-
-    @include media($tablet) {
-      float:none;
-      position:relative;
-      margin:0;
-    }
-
-    a {
-      display:block;
-      padding: $link-vertical-padding $link-horizontal-padding;
-      text-align:center;
-      color:$link-color;
-      text-decoration:none;
-      border-right:1px solid darken($menu-background,10%);
-      text-shadow:2px 2px 2px rgba(0,0,0,.8);
-
-      &:hover {
-        background:darken($menu-background,10%);
-        color:$link-hover;
-      }
-
-      @include media($tablet) {
-      	display:table;
-      	margin:0;
-    	  padding:15px 2px;
-      	color:white;
-      	border-top:1px solid rgba(0,0,0,.15);
-        box-shadow:inset 0px 1px 3px rgba(255,255,255,.03);
-      	text-shadow:none;
-      	width:100%;
-      }
-    }
-
-    &:hover ul {
-      opacity:1;
-      max-height:1000px;
-
-      @include media($tablet) {
-        max-height:0;
-      }
-    }
-
-    /******************
-    SUBNAV
-    ******************/
-
-    ul {
-      background:darken($menu-background,10%);
-      list-style:none;
-      padding:0;
-      position:absolute;
-      width:200px;
-      max-height:0;
-      z-index:0;
-      opacity:0;
-      overflow:hidden;
-      font-size:.9em;
-      box-shadow:0px 2px 2px rgba(0,0,0,.5);
-
-      @include media($tablet) {
-        max-height:0;
-        opacity:1;
-        width:100%;
-        position:relative;
-        overflow:hidden;
-        box-shadow:inset 0px 2px 2px rgba(0,0,0,.5);
-      }
-
-      li {
-        float:none;
-        margin:0;
-
-        @include media($tablet) {
-          margin:0;
-        }
-
-        a {
-          display:block;
-          text-align:left;
-          padding:$link-vertical-padding/1.5 $link-horizontal-padding/1.5;
-          margin:0;
-          border-right:none;
-          border-top:1px solid darken($menu-background,12%);
-          box-shadow:inset 0px 1px 3px rgba(255,255,255,.03);
-          text-transform:none;
-          text-shadow:none;
-
-          &:hover {
-          	color:$link-hover;
-            background:lighten($menu-background,5%);
-          }
-
-          @include media($tablet) {
-          	color:white;
-          	padding-left:20px;
-          	background:none;
-          }
-        }
-      }
-    }
-  }
-}
-
-.mobile {
-  display:none;
-  margin:0;
-  padding:20px 15px;
-  background: linear-gradient(to bottom, #353535 0%,#262626 100%);
-  position:absolute;
-  color:white;
-  text-decoration:none;
-  top:15px;
-  right:15px;
-  line-height:0;
-  box-shadow:0px 2px 2px rgba(0,0,0,.35);
-
-  @include media($tablet) {
-    display:table;
-  }
-}
-
-.active {
-  max-height:9000px !important;
- }
-
-@include media($tablet) {
-  .arrow {
-    display:block;
-    background:url(http://www.jasonkinney.me/images/arrow.png) no-repeat;
-    float:right;
-    height:30px;
-    width:30px;
-    position:absolute;
-    right:25px;
-    top:10px;
-
-    &:hover {
-      cursor:pointer;
-    }
-  }
-
-  .rotate {
-	  -webkit-transform:rotate(-180deg);
-      -moz-transform:rotate(-180deg);
-          transform:rotate(-180deg);
-  }
-}
-
-
 
 .contheaderswrapper{
   @include media($mobile){
@@ -284,6 +123,7 @@ nav ul {
     padding-left:60px;
     h3{
       font-family:'PortraitCond-Light';
+      font-weight:normal;
       font-size:21pt;
       .right{
         @include shift(4);
@@ -302,7 +142,7 @@ nav ul {
 
 .content{
   @include media($mobile){
-    @include span-columns(4);
+    @include span-columns(6);
   }
   @include span-columns(8 of 8);
   @include row();
@@ -310,17 +150,22 @@ nav ul {
 
 .eventfeed{
   @include media($mobile){
-    @include span-columns(4 of 4);
+    @include span-columns(6 of 6);
+    height:auto;
   }
     @include span-columns(4 of 8);
     z-index:0;
     overflow-y: scroll;
-    height:400px;
+    height:$feedheights;
     padding-left:60px;
-
     .feedcontent{
+      @include media($mobile){
+        img{
+          width:100%;
+        }
+      }
       img{
-        width:50%;
+        width:70%;
       }
       h1{
         font-family:'AtlasGrotesk-Regular';
@@ -333,6 +178,7 @@ nav ul {
         font-family:'PortraitText-RegularItalic';
         font-size:14pt;
         line-height:100%;
+        font-weight:normal;
 
       }
     }
@@ -344,12 +190,13 @@ nav ul {
   }
   @include span-columns(4 of 8);
   overflow-y:scroll;
-  height:400px;
+  height:$feedheights;
   padding-left:60px;
   h1{
     font-family:'AtlasGrotesk-Regular';
     font-size:16pt;
     line-height:120%;
+    font-weight:normal;
     a{
       text-decoration:none;
       color:#000;
@@ -368,6 +215,7 @@ nav ul {
     font-family:'PortraitText-RegularItalic';
     font-size:14pt;
     line-height:100%;
+    font-weight:normal;
   }
   h3{
     font-family:'AtlasGrotesk-Medium';
@@ -375,6 +223,7 @@ nav ul {
     color:#999b9e;
     text-transform:uppercase;
     line-height:100%;
+    font-weight:normal;
 
   }
 }
@@ -409,16 +258,94 @@ nav ul {
     h1{
       font-family:'PortraitCond-Light';
       font-size:21pt;
+      font-weight:normal;
     }
     h2{
       font-family:'PortraitText-Regular';
-      font-size:14;
+      font-size:18px;
+      font-weight:normal;
+      a{
+        text-decoration:underline;
+        color:$color-offblack;
+        &:hover{
+          text-decoration:none;
+        }
+      }
     }
     h3{
-      font-size:14;
+      font-size:18px;
       color:white;
+      font-weight:normal;
+    }
+    input{
+      font-family:'PortraitText-RegularItalic';
+      border-bottom:1px solid $color-blue;
+      border-left:none;
+      border-top:none;
+      border-right:none;
+      padding:0;
+      vertical-align:middle;
+      white-space:normal;
+      background:none;
+      line-height:1;
+      font-size:20px;
+      @include placeholder{
+        color:white;
+      }
+      &:focus{
+        outline:0;
+      }
+
     }
   }
+}
+
+.twitterfooter{
+  position:fixed;
+  width:100%;
+  height:40px;
+  z-index:9999;
+  bottom:0;
+  background:$color-offwhite;
+  .twittercontent{
+    position:relative;
+    img{
+      width:16px;
+    }
+    font-family:'PortraitText-RegularItalic';
+    src:local('PortraitText-RegularItalic');
+    color:$color-midgrey;
+    font-size:15px;
+    padding: 12px;
+  }
+
+  @include media($tablet){
+  }
+  @include media($mobile){
+    display:none;
+  }
+}
+
+.mobresourcebulletin{
+  @include media($mobile){
+    position:fixed;
+    width:100%;
+    height:40px;
+    bottom:0;
+    background:white;
+    z-index:9999;
+    padding:8px;
+    padding-top:13px;
+    border-top:1px $color-offblack solid;
+    a{
+      font-family:'PortraitText-Regular';
+      font-size:15;
+      color:$color-offblack;
+    }
+  }
+  position:fixed;
+  bottom:-999999;
+
 }
 
 // SCROLLBAR CUSTOMIZATIONS
@@ -426,7 +353,7 @@ nav ul {
 
 ::-webkit-scrollbar {
     -webkit-appearance: none;
-    width: 7px;
+    width: 2px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -441,12 +368,21 @@ nav ul {
 
 ::-webkit-scrollbar
 {
-	width: 12px;
+	width: 8px;
+  height:8px;
 	background-color: #f8f8f9;
 }
 
 ::-webkit-scrollbar-thumb
 {
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	background-color: $color-blue;
+	// -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	// background-color: $color-lightgrey;
+  background: $color-midgrey;
+  background:
+    linear-gradient(135deg, transparent $scrollcorner, $color-midgrey 0) top left,
+    linear-gradient(225deg, transparent $scrollcorner, $color-midgrey 0) top right,
+    linear-gradient(315deg, transparent $scrollcorner, $color-midgrey 0) bottom right,
+    linear-gradient(45deg,  transparent $scrollcorner, $color-midgrey 0) bottom left;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
 }

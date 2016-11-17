@@ -1,0 +1,155 @@
+$visual-grid: false !default;
+
+@import "grid-settings";
+@import "neat/neat"; // or "neat" when in Rails
+@import "nav.scss";
+@import "typefaces";
+
+
+$color-blue:#5284ff;
+$color-lightgrey:#c2c4c6;
+$color-offwhite:#f8f8f9;
+$color-midgrey:#999b9e;
+$color-offblack:#232021;
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}
+}
+
+
+
+.container {
+  @include outer-container(100%);
+  font-family:'AtlasGrotesk-Regular';
+}
+
+.formwrapper{
+  @include media($mobile){
+    @include span-columns(4);
+  }
+  @include span-columns(6);
+  border:2px solid $color-offblack;
+  -webkit-box-shadow: 2px 2px 7px 3px rgba(35,32,33,0.4);
+  -moz-box-shadow: 2px 2px 7px 3px rgba(35,32,33,0.4);
+  box-shadow: 2px 2px 7px 3px rgba(35,32,33,0.4);
+  padding:10px;
+  .inputwrapper{
+    @include media($mobile){
+      @include span-columns(4 of 4);
+    }
+    @include span-columns(3 of 6);
+    // border:1px solid black;
+  }
+  .contactinfowrapper{
+    @include media($mobile){
+      display:none;
+    }
+    margin-top:200px;
+    @include span-columns(3 of 6);
+    font-family:'PortraitText-Regular';
+    text-align:right;
+    color:$color-offblack;
+    font-size:16px;
+    line-height:150%;
+    h3{
+      color:$color-blue;
+      font-weight:normal;
+      margin:0px;
+      font-size:16px;
+    }
+
+    .contactinfocontent{
+      @include span-columns(2 of 3);
+      @include shift(1);
+    }
+  }
+}
+
+
+
+ul{
+
+}
+
+input{
+  @include media($mobile){
+    @include span-columns(4 of 4);
+  }
+  @include span-columns(2 of 3);
+  display:block;
+  margin-bottom:16px;
+	border-bottom:1px solid $color-offblack;
+  border-left:none;
+  border-top:none;
+  border-right:none;
+	padding:0;
+	vertical-align:middle;
+	white-space:normal;
+	background:none;
+	line-height:1;
+  font-size:20px;
+  color:$color-offblack;
+  &:focus{
+    outline:0;
+  }
+  font-family:'AtlasGrotesk-Regular';
+  @include placeholder {
+      color: $color-midgrey;
+  }
+
+}
+
+.longmessage{
+  @include media($mobile){
+    @include span-columns(4 of 4);
+  }
+  @include span-columns(3 of 3);
+  background:$color-offwhite;
+  color:$color-offblack;
+  height:200px;
+  font-size:16px;
+  resize:none;
+  font-family:'AtlasGrotesk-Regular';
+  border:none;
+  &:focus{
+    outline:0;
+  }
+  @include placeholder {
+      color: $color-lightgrey;
+  }
+}
+
+button{
+  @include media($mobile){
+    @include span-columns(4 of 4);
+  }
+  @include span-columns(2 of 3);
+  margin-top:10px;
+  background-color: $color-offwhite;
+  border-top:none;
+  border-right:none;
+  border-left:none;
+  border-bottom:2px solid $color-midgrey;
+  color: $color-offwhite;
+  padding: 15px 32px;
+  font-family:'AtlasGrotesk-Regular';
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  text-shadow: 0px 0px 10px $color-offblack;
+  &:hover{
+    background-color:$color-offblack;
+    color:$color-offwhite;
+    border-bottom:2px solid $color-offblack;
+  }
+  &:active{
+    outline:0;
+  }
+  &:focus{
+    outline:0;
+  }
+}

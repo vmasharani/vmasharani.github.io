@@ -166,6 +166,7 @@ body{
     @include span-columns(6 of 6);
     margin-top:90px;
   }
+
   @include span-columns(3 of 8);
   p{
     font-family:"PortraitText-Regular";

@@ -1,40 +1,70 @@
 $visual-grid: true !default;
-$column: 4.2358em !default;
-$gutter: 1em;
-$grid-columns: 8;
+@import "grid-settings";
+@import "neat/neat"; // or "neat" when in Rails
 $color-blue:#5284ff;
+$color-lightgrey:#c2c4c6;
 $text: #333;
 
 
+body{
+  margin:0;
+  padding:0;
+}
 
 @font-face{
   font-family: 'AtlasGrotesk-Bold';
   src: local('AtlasGrotesk-Bold');
+}
 
+@font-face{
   font-family: 'AtlasGrotesk-Medium';
   src: local('AtlasGrotesk-Medium');
+}
 
+@font-face{
   font-family: 'AtlasGrotesk-Regular';
   src: local('AtlasGrotesk-Regular');
+}
 
-  font-family: 'PortraitCond-Light';
-  src: local('PortraitCond-Light');
+@font-face{
+    font-family: 'PortraitCond-Light';
+    src: local('PortraitCond-Light');
+}
 
+@font-face{
+  font-family:'PortraitText-Regular';
+  src:local('PortraitText-Regular');
+}
+
+@font-face{
   font-family:'PortraitText-RegularItalic';
   src:local('PortraitText-RegularItalic');
 }
 
-@import "neat/neat";
 
 .container {
-  @include outer-container(1200px);
+  @include outer-container(100%);
   font-family:'AtlasGrotesk-Regular';
+
 }
 
 .home {
+
+  @include media($mobile) { // As defined in _grid-settings.scss
+    @include span-columns(2);
+    @include shift(1);
+    background-image:url('images/logo-large-1.png');
+    background-size:contain;
+    height:100px;
+    background-repeat:no-repeat;
+  }
   @include span-columns(3);
   font-size:40pt;
   margin-top:25px;
+  background-image:url('images/logo-monoline-1.png');
+  background-size:contain;
+  height:150px;
+  background-repeat:no-repeat;
   img{
     @include fill-parent;
   }
@@ -45,49 +75,58 @@ $text: #333;
   @include span-columns(5);
   //@include shift(1);
   @include omega();
-
-}
-
-.navitem{
-  @include span-columns(1 of 5);
-  font-size:12pt;
-  text-align:right;
-  margin-top:80px;
-  a{
-    text-decoration:none;
-    color:black;
-    &:hover{
-      text-decoration:underline;
+  .navitem{
+    @include span-columns(1 of 5);
+    font-size:12pt;
+    text-align:right;
+    margin-top:80px;
+    padding-right:5px;
+    a{
+      text-decoration:none;
+      color:black;
+      &:hover{
+        text-decoration:underline;
+      }
     }
   }
 }
 
+
+
 .contheaderswrapper{
   @include span-columns(8);
   @include row();
-
-}
-
-.contheaders{
-  @include span-columns(4 of 8);
-  padding-left:60px;
-  h3{
-    font-family:'PortraitCond-Light';
-    font-size:21pt;
-    .right{
-      @include shift(4);
+  .contheaders{
+    @include span-columns(4 of 8);
+    padding-left:60px;
+    h3{
+      font-family:'PortraitCond-Light';
+      font-size:21pt;
+      .right{
+        @include shift(4);
+      }
     }
+  }
 }
+
+
+.contentwrapper{
+  @include span-columns(8);
+  overflow:hidden;
+
+
 }
 
 .content{
-  @include span-columns(8);
+
+  @include span-columns(8 of 8);
   @include row();
 }
 
-
 .eventfeed{
+
     @include span-columns(4 of 8);
+    z-index:0;
     overflow-y: scroll;
     height:400px;
     padding-left:60px;
@@ -101,12 +140,12 @@ $text: #333;
         font-weight:normal;
         font-size:24pt;
         color:$color-blue;
-        line-height:60%;
+        line-height:100%;
       }
       h2{
         font-family:'PortraitText-RegularItalic';
         font-size:14pt;
-        line-height:60%;
+        line-height:100%;
 
       }
     }
@@ -120,7 +159,7 @@ $text: #333;
   h1{
     font-family:'AtlasGrotesk-Regular';
     font-size:16pt;
-    line-height:70%;
+    line-height:120%;
     a{
       text-decoration:none;
       color:#000;
@@ -138,17 +177,55 @@ $text: #333;
   h2{
     font-family:'PortraitText-RegularItalic';
     font-size:14pt;
-    line-height:70%;
+    line-height:100%;
   }
   h3{
     font-family:'AtlasGrotesk-Medium';
     font-size:8pt;
     color:#999b9e;
     text-transform:uppercase;
-    line-height:70%;
+    line-height:100%;
 
   }
 }
+
+.infobox{
+  // position: fixed;
+  // min-height:100%;
+  bottom:0;
+  left:0%;
+  @include span-columns(2);
+  background-color:$color-lightgrey;
+  margin-bottom: -1000px;
+  padding-bottom: 1000px;
+  padding-top:10px;
+  padding-left:10px;
+  padding-right:10px;
+  float:none;
+  position:relative;
+  z-index:99;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  .infocontent{
+    @include span-columns(1.5 of 1.5);
+    position:absolute;
+    width:100%;
+    h1{
+      font-family:'PortraitCond-Light';
+      font-size:21pt;
+    }
+    h2{
+      font-family:'PortraitText-Regular';
+      font-size:14;
+    }
+    h3{
+      font-size:14;
+      color:white;
+    }
+  }
+}
+
+// SCROLLBAR CUSTOMIZATIONS
+
 
 ::-webkit-scrollbar {
     -webkit-appearance: none;

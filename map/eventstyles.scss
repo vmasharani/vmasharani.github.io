@@ -104,18 +104,25 @@ body{
       position:fixed;
       top:auto;
       bottom:0;
+      padding:.5rem;
       background-color:$color-lightgrey;
       text-align:center;
+      -webkit-box-shadow: 0px -2px 12px 6px $color-midgrey;
+      -moz-box-shadow: 0px -2px 12px 6px $color-midgrey;
+      box-shadow: 0px -2px 12px 6px $color-midgrey;
     }
     @include span-columns (2 of 8);
-
+    padding-left:1rem;
     position:fixed;
     top:180px;
-
     left:0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
     h1{
       @include media($mobile){
-        font-size:18px;
+        font-size:24px;
       }
       font-weight:normal;
       font-family:"AtlasGrotesk-Regular";
@@ -127,7 +134,7 @@ body{
       font-family:"PortraitText-Regular";
       font-weight:normal;
       color:$color-offblack;
-      font-size:18px;
+      font-size:22px;
       display:inline;
 
     }
@@ -135,7 +142,7 @@ body{
       font-family:"AtlasGrotesk-Regular";
       font-weight:normal;
       color:white;
-      font-size:15px;
+      font-size:21px;
       display:inline;
     }
     .details{
@@ -144,6 +151,7 @@ body{
       }
       @include span-columns(2 of 2);
       background-color:$color-lightgrey;
+      padding:0 .3rem .3rem .3rem;
     }
   }
 }
@@ -196,7 +204,7 @@ body{
       text-transform:uppercase;
       color:$color-offblack;
       display:block;
-      font-size:9px;
+      font-size:11px;
       text-decoration:none;
       margin-bottom:2px;
       span{

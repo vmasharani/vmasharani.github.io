@@ -78,7 +78,7 @@ input{
   @include media($mobile){
     @include span-columns(4 of 4);
   }
-  @include span-columns(2 of 3);
+  @include span-columns(3 of 3);
   display:block;
   margin-bottom:16px;
 	border-bottom:1px solid $color-offblack;
@@ -126,7 +126,7 @@ button{
   @include media($mobile){
     @include span-columns(4 of 4);
   }
-  @include span-columns(2 of 3);
+  @include span-columns(3 of 3);
   margin-top:10px;
   background-color: $color-offwhite;
   border-top:none;

@@ -308,12 +308,14 @@ body {
     margin-right: 2.4458%;
     width: 23.16565%;
     padding-left: 1rem;
-    position: fixed;
+    position: absolute;
     top: 180px;
     left: 0;
-    -webkit-box-shadow: 0px -2px 12px 6px #999b9e;
-    -moz-box-shadow: 0px -2px 12px 6px #999b9e;
-    box-shadow: 0px -2px 12px 6px #c2c4c6; }
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto; }
     @media screen and (max-width: 480px) {
       .eventwrapper .calendarinfo {
         float: left;
@@ -325,7 +327,10 @@ body {
         bottom: 0;
         padding: .5rem;
         background-color: #c2c4c6;
-        text-align: center; }
+        text-align: center;
+        -webkit-box-shadow: 0px -2px 12px 6px #999b9e;
+        -moz-box-shadow: 0px -2px 12px 6px #999b9e;
+        box-shadow: 0px -2px 12px 6px #c2c4c6; }
         .eventwrapper .calendarinfo:last-child {
           margin-right: 0; } }
     .eventwrapper .calendarinfo:last-child {
@@ -368,6 +373,22 @@ body {
             margin-right: 0; } }
       .eventwrapper .calendarinfo .details:last-child {
         margin-right: 0; }
+
+.calendarinfo.clone {
+  position: fixed;
+  top: -980px;
+  left: 0;
+  right: 0;
+  z-index: 999; }
+  @media screen and (max-width: 480px) {
+    .calendarinfo.clone {
+      display: none; } }
+
+body.down .calendarinfo.clone {
+  top: 0px; }
+  @media screen and (max-width: 480px) {
+    body.down .calendarinfo.clone {
+      display: none; } }
 
 .eventphotos {
   float: left;

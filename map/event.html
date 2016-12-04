@@ -26,7 +26,7 @@
 
       <div class="eventwrapper">
 
-        <div class="calendarinfo">
+        <div class="calendarinfo" id="followinfo">
           <h1>35th Anniversary Exhibition</h1>
           <div class="details">
             <h2>the show runs</h2><h3> 10/6-10/27</h3><h2>. the opening reception is on </h2><h3>10/6</h3><h2> from </h2><h3>5-7pm</h3><h2>.</h2>
@@ -86,11 +86,29 @@
     <script>
     var tooltipSpan = document.getElementById('tooltip-span');
 
-window.onmousemove = function (e) {
-  var x = e.clientX, y = e.clientY;
-  tooltipSpan.style.top = (y + 20) + 'px';
-  tooltipSpan.style.left = (x + 20) + 'px';
-};
+      window.onmousemove = function (e) {
+        var x = e.clientX, y = e.clientY;
+        tooltipSpan.style.top = (y + 20) + 'px';
+        tooltipSpan.style.left = (x + 20) + 'px';
+      };
+
+      $(document).ready(function() {
+    var $header = $("#followinfo"),
+        $clone = $header.before($header.clone().addClass("clone"));
+
+    $(window).on("scroll", function() {
+        var fromTop = $(window).scrollTop();
+        $("body").toggleClass("down", (fromTop > 180));
+        if (fromTop>180){
+          $header.hide();
+        } else {
+          $header.show();
+        }
+
+
+    });
+});
+
     </script>
   </body>
 </html>

@@ -91,6 +91,7 @@ body{
   }
 }
 
+
 .eventwrapper{
   @include media($mobile){
     @include span-columns(6);
@@ -107,16 +108,26 @@ body{
       padding:.5rem;
       background-color:$color-lightgrey;
       text-align:center;
+      -webkit-box-shadow: 0px -2px 12px 6px $color-midgrey;
+      -moz-box-shadow: 0px -2px 12px 6px $color-midgrey;
+      box-shadow: 0px -2px 12px 6px $color-lightgrey;
     }
+
     @include span-columns (2 of 8);
     padding-left:1rem;
-    position:fixed;
+    position:absolute;
     top:180px;
     left:0;
+    word-wrap:break-word;
 
-    -webkit-box-shadow: 0px -2px 12px 6px $color-midgrey;
-    -moz-box-shadow: 0px -2px 12px 6px $color-midgrey;
-    box-shadow: 0px -2px 12px 6px $color-lightgrey;
+-webkit-hyphens: auto;
+   -moz-hyphens: auto;
+    -ms-hyphens: auto;
+        hyphens: auto;
+
+
+
+
 
     h1{
       @include media($mobile){
@@ -153,6 +164,25 @@ body{
     }
   }
 }
+
+.calendarinfo.clone {
+  @include media($mobile){
+    display:none;
+  }
+    position:fixed;
+    top:-980px;
+    left: 0;
+    right: 0;
+    z-index:999;
+    // transition:0.4s top cubic-bezier(.3,.73,.3,.74);
+}
+body.down .calendarinfo.clone {
+  @include media($mobile){
+    display:none;
+  }
+  top:0px;
+}
+
 
 .eventphotos{
   @include media($mobile){
@@ -216,13 +246,10 @@ body{
 
     .tooltip{
       position:relative;
-
     }
-
     .tooltip span{
       display:none;
     }
-
     .tooltip:hover span{
       display:block;
       position:fixed;

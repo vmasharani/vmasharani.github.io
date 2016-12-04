@@ -4,6 +4,8 @@ $visual-grid: true !default;
 @import "neat/neat"; // or "neat" when in Rails
 @import "nav.scss";
 
+
+
 $color-blue:#5284ff;
 $color-lightgrey:#c2c4c6;
 $color-offwhite:#f8f8f9;
@@ -71,22 +73,56 @@ body{
   }
 }
 
+
+
+
 .navwrapper{
   @include span-columns(5);
   @include row();
   @include omega();
 
-  @include media($mobile){
-    display:none;
+  // @include media($mobile){
+  //   display:none;
+  // }
+  //
+  // @include media($tablet){
+  //   display:none;
+  // }
+
+  .deskelements{
+    @include media($tablet,$mobile){
+      display:none;
+    }
   }
 
-  @include media($tablet){
-    display:none;
-  }
+  .mobnav{
+    position:fixed;
+    right:-9999px;
 
+
+    @include media($tablet){
+      position:fixed;
+      right:40px;
+      top:80px;
+      z-index:99999;
+      font-size:30px;
+      font-weight:lighter;
+    }
+
+    @include media($mobile){
+      position:fixed;
+      right:40px;
+      top:20px;
+      z-index:99999;
+      font-size:30px;
+      font-weight:lighter;
+    }
+  }
 
   li{
     @include span-columns(1 of 5);
+  }
+
     font-size:12pt;
     text-align:right;
     float:left;
@@ -102,6 +138,37 @@ body{
     }
   }
   // margin-right:12px;
+
+.overlaymenu{
+  height:100%;
+  width:0;
+  position:fixed;
+  z-index:9999999;
+  left:0;
+  top:0;
+  overflow-x: hidden;
+  transition:.1s;
+  .overlaycontent{
+    position:relative;
+    top:25%;
+    width:100%;
+    text-align:center;
+    margin-top:30px;
+    a{
+      padding:8px;
+      text-decration:none;
+      font-size:36px;
+      color:red;
+      display:block;
+      transition:.3s;
+    }
+  }
+  .closebtn{
+    position:absolute;
+    top:20px;
+    right:45px;
+    font-size:60px;
+  }
 }
 
 .contheaderswrapper{
@@ -223,18 +290,34 @@ body{
   }
 }
 
+.infobutton{
+  width:10px;
+  position:absolute;
+  right:0;
+  // height:100%;
+  float:none;
+  // // float:none;
+  margin-bottom:-1000px;
+  padding-bottom:1000px;
+  overflow-y:hidden;
+  background-color:$color-blue;
+  z-index:999;
+}
+
 .infobox{
   // position: fixed;
   // min-height:100%;
+
+
   @include media($mobile){
     display:none;
   }
   @include media($tablet) { // As defined in _grid-settings.scss
-    left:-20%;
   }
 
-  bottom:0;
+  bottom:0%;
   left:0%;
+
   @include span-columns(2);
   background-color:$color-lightgrey;
   margin-bottom: -1000px;
@@ -246,10 +329,13 @@ body{
   position:relative;
   z-index:99;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
   .infocontent{
     @include span-columns(1.5 of 1.5);
     position:absolute;
+    word-wrap: break-word;
     width:100%;
+    padding-right:12%;
     h1{
       font-family:'PortraitCond-Light';
       font-size:21pt;
@@ -271,6 +357,8 @@ body{
       font-size:18px;
       color:white;
       font-weight:normal;
+      font-family:'AtlasGrotesk-Regular';
+
     }
     input{
       font-family:'PortraitText-RegularItalic';
@@ -293,6 +381,29 @@ body{
 
     }
   }
+}
+
+.infobox-hidden{
+  @include media($mobile){
+    display:none;
+  }
+
+  bottom:0%;
+  left:0%;
+
+  @include span-columns(2);
+  @include shift(-1.65);
+  background-color:$color-lightgrey;
+  margin-bottom: -1000px;
+  padding-bottom: 1000px;
+  padding-top:10px;
+  padding-left:10px;
+  padding-right:10px;
+  float:none;
+  position:relative;
+  z-index:99;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  font-size:.01px;
 }
 
 .twitterfooter{
@@ -355,6 +466,10 @@ body{
   bottom:-999999;
 
 }
+
+
+//JS
+
 
 // SCROLLBAR CUSTOMIZATIONS
 

@@ -311,9 +311,9 @@ body {
     position: fixed;
     top: 180px;
     left: 0;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none; }
+    -webkit-box-shadow: 0px -2px 12px 6px #999b9e;
+    -moz-box-shadow: 0px -2px 12px 6px #999b9e;
+    box-shadow: 0px -2px 12px 6px #c2c4c6; }
     @media screen and (max-width: 480px) {
       .eventwrapper .calendarinfo {
         float: left;
@@ -325,10 +325,7 @@ body {
         bottom: 0;
         padding: .5rem;
         background-color: #c2c4c6;
-        text-align: center;
-        -webkit-box-shadow: 0px -2px 12px 6px #999b9e;
-        -moz-box-shadow: 0px -2px 12px 6px #999b9e;
-        box-shadow: 0px -2px 12px 6px #999b9e; }
+        text-align: center; }
         .eventwrapper .calendarinfo:last-child {
           margin-right: 0; } }
     .eventwrapper .calendarinfo:last-child {
@@ -453,10 +450,19 @@ body {
       @media screen and (max-width: 480px) {
         .eventcontent .nametable a {
           font-size: 13px; } }
-      .eventcontent .nametable a span {
+      .eventcontent .nametable a em {
+        font: inherit;
         border-bottom: 1px solid #5284ff; }
-        .eventcontent .nametable a span:hover {
+        .eventcontent .nametable a em:hover {
           border-bottom: none; }
+    .eventcontent .nametable .tooltip {
+      position: relative; }
+    .eventcontent .nametable .tooltip span {
+      display: none; }
+    .eventcontent .nametable .tooltip:hover span {
+      display: block;
+      position: fixed;
+      overflow: hidden; }
     .eventcontent .nametable tbody {
       float: left;
       display: block;

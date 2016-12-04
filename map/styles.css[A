@@ -294,81 +294,37 @@ body {
   margin-right: 2.4458%;
   width: 61.58282%;
   display: block;
-  margin-right: 0;
-  font-size: 12pt;
-  text-align: right;
-  float: left;
-  margin-top: 80px;
-  margin-right: 0;
-  padding-right: 14px; }
+  margin-right: 0; }
   .navwrapper:last-child {
     margin-right: 0; }
   .navwrapper::after {
     clear: both;
     content: "";
     display: block; }
-  @media screen and (max-width: 840px) {
-    .navwrapper .deskelements {
+  @media screen and (max-width: 480px) {
+    .navwrapper {
       display: none; } }
-  .navwrapper .mobnav {
-    position: fixed;
-    right: -9999px; }
-    @media screen and (max-width: 840px) {
-      .navwrapper .mobnav {
-        position: fixed;
-        right: 40px;
-        top: 80px;
-        z-index: 99999;
-        font-size: 30px;
-        font-weight: lighter; } }
-    @media screen and (max-width: 480px) {
-      .navwrapper .mobnav {
-        position: fixed;
-        right: 40px;
-        top: 20px;
-        z-index: 99999;
-        font-size: 30px;
-        font-weight: lighter; } }
+  @media screen and (max-width: 840px) {
+    .navwrapper {
+      display: none; } }
   .navwrapper li {
     float: left;
     display: block;
     margin-right: 3.97156%;
-    width: 16.82275%; }
+    width: 16.82275%;
+    font-size: 12pt;
+    text-align: right;
+    float: left;
+    margin-top: 80px;
+    margin-right: 0;
+    padding-right: 14px; }
     .navwrapper li:last-child {
       margin-right: 0; }
-  .navwrapper a {
-    text-decoration: none;
-    color: #232021; }
-    .navwrapper a:hover {
-      text-decoration: underline; }
-
-.overlaymenu {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 9999999;
-  left: 0;
-  top: 0;
-  overflow-x: hidden;
-  transition: .1s; }
-  .overlaymenu .overlaycontent {
-    position: relative;
-    top: 25%;
-    width: 100%;
-    text-align: center;
-    margin-top: 30px; }
-    .overlaymenu .overlaycontent a {
-      padding: 8px;
-      text-decration: none;
-      font-size: 36px;
-      color: red;
-      display: block;
-      transition: .3s; }
-  .overlaymenu .closebtn {
-    position: absolute;
-    top: 20px;
-    right: 45px;
-    font-size: 60px; }
+    .navwrapper li a {
+      text-decoration: none;
+      color: #232021; }
+      .navwrapper li a:hover {
+        text-decoration: underline; }
 
 .contheaderswrapper {
   float: left;
@@ -520,7 +476,6 @@ body {
   float: none;
   margin-bottom: -1000px;
   padding-bottom: 1000px;
-  overflow-y: hidden;
   background-color: #5284ff;
   z-index: 999; }
 
@@ -544,6 +499,9 @@ body {
   @media screen and (max-width: 480px) {
     .infobox {
       display: none; } }
+  @media screen and (max-width: 840px) {
+    .infobox {
+      left: -20%; } }
   .infobox:last-child {
     margin-right: 0; }
   .infobox .infocontent {
@@ -552,9 +510,7 @@ body {
     margin-right: 14.59066%;
     width: 100%;
     position: absolute;
-    word-wrap: break-word;
-    width: 100%;
-    padding-right: 12%; }
+    width: 100%; }
     .infobox .infocontent:last-child {
       margin-right: 0; }
     .infobox .infocontent h1 {
@@ -573,8 +529,7 @@ body {
     .infobox .infocontent h3 {
       font-size: 18px;
       color: white;
-      font-weight: normal;
-      font-family: 'AtlasGrotesk-Regular'; }
+      font-weight: normal; }
     .infobox .infocontent input {
       font-family: 'PortraitText-RegularItalic';
       border-bottom: 1px solid #5284ff;
@@ -615,11 +570,13 @@ body {
   float: none;
   position: relative;
   z-index: 99;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  font-size: .01px; }
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
   @media screen and (max-width: 480px) {
     .infobox-hidden {
       display: none; } }
+  @media screen and (max-width: 840px) {
+    .infobox-hidden {
+      left: -20%; } }
   .infobox-hidden:last-child {
     margin-right: 0; }
 
@@ -696,4 +653,4 @@ body {
   background-size: 50% 50%;
   background-repeat: no-repeat; }
 
-/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=styles.css[A.map */

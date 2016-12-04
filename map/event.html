@@ -62,7 +62,7 @@
           </p>
           <div class="tablewrapper">
             <table class="nametable">
-              <tr><td><a href=""><span>Gina Adams</span></a></td><td><a href=""><span>James Evans</span></a></td><td><a href=""><span>Fred Lazarus</span></a></td></tr>
+              <tr><td><a href="" class="tooltip"><em>Gina Adams</em><span id="tooltip-span"><img alt="" src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"/></span></a></td><td><a href=""><span>James Evans</span></a></td><td><a href=""><span>Fred Lazarus</span></a></td></tr>
               <tr><td><a href=""><span>Doreen Bolger</span></a></td><td><a href=""><span>Olivia Georgia</span></a></td><td><a href=""><span>Mary Ann Mears</span></a></td></tr>
               <tr><td><a href=""><span>Stiles Tuttle Colwill</span></a></td><td><a href=""><span>Fredye Wright Gross</span></a></td><td><a href=""><span>Jack Rasmussen</span></a></td></tr>
               <tr><td><a href=""><span>Liz S. Courtemanche</span></a></td><td><a href=""><span>Barbie Esham Hart</span></a></td><td><a href=""><span>Joyce Scott</span></a></td></tr>
@@ -82,5 +82,15 @@
         </div>
       </div>
     </div>
+
+    <script>
+    var tooltipSpan = document.getElementById('tooltip-span');
+
+window.onmousemove = function (e) {
+  var x = e.clientX, y = e.clientY;
+  tooltipSpan.style.top = (y + 20) + 'px';
+  tooltipSpan.style.left = (x + 20) + 'px';
+};
+    </script>
   </body>
 </html>

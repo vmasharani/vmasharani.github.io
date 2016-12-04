@@ -3,6 +3,7 @@
   <head>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
   </head>
   <body>
     <div class="container">
@@ -12,17 +13,29 @@
       </div>
 
       <div class="navwrapper">
-        <!-- <a class="mobile" href="#">&#9776;</a>
-        <nav> -->
+
         <ul>
+          <div class="deskelements">
           <li><a href="#">About</a></li>
           <li><a href="#">Press</a></li>
           <li><a href="event.html">Events</a></li>
           <li><a href="#">Join</a></li>
           <li><a href="contact.html">Contact</a></li>
+        </div>
+        <div class="mobnav">
+          <li><span onclick="openNav()">☰</span></li>
+        </div>
         </ul>
-        <div style="clear:both;"></div>
       <!-- </nav> -->
+      </div>
+
+      <div id="respnav" class="overlaymenu">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlaycontent">
+          <a href="#">TEST</a>
+        </div>
+      </div>
+
       </div>
       <div class="contentwrapper">
 
@@ -63,7 +76,8 @@
             <h2>due 10/30</h2>
           </div>
         </div>
-        <div class="infobox">
+        <div class="infobox" id="mybox">
+          <button class="infobutton" id="infobutton"></button>
           <div class="infocontent">
             <div class="infoheader">
             <h1>Visiting</h1>
@@ -78,10 +92,10 @@
               <h2>To keep in touch, subscribe to our newsletter.</h2>
               <input type="email" name="email" placeholder="bouazizi@hotmail.com"/>
             </div>
+
+
           </div>
         </div>
-
-
       </div>
       <div class="mobresourcebulletin">
         <a href="#">Resource Bulletin</a>
@@ -94,6 +108,28 @@
       </div>
 
     </div>
+
+
+
+    <script>
+      $(function(){
+        $("#infobutton").click(function(){
+          $('#mybox').toggleClass("infobox infobox-hidden");
+        })
+
+      });
+
+      function openNav(){
+        document.getElementById("respnav").style.width="100%";
+      }
+      function closeNav(){
+        document.getElementById("respnav").style.width="0%";
+      }
+
+    </script>
+
+
+
   </body>
 
 </html>

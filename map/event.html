@@ -6,6 +6,13 @@
   <body>
     <div class="container">
 
+      <div id="contactModal" class="modal">
+        <div class="modal-content">
+          <span class="close">x</span>
+          <p>Test Content</p>
+        </div>
+      </div>
+
       <div class="home">
         <!-- <img src="images/logo-monoline-1.png"/> -->
       </div>
@@ -18,7 +25,7 @@
           <li><a href="#">Press</a></li>
           <li><a href="event.html">Events</a></li>
           <li><a href="#">Join</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#" id="openContact">Contact</a></li>
         </ul>
         <div style="clear:both;"></div>
       <!-- </nav> -->
@@ -57,6 +64,7 @@
               <tr><td><a href=""><span>Laure Drogoul</span></a></td><td><a href=""><span>Mike McConnell</span></a></td><td><a href=""><span></span></a></td></tr>
             </table>
           </div>
+
           <p>
             This exhibition will showcase works ranging from painting, printmaking, photography, sculpture, installation and more. We look forward to seeing you there!<br><br>Consider donating to our $35K@35 Campaign. Donors are welcome to join us for a post Open House Reception in the gallery from 5-7pm that same day!<br>The 35th Anniversary Exhibition host committee includes:
           </p>
@@ -93,21 +101,43 @@
       };
 
       $(document).ready(function() {
-    var $header = $("#followinfo"),
-        $clone = $header.before($header.clone().addClass("clone"));
+        var $header = $("#followinfo"),
+            $clone = $header.before($header.clone().addClass("clone"));
+            if ($(window).width()>=480){
+              $header.show();
+            }
 
-    $(window).on("scroll", function() {
-        var fromTop = $(window).scrollTop();
-        $("body").toggleClass("down", (fromTop > 180));
-        if (fromTop>180){
-          $header.hide();
-        } else {
-          $header.show();
-        }
+        $(window).on("scroll", function() {
+            var fromTop = $(window).scrollTop();
+            $("body").toggleClass("down", (fromTop > 180));
+            if (fromTop>180 && $( window ).width()>=480){
+              $header.hide();
+            } else {
+              $header.show();
+            }
 
 
-    });
-});
+        });
+      });
+
+      // Get the modal
+      var modal = document.getElementById('contactModal');
+
+      // Get the button that opens the modal
+      var btn = document.getElementById("openContact");
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks on the button, open the modal
+      btn.onclick = function() {
+          modal.style.display = "block";
+      }
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+          modal.style.display = "none";
+      }
 
     </script>
   </body>

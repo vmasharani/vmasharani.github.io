@@ -1,144 +1,238 @@
 <html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="eventstyles.css">
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-  </head>
-  <body>
-    <div class="container">
+<head>
+  <link rel="stylesheet" type="text/css" href="css/eventstyles.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+  <!-- container wrapper-->
+  <div class="container">
 
-      <div id="contactModal" class="modal">
-        <div class="modal-content">
-          <span class="close">x</span>
-          <p>Test Content</p>
-        </div>
-      </div>
-
-      <div class="home">
-        <!-- <img src="images/logo-monoline-1.png"/> -->
-      </div>
-
-      <div class="navwrapper">
-        <!-- <a class="mobile" href="#">&#9776;</a>
-        <nav> -->
-        <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Press</a></li>
-          <li><a href="event.html">Events</a></li>
-          <li><a href="#">Join</a></li>
-          <li><a href="#" id="openContact">Contact</a></li>
-        </ul>
-        <div style="clear:both;"></div>
-      <!-- </nav> -->
-      </div>
-
-      <div class="eventwrapper">
-
-        <div class="calendarinfo" id="followinfo">
-          <h1>35th Anniversary Exhibition</h1>
-          <div class="details">
-            <h2>the show runs</h2><h3> 10/6-10/27</h3><h2>. the opening reception is on </h2><h3>10/6</h3><h2> from </h2><h3>5-7pm</h3><h2>.</h2>
-          </div>
+    <!-- contact modal -->
+    <div id="contactModal" class="modal">
+      <div class="modal-content">
+        <div class="close"><div class="line1"></div><div class="line2"></div></div>
+        <div class="inputwrapper">
+          <input type="text" name="name" placeholder="Name" />
+          <input type="email" name="email" placeholder="Email" />
+          <input type="phone" name="phone" placeholder="Phone #" />
+          <textarea class="longmessage" type="text" name="phone" placeholder="How did you enjoy our most recent exhibition? Interested in joining our team? Just saying hey? Whatever it is, put it here. We look forward to hearing from you."></textarea>
+          <button id="submitbutton">Submit</button>
         </div>
 
-        <div class="eventphotos">
-          <img src="images/eventimage1.jpg"/>
-          <img src="images/eventimage2.jpg"/>
-        </div>
-
-        <div class="eventcontent">
-          <p>
-            MAP serves over 400 artists annually in its galleries. This year we are excited to celebrate our 35th Birthday by featuring 35 contemporary artists. These influential artists have made their mark on MAP throughout our history:
-          </p>
-          <div class="tablewrapper">
-            <table class="nametable">
-              <tr><td><a href=""><span>Hasan Elahi</span></a></td><td><a href=""><span>Neil Feather</span></a></td><td><a href=""><span>Mary Ann Mears</span></a></td></tr>
-              <tr><td><a href=""><span>John Ruppert</span></a></td><td><a href=""><span>Peggy Fox</span></a></td><td><a href=""><span>Raoul Middleman</span></a></td></tr>
-              <tr><td><a href=""><span>Beki Basch</span></a></td><td><a href=""><span>Carol Frost</span></a></td><td><a href=""><span>Mary Beth Muscara</span></a></td></tr>
-              <tr><td><a href=""><span>Carol Brown Goldberg</span></a></td><td><a href=""><span>Helen Glazer</span></a></td><td><a href=""><span>Nancy O'D Wilson</span></a></td></tr>
-              <tr><td><a href=""><span>Mina Cheon</span></a></td><td><a href=""><span>Mia Halton</span></a></td><td><a href=""><span>Janet Olney</span></a></td></tr>
-              <tr><td><a href=""><span>Gabriel Kroiz</span></a></td><td><a href=""><span>Dana Holgerson</span></a></td><td><a href=""><span>David Page</span></a></td></tr>
-              <tr><td><a href=""><span>Bonnie Crawford Kotula</span></a></td><td><a href=""><span>Maria Karametou</span></a></td><td><a href=""><span>Michael Platt</span></a></td></tr>
-              <tr><td><a href=""><span>Linda DePalma</span></a></td><td><a href=""><span>Glen Kessler</span></a></td><td><a href=""><span>Jan Razauskas</span></a></td></tr>
-              <tr><td><a href=""><span>Oletha Devane</span></a></td><td><a href=""><span>Jonathan Latiano</span></a></td><td><a href=""><span>Joyce Scott</span></a></td></tr>
-              <tr><td><a href=""><span>Liz Donadio</span></a></td><td><a href=""><span>Karen Lemmert</span></a></td><td><a href=""><span>Koe Shannon</span></a></td></tr>
-              <tr><td><a href=""><span>Laure Drogoul</span></a></td><td><a href=""><span>Mike McConnell</span></a></td><td><a href=""><span></span></a></td></tr>
-            </table>
-          </div>
-
-          <p>
-            This exhibition will showcase works ranging from painting, printmaking, photography, sculpture, installation and more. We look forward to seeing you there!<br><br>Consider donating to our $35K@35 Campaign. Donors are welcome to join us for a post Open House Reception in the gallery from 5-7pm that same day!<br>The 35th Anniversary Exhibition host committee includes:
-          </p>
-          <div class="tablewrapper">
-            <table class="nametable">
-              <tr><td><a href="" class="tooltip"><em>Gina Adams</em><span id="tooltip-span"><img alt="" src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"/></span></a></td><td><a href=""><span>James Evans</span></a></td><td><a href=""><span>Fred Lazarus</span></a></td></tr>
-              <tr><td><a href=""><span>Doreen Bolger</span></a></td><td><a href=""><span>Olivia Georgia</span></a></td><td><a href=""><span>Mary Ann Mears</span></a></td></tr>
-              <tr><td><a href=""><span>Stiles Tuttle Colwill</span></a></td><td><a href=""><span>Fredye Wright Gross</span></a></td><td><a href=""><span>Jack Rasmussen</span></a></td></tr>
-              <tr><td><a href=""><span>Liz S. Courtemanche</span></a></td><td><a href=""><span>Barbie Esham Hart</span></a></td><td><a href=""><span>Joyce Scott</span></a></td></tr>
-              <tr><td><a href=""><span>Suzi Keats Cordish</span></a></td><td><a href=""><span>Megan Isennock</span></a></td><td><a href=""><span>Emily Sollenberger</span></a></td></tr>
-              <tr><td><a href=""><span>Linda DePalma</span></a></td><td><a href=""><span>Christopher Janian</span></a></td><td><a href=""><span>Nelle Somerville</span></a></td></tr>
-            </table>
+        <div class="contactinfowrapper">
+          <div class='imagewrapper'>
+            <a href-"http://tumblr.com" title="maryland art place tumblr"><img src="images/tumblr.png" alt="tumblr icon"/></a>
+            <a href-"http://twitter.com" title="maryland art place twitter"><img src="images/twitter.png" alt="twitter icon"/></a>
+            <a href-"http://facebook.com" title="maryland art place facebook"><img src="images/like.png" alt="facebook icon"/></a>
+            <a href-"http://instagram.com" title="maryland art place instagram"><img src="images/insta.png" alt="instagram icon"/></a>
           </div>
           <p>
-            We thank the host committee for their dedication and expertise, furthering this important cultural organization.
+            410 962 8565<br>218 West Saratoga Street<br>Baltimore, MD 21201 <br><span>Office hours</span><br> Tues-Sat 9am-5pm <br><span>Gallery hours</span><br> Tuesday-Saturday 12pm-4pm
           </p>
-        </div>
 
-      </div>
-      <div class="twitterfooter">
-        <div class="twittercontent">
-          <img src="images/twfeed.png"/> 5  days left to apply to “UNDER $500”, our upcoming winter benefit exhibition! Don't miss out on this #MAPortunity!
         </div>
       </div>
     </div>
 
-    <script>
-    var tooltipSpan = document.getElementById('tooltip-span');
+    <!-- header-->
+    <div class="homewrapper">
+      <h1><a href="index.html">maryland art place</a></h1>
+    </div>
 
-      window.onmousemove = function (e) {
-        var x = e.clientX, y = e.clientY;
-        tooltipSpan.style.top = (y + 20) + 'px';
-        tooltipSpan.style.left = (x + 20) + 'px';
-      };
+    <!--desktop nav-->
+    <div class="navwrapper">
 
-      $(document).ready(function() {
-        var $header = $("#followinfo"),
-            $clone = $header.before($header.clone().addClass("clone"));
-            if ($(window).width()>=480){
-              $header.show();
-            }
+      <ul>
+        <div class="deskelements">
+        <li><a href="#" title="about">About</a></li>
+        <li><a href="#" title="press">Press</a></li>
+        <li><a href="event.html" title="events">Events</a></li>
+        <li><a href="#" title="join">Join</a></li>
+        <li><a href="#" id="openContact" title="contact">Contact</a></li>
+      </div>
+      <div class="mobnav">
+        <li><span onclick="openNav()" title="opennav">&#9776;</span></li>
+      </div>
+      </ul>
+    </div>
 
-        $(window).on("scroll", function() {
-            var fromTop = $(window).scrollTop();
-            $("body").toggleClass("down", (fromTop > 180));
-            if (fromTop>180 && $( window ).width()>=480){
-              $header.hide();
-            } else {
-              $header.show();
-            }
+    <!-- responsive nav-->
 
+    <div id="respnav" class="overlaymenu">
 
-        });
-      });
+      <div class="overlaycontent">
+        <div class="close lighter" onclick="closeNav()"><div class="line1 lighter"></div><div class="line2 lighter"></div></div>
+        <h2>Maryland Art Place
+        <br>
+        <span>410 962 8565</span>
+        <br>
+        218 West Saratoga Street
+        <br>
+        <span>Baltimore, MD 21201</span>
+        <br>
+        Office hours
+        <br>
+        <span>Tues-Sat 9am-5pm</span>
+        <br>
+        Gallery hours
+        <br>
+        <span>Tuesday-Saturday 12pm-4pm</span></h2>
+        <div class="rule"></div>
+        <a href="#" title='about'>About</a>
+        <a href="#" title='press'>Press</a>
+        <a href="#" title='events'>Events</a>
+        <a href="#" title='join'>Join</a>
+        <a href="#" title='contact'>Contact</a>
+        <a href="#" title='history'>History</a>
+        <a href="#" title='staff'>Staff</a>
+        <a href="#" title='directions'>Directions</a>
+        <a href="#" title='resource bulletin'>Resource Bulletin</a>
+        <a href="#" title='reviews'>Reviews</a>
+        <a href="#" title='imprint'>Imprint</a>
+        <a href="#" title='donate'>Donate</a>
+        <a href="#" title='volunteer'>Volunteer</a>
+        <a href="#" title='internships'>Internships</a>
+      </div>
+    </div>
 
-      // Get the modal
-      var modal = document.getElementById('contactModal');
+    <!-- event wrapper-->
+    <div class="eventwrapper">
 
-      // Get the button that opens the modal
-      var btn = document.getElementById("openContact");
+      <!-- details -->
+      <div class="calendarinfo" id="followinfo">
+        <h1>35th Anniversary Exhibition</h1>
+        <div class="details">
+          <p>the show runs<span> 10/6-10/27</span>. the opening reception is on <span>10/6</span> from <span>5-7pm</span>.</p>
+        </div>
+      </div>
 
-      // Get the <span> element that closes the modal
-      var span = document.getElementsByClassName("close")[0];
+      <!-- event photographs -->
+      <div class="eventphotos">
+        <img src="images/eventimage1.jpg" alt="35th Anniversary preview image one"/>
+        <img src="images/eventimage2.jpg" alt="35th anniversary preview image two"/>
+      </div>
 
-      // When the user clicks on the button, open the modal
-      btn.onclick = function() {
-          modal.style.display = "block";
-      }
+      <!--event text+links-->
+      <div class="eventcontent">
+        <p>
+          MAP serves over 400 artists annually in its galleries. This year we are excited to celebrate our 35th Birthday by featuring 35 contemporary artists. These influential artists have made their mark on MAP throughout our history:
+        </p>
+        <!-- list of artists-->
+        <div class="tablewrapper">
+          <div class="nametable">
 
-      // When the user clicks on <span> (x), close the modal
-      span.onclick = function() {
-          modal.style.display = "none";
-      }
+            <a href="" class="tooltip" title="Hasan Elahi website"><em>Hasan Elahi</em><span id="tooltip-span1"><img alt="artist image Hasan Elahi" src="images/thumbs/elahi.jpg"/></span></a><br>
 
-    </script>
-  </body>
+            <a href="" class="tooltip" title="Neil Feather website"><em>Neil Feather</em><span id="tooltip-span12"><img alt="artist image Neil Feather" src="images/thumbs/feather.jpg"/></span></a><br>
+
+            <a href="" class="tooltip" title="Mary Ann Mears website"><em>Mary Ann Mears</em><span id="tooltip-span23"><img alt="artist image Mary Ann Mears" src="images/thumbs/mears.jpg"/></span></a><br>
+
+            <a href="" class="tooltip" title="John Ruppert website"><em>John Ruppert</em><span id="tooltip-span2"><img alt="artist image John Ruppert" src="images/thumbs/ruppert.jpg"/></span></a><br>
+
+            <a href="" class="tooltip" title="Peggy Fox website"><em>Peggy Fox</em><span id="tooltip-span13"><img alt="artist image Peggy Fox" src="images/thumbs/fox.jpg"/></span></a><br>
+
+            <a href="" class="tooltip" title="Raoul Middleman website"><em>Raoul Middleman</em><span id="tooltip-span24"><img alt="artist image Raoul Middleman" src="images/thumbs/middleman.jpg"/></span></a><br>
+
+            <a href="" class="tooltip" title="Beki Basch website"><em>Beki Basch</em><span id="tooltip-span3"><img alt="artist image Beki Basch" src="images/thumbs/basch.jpg"/></span></a><br>
+
+            <a href="" class="tooltip" title="Carol Frost website"><em>Carol Frost</em><span id="tooltip-span14"><img alt="artist image Carol Frost" src="images/thumbs/frost.jpg"/></span></a><br>
+
+            <a href="" class="tooltip" title="Mary Beth Muscara website"><em>Mary Beth Muscara</em><span id="tooltip-span25"><img alt="artist image Mary Beth Muscara" src="images/thumbs/muscara.png"/></span></a><br>
+
+            <a href="artist image " class="tooltip" title="Carol Brown Goldberg website"><em>Carol Brown Goldberg</em><span id="tooltip-span4"><img alt="artist image Carol Brown" src="images/thumbs/goldberg.jpg"/></span></a><br>
+
+            <a href="" class="tooltip" title="Helen Glazer website"><em>Helen Glazer</em><span id="tooltip-span15"><img alt="artist image Helen Glazer" src="images/thumbs/glazer.jpg"/></span></a><br>
+
+            <a href="" class="tooltip" title="Nancy O'D Wilson website"><em>Nancy O'D Wilson</em><span id="tooltip-span26"><img alt="artist image Nancy O'D Wilson" src="images/thumbs/wilson.jpg"/></span></a><br>
+
+            <a href="" class="tooltip" title="Mina Cheon website"><em>Mina Cheon</em><span id="tooltip-span5"><img alt="artist image Mina Cheon" src="images/thumbs/cheon.jpg"/></span></a><br>
+
+            <a href="" class="tooltip" title="Mia Halton website"><em>Mia Halton</em><span id="tooltip-span16"><img alt="artist image Mia Halton" src="images/thumbs/halton.jpg"/></span></a><br>
+
+            <a href="" class="tooltip" title="Janet Olney website"><em>Janet Olney</em><span id="tooltip-span27"><img alt="artist image Janet Olney" src="images/thumbs/olney.jpg"/></span></a><br>
+
+            <a href="" class="tooltip" title="Gabriel Kroiz website"><em>Gabriel Kroiz</em><span id="tooltip-span6"><img alt="artist image Gabriel Kroiz" src="images/thumbs/kroiz.jpg"/></span></a><br>
+
+            <a href="" class="tooltip" title="Dana Holgerson website"><em>Dana Holgerson</em><span id="tooltip-span17"><img alt="artist image Dana Holgerson" src="images/thumbs/holgerson.jpg"/></span></a><br>
+
+            <a href="" class="tooltip" title="David Page website"><em>David Page</em><span id="tooltip-span28"><img alt="artist image David Page" src="images/thumbs/page.jpg"/></span></a><br>
+
+            <a href="" class="tooltip" title="Bonnie Crawford Kotula website"><em>Bonnie Crawford Kotula</em><span id="tooltip-span7"><img alt="artist image Bonnie Crawford Kotula" src="images/thumbs/kotula.jpg"/></span></a><br>
+
+            <a href="" class="tooltip" title="Maria Karametou website"><em>Maria Karametou</em><span id="tooltip-span18"><img alt="artist image Maria Karametou" src="images/thumbs/karametou.jpg"/></span></a><br>
+
+            <a href="" class="tooltip" title="Michael Platt website"><em>Michael Platt</em><span id="tooltip-span29"><img alt="artist image Michael Platt" src="images/thumbs/platt.jpg"/></span></a><br>
+
+            <a href="" class="tooltip" title="Linda DePalma website"><em>Linda DePalma</em><span id="tooltip-span8"><img alt="artist image Linda DePalma" src="images/thumbs/depalma.jpg"/></span></a><br>
+
+            <a href="" class="tooltip" title="Glen Kessler website"><em>Glen Kessler</em><span id="tooltip-span19"><img alt="artist image Glen Kessler" src="images/thumbs/kessler.jpg"/></span></a><br>
+
+            <a href="" class="tooltip" title="Jan Razauskas website"><em>Jan Razauskas</em><span id="tooltip-span30"><img alt="artist image Jan Razauskas" src="images/thumbs/razkausas.jpg"/></span></a><br>
+
+            <a href="" class="tooltip" title="Oletha Devane website"><em>Oletha Devane</em><span id="tooltip-span9"><img alt="artist image Oletha Devane" src="images/thumbs/devane.jpg"/></span></a><br>
+
+            <a href="" class="tooltip" title="Jonathan Latiano website"><em>Jonathan Latiano</em><span id="tooltip-span20"><img alt="artist image Jonathan Latiano" src="images/thumbs/latiano.jpg"/></span></a><br>
+
+            <a href="" class="tooltip" title="Joyce Scott website"><em>Joyce Scott</em><span id="tooltip-span31"><img alt="artist image Joyce Scott" src="images/thumbs/scott.jpg"/></span></a><br>
+
+            <a href="" class="tooltip" title="Liz Donadio website"><em>Liz Donadio</em><span id="tooltip-span10"><img alt="artist image Liz Donadio" src="images/thumbs/donadio.jpg"/></span></a><br>
+
+            <a href="" class="tooltip" title="Karen Lemmert website"><em>Karen Lemmert</em><span id="tooltip-span21"><img alt="artist image Karen Lemmert" src="images/thumbs/lemmert.jpg"/></span></a><br>
+
+            <a href="" class="tooltip" title="Koe Shannon website"><em>Koe Shannon</em><span id="tooltip-span32"><img alt="artist image Koe Shannon" src="images/thumbs/shannon.jpg"/></span></a><br>
+
+            <a href="" class="tooltip" title="Laure Drogoul website"><em>Laure Drogoul</em><span id="tooltip-span11"><img alt="artist image Laure Drogoul" src="images/thumbs/drogoul.jpg"/></span></a><br>
+
+            <a href="" class="tooltip" title="Mike McConnell website"><em>Mike McConnell</em><span id="tooltip-span22"><img alt="artist image Mike McConnell" src="images/thumbs/mcconnell.jpg"/></span></a><br>
+
+            <a href="" class="tooltip" title="website"><em></em><span id="tooltip-span33"><img alt="" src="images/thumbs/elahi.jpg"/></span></a>
+          </div>
+        </div>
+
+        <p>
+          This exhibition will showcase works ranging from painting, printmaking, photography, sculpture, installation and more. We look forward to seeing you there!<br><br>Consider donating to our $35K@35 Campaign. Donors are welcome to join us for a post Open House Reception in the gallery from 5-7pm that same day!<br>The 35th Anniversary Exhibition host committee includes:
+        </p>
+
+        <div class="tablewrapper">
+          <div class="nametable">
+            <a href="" title="Gina Adams website"><em>Gina Adams</em></a><br>
+            <a href="" title="James Evans website"><em>James Evans</em></a><br>
+            <a href="" title="Fred Lazarus website"><em>Fred Lazarus</em></a><br>
+            <a href="" title="Doreen Bolger website"><em>Doreen Bolger</em></a><br>
+            <a href="" title="Olivia Georgia website"><em>Olivia Georgia</em></a><br>
+            <a href="" title="Mary Ann Mears website"><em>Mary Ann Mears</em></a><br>
+            <a href="" title="Stiles Tuttle Colwill website"><em>Stiles Tuttle Colwill</em></a><br>
+            <a href="" title="Fredye Wright Gross website"><em>Fredye Wright Gross</em></a><br>
+            <a href="" title="Jack Rasmussen website"><em>Jack Rasmussen</em></a><br>
+            <a href="" title="Liz S. Courtemanche website"><em>Liz S. Courtemanche</em></a><br>
+            <a href="" title="Barbie Esham Hart website"><em>Barbie Esham Hart</em></a><br>
+            <a href="" title="Joyce Scott website"><em>Joyce Scott</em></a><br>
+            <a href="" title="Suzi Keats Cordish website"><em>Suzi Keats Cordish</em></a><br>
+            <a href="" title="Megan Isennock website"><em>Megan Isennock</em></a><br>
+            <a href="" title="Emily Sollenberger website"><em>Emily Sollenberger</em><br></a>
+            <a href="" title="Linda DePalma website"><em>Linda DePalma</em></a><br>
+            <a href="" title="Christopher Janian website"><em>Christopher Janian</em></a><br>
+            <a href="" title="Nelle Somerville website"><em>Nelle Somerville</em></a>
+          </div>
+        </div>
+        <p>
+          We thank the host committee for their dedication and expertise, furthering this important cultural organization.
+        </p>
+      </div>
+    </div>
+
+    <!--twitter footer-->
+
+    <div class="twitterfooter">
+      <div class="twittercontent">
+        <img src="images/twfeed.png" alt="twitter icon footer"/> 5  days left to apply to “UNDER $500”, our upcoming winter benefit exhibition! Don't miss out on this #MAPortunity!
+      </div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+
+</body>
 </html>

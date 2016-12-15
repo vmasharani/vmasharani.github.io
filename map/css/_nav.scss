@@ -1,0 +1,152 @@
+@import 'shared';
+
+
+// desktop wrapper
+.navwrapper{
+  @include media($tablet){
+
+      @include span-columns(0);
+  }
+
+  @include span-columns(4);
+  @include row();
+  @include omega();
+
+  margin-top:4rem;
+  margin-right:0;
+
+  //font styling
+  font-family:'AtlasGrotesk-Regular';
+  font-size:1.2rem;
+  text-align:right;
+  float:right;
+  a{
+    text-decoration:none;
+    color:$color-offblack;
+    &:hover{
+      text-decoration:underline;
+    }
+  }
+
+
+// two different navs requires two separate divs
+  .deskelements{
+    @include media($tablet,$mobile){
+      display:none;
+    }
+  }
+
+// mobnav starts offscreen
+  .mobnav{
+    position:fixed;
+    right:-9999px;
+    cursor: pointer;
+    cursor: hand;
+// becomes visible in tablet view
+    @include media($tablet){
+      position:fixed;
+      right:6.5rem;
+      top:6.5rem;
+      z-index:99999;
+
+      font-size:30px;
+      font-weight:lighter;
+    }
+  }
+
+// each nav element is in a ul
+  li{
+    display:inline-block;
+    width:auto;
+    margin-right:3.7rem;
+    @include media($mobile){
+      margin-right:.7rem;
+    }
+  }
+
+
+}
+
+// overlay responsive
+.overlaymenu{
+  @include media($desktop){
+    display:none;
+  }
+
+  @include media($tablet){
+    display:block;
+    height:100%;
+    width:0;
+    position:fixed;
+    z-index:99999;
+    left:0;
+    top:0;
+
+    overflow-x: hidden;
+    overflow-y:hidden;
+    // overlay content
+    .overlaycontent{
+      padding:6% 11% 6% 11%;
+      position:absolute;
+      top:0;
+      width:100%;
+      text-align:left;
+      background-color:rgba(35,32,33,.95);
+
+      height:100%;
+      line-height:20px;
+      // overlay content font styling
+      h2{
+        @include media($mobile){
+          font-size:3.1rem;
+          line-height:1.6em;
+        }
+
+        font-family:'PortraitText-Bold';
+        color:$color-offwhite;
+        font-weight:normal;
+        font-size:1.9rem;
+        line-height:1.4em;
+        span{
+          font-family:'PortraitText-Regular';
+          font-weight:normal;
+        }
+      }
+
+      a{
+        @include media($mobile){
+          font-size:3.1rem;
+          line-height:1.6em;
+        }
+        font-family:'AtlasGrotesk-Regular';
+        color:$color-offwhite;
+        text-decoration:none;
+        font-size:2.2rem;
+        line-height:1.5em;
+        display:block;
+        &:hover{
+          text-decoration:underline;
+        }
+      }
+    }
+    // close button
+    .closebtn{
+
+      position:absolute;
+      top:20px;
+      right:45px;
+      font-size:60px;
+      z-index:999999;
+
+    }
+  }
+}
+
+
+// rule class
+.rule{
+  width:100%;
+  height:0;
+  border-top:1px solid $color-offwhite;
+  margin: 10px 0px 10px 0px;
+}

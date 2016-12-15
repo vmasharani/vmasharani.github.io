@@ -1,0 +1,274 @@
+// imports
+
+$visual-grid: false !default;
+@import "grid-settings";
+@import "typefaces";
+@import "../neat/neat"; // or "neat" when in Rails
+@import "nav.scss";
+@import "shared";
+@import "reset";
+@import "modal";
+@import 'scroll';
+@import 'logo';
+@import 'styles.scss';
+
+body{
+  margin:0;
+  padding:0;
+}
+
+// outer container
+.container {
+  @include outer-container(100%);
+  font-family:'AtlasGrotesk-Regular';
+}
+
+
+// whole event
+.eventwrapper{
+  @include media($tablet){
+    @include span-columns(6);
+  }
+  @include media($mobile){
+  }
+
+  @include span-columns(8);
+  margin-top:5rem;
+
+// leftmost column (calendar details)
+  .calendarinfo{
+    @include media($tablet){
+      @include span-columns(6 of 6);
+      position:fixed;
+      top:auto;
+      bottom:0;
+      padding:.5rem;
+
+      background-color:$color-lightgrey;
+      text-align:center;
+      -webkit-box-shadow: 0px -2px 12px 6px $color-midgrey;
+      -moz-box-shadow: 0px -2px 12px 6px $color-midgrey;
+      box-shadow: 0px -2px 12px 6px $color-lightgrey;
+    }
+// absolutely positioned for scroll interaction
+    @include span-columns (2 of 8);
+    top:180px;
+    left:0;
+    padding-left:1rem;
+    padding-top:.5rem;
+    position:absolute;
+
+    word-wrap:break-word;
+    z-index:999;
+
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+
+
+    // show details
+    .details{
+
+      @include media($tablet){
+        margin-top:none;
+      }
+      @include media($mobile){
+        @include span-columns(6 of 6);
+      }
+
+      @include span-columns(2 of 2);
+      background-color:$color-lightgrey;
+      padding:.3rem .3rem .3rem .3rem;
+      margin-top:.75rem;
+    }
+
+    // show title
+    h1{
+      @include media($tablet){
+        font-size:4rem;
+      }
+      @include media($mobile){
+        font-size:5rem;
+      }
+      font-weight:normal;
+      font-family:"AtlasGrotesk-Regular";
+      color:$color-blue;
+      font-size:2rem;
+    }
+    // show info
+    p{
+
+      @include media($tablet){
+        font-size:2.6rem;
+      }
+      @include media($mobile){
+        font-size:3.7rem;
+      }
+      font-family:"PortraitText-Regular";
+      font-weight:normal;
+      color:$color-offblack;
+      font-size:1.2rem;
+      line-height:1.1em;
+
+    }
+
+    span{
+      @include media($tablet){
+        font-size:2.1rem;
+      }
+      @include media($mobile){
+        font-size:3.4rem;
+
+      }
+      font-family:"AtlasGrotesk-Regular";
+      font-weight:normal;
+      color:white;
+      font-size:1.1rem;
+    }
+  }
+}
+
+// clone for scroll interaction;
+
+.calendarinfo.clone {
+  @include media($tablet){
+    display:none;
+  }
+    position:fixed;
+    top:-980px;
+    left: 0;
+    right: 0;
+    z-index:999;
+}
+
+// disables interaction in smaller viewports
+body.down .calendarinfo.clone {
+  @include media($tablet){
+    display:none;
+  }
+  @include media($mobile){
+    display:none;
+  }
+  top:0px;
+}
+
+// photo column
+.eventphotos{
+  @include media($tablet){
+    @include span-columns (3 of 6);
+    @include shift(0);
+  }
+  @include media($mobile){
+    display:none;
+  }
+
+  @include span-columns(3 of 8);
+  @include shift(2);
+  padding:0rem 1rem 2rem 1rem;
+
+  img{
+    width:90%;
+    margin-bottom:15px;
+    min-width:125px;
+  }
+}
+
+// event content
+.eventcontent{
+  @include media($tablet){
+    padding:0rem 1rem 12rem 0rem;
+    @include span-columns (3 of 6);
+  }
+  @include media($mobile){
+    @include span-columns(6 of 6);
+    margin-top:15rem;
+    padding: 0rem 4rem 20rem 4rem;
+  }
+
+  @include span-columns(3 of 8);
+  padding:0rem 1rem 3.5rem 0rem;
+
+  p{
+
+    @include media($tablet){
+      font-size:2.2rem;
+    }
+    @include media($mobile){
+      font-size:3.75rem;
+    }
+    font-family:"PortraitText-Regular";
+    font-weight:normal;
+    color:$color-offblack;
+    font-size:1.2rem;
+    line-height:1.3em;
+
+  }
+  // name table (artist list)
+  .tablewrapper{
+    @include media($mobile){
+      @include span-columns(6 of 6);
+    }
+    @include span-columns(3 of 3);
+    margin:0 auto;
+  }
+  .nametable{
+    @include media($mobile){
+      @include span-columns(6 of 6);
+    }
+    @include span-columns(3 of 3);
+
+    margin: 1rem 0rem 1rem 0rem;
+
+    a{
+      @include media($tablet){
+        font-size:1.3rem;
+      }
+      @include media($mobile){
+        font-size:2.1rem;
+      }
+      font-family: 'AtlasGrotesk-Medium';
+      text-transform:uppercase;
+      color:$color-offblack;
+      font-size:.8rem;
+      text-decoration:none;
+      line-height:1.6em;
+      em{
+        font:inherit;
+        border-bottom:1px solid $color-blue;
+        &:hover{
+          border-bottom:none;
+        }
+      }
+    }
+
+// tooltips for hover interaction
+    .tooltip{
+      position:relative;
+
+    }
+    .tooltip span{
+      display:none;
+      position:absolute;
+    }
+    .tooltip:hover span{
+      display:block;
+      position:fixed;
+      overflow:hidden;
+      vertical-align:bottom;
+
+      width:-50%;
+      background-color:white;
+      border:1px solid black;
+      padding:5px;
+      z-index:9;
+      transform:scaleX(-1);
+      img{
+        width:100%;
+      }
+      @include media($tablet){
+        width:40%;
+      }
+    }
+  }
+}

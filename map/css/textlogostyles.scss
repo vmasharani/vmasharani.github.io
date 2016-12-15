@@ -1,0 +1,44 @@
+$visual-grid: false !default;
+
+
+@import "grid-settings";
+@import "neat/neat"; // or "neat" when in Rails
+@import "nav.scss";
+@import "typefaces";
+
+
+$color-blue:#5284ff;
+$color-lightgrey:#c2c4c6;
+$color-offwhite:#f8f8f9;
+$color-midgrey:#999b9e;
+$color-offblack:#232021;
+
+$scrollcorner:4px;
+
+body{
+  margin:0;
+  padding:0;
+}
+
+h1{
+  font-family:'AtlasGrotesk-Light';
+  color:white;
+  text-transform:uppercase;
+  font-weight:normal;
+  text-shadow: 0 0 20px $color-blue,
+  0 0 50px $color-blue,
+  0 0 80px $color-blue,
+  ;
+  position:absolute;
+  top:40;
+  left:40;
+  transition: ease 1s;
+  &:hover{
+    text-shadow: 0 0 50px $color-blue,
+    0 0 80px $color-blue,
+    0 0 90px $color-blue,
+    0 0 80px $color-blue,
+    0 0 100px $color-blue,
+
+  }
+}

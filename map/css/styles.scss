@@ -1,0 +1,600 @@
+$visual-grid: false !default;
+
+// imports
+
+@import "grid-settings";
+@import "typefaces";
+@import "../neat/neat"; // or "neat" when in Rails
+@import "nav.scss";
+@import "shared";
+@import "reset";
+@import "modal";
+@import 'scroll';
+@import 'logo';
+
+
+body{
+  margin:0;
+  padding:0;
+}
+
+// wrapper container
+.container {
+  @include outer-container(100%);
+}
+
+// headers
+.contheaderswrapper{
+
+  @include media($mobile){
+    display:none;
+  }
+
+  @include span-columns(8);
+  @include row();
+
+  .contheaders{
+    @include span-columns(3.9 of 8);
+    padding-left:60px;
+
+    h3{
+      @include media($tablet){
+        font-size:4.1rem;
+      }
+
+      font-family:'PortraitCond-Light';
+      font-weight:normal;
+      font-size:2.2rem;
+      .right{
+        @include shift(4);
+      }
+    }
+  }
+}
+
+
+// page content wrapper
+.contentwrapper{
+
+  @include span-columns(8);
+  margin-top: 3rem;
+  overflow:hidden;
+
+}
+
+//page-content
+.content{
+
+  @include media($mobile){
+    @include span-columns(6);
+  }
+  @include span-columns(8 of 8);
+  @include row();
+
+  margin-top:2.2rem;
+
+}
+
+// event feed
+.eventfeed{
+  // includes
+  @include media($mobile){
+    @include span-columns(6 of 6);
+    margin-top:14rem;
+  }
+  @include span-columns(3.9 of 8);
+
+
+  height:80vh;
+  z-index:0;
+  overflow-y: scroll;
+  padding-left:60px;
+  padding-bottom:5.2rem;
+
+  // feed content
+  .feedcontent{
+
+    @include media($mobile){
+      img{
+        width:100%;
+      }
+    }
+    width:90%;
+    img{
+      width:90%;
+      margin-top:2rem;
+    }
+
+    // event title
+    h1{
+      @include media($tablet){
+        font-size:3.25rem;
+      }
+      @include media($mobile){
+        font-size:5.5rem;
+      }
+
+      a{
+        color:$color-blue;
+        text-decoration:none;
+        background-image: linear-gradient(#fff 50%, $color-offblack 50%);
+        background-repeat: repeat-x;
+        background-position: 0 .725em;
+        background-size: 4px 8px;
+        &:hover {
+          background-image:none;
+        }
+      }
+
+      font-family:'AtlasGrotesk-Regular';
+      font-weight:normal;
+      font-size:2.75rem;
+      line-height:1.1em;
+      margin-top:1.75rem;
+    }
+
+    #first{
+      margin-top:none;
+    }
+
+    // event date
+    h2{
+      @include media($tablet){
+        font-size:2rem;
+      }
+      @include media($mobile){
+        font-size:4.5rem;
+      }
+      font-family:'PortraitText-RegularItalic';
+      font-size:1.45rem;
+      line-height:1.1em;
+      font-weight:normal;
+    }
+  }
+}
+
+// resource bulletin
+.resourcefeed{
+  @include media($mobile){
+    position:fixed;
+    top:9999px;
+    &.show{
+      height:auto;
+      position:absolute;
+      top:19rem;
+      bottom:0rem;
+      left:0rem;
+      right:0rem;
+      padding:8rem 1.75rem 1rem 2.25rem;
+      width:100%;
+      background-color:$color-offwhite;
+      z-index:0;
+    }
+  }
+  @include span-columns(3.9 of 8);
+
+  height:80vh;
+  overflow-y:scroll;
+  padding-left:60px;
+
+  // each item
+  h1{
+    @include media($tablet){
+      font-size: 2.4rem;
+    }
+    @include media($mobile){
+      font-size: 6rem;
+    }
+
+    font-family:'AtlasGrotesk-Regular';
+    font-size:1.6rem;
+    line-height:1.4em;
+    font-weight:normal;
+    margin-top:.6rem;
+
+    a{
+      text-decoration:none;
+      color:$color-offblack;
+      background-image: linear-gradient(#fff 50%, $color-blue 50%);
+      background-repeat: repeat-x;
+      background-position: 0 .625em;
+      background-size: 4px 8px;
+      &:hover {
+        background-image:none;
+      }
+    }
+  }
+
+// date
+  h2{
+    @include media($tablet){
+      font-size: 2.2rem;
+    }
+    @include media($mobile){
+      font-size:4.2rem;
+    }
+    font-family:'PortraitText-RegularItalic';
+    font-size:1rem;
+    line-height:1em;
+    font-weight:normal;
+  }
+  // label
+  h3{
+    @include media($tablet){
+      width:75%;
+      padding: .75rem 0rem .5rem .6rem;
+      font-size: 1.4rem;
+    }
+    @include media($mobile){
+      width:100%;
+      padding: .75rem 0rem .5rem .6rem;
+      font-size: 2.9rem;
+      text-align:center;
+
+    }
+    padding: .15rem 0rem .07rem .25rem;
+    width:60%;
+    font-family:'AtlasGrotesk-Medium';
+    font-size:.8rem;
+    color:$color-offwhite;
+    background-color:$color-lightgrey;
+    text-transform:uppercase;
+    line-height:110%;
+    font-weight:normal;
+  }
+}
+
+// BEGIN INFOBOX STYLES
+
+.infobutton{
+  width:10px;
+  padding:0 0 0 0;
+  position:absolute;
+  right:0;
+  float:none;
+  // makes height == container div
+  margin-bottom:-1000px;
+  padding-bottom:1000px;
+  overflow-y:hidden;
+  z-index:9;
+
+  border:none;
+  background-color:$color-midgrey;
+  color:$color-midgrey;
+  text-align:center;
+
+  box-shadow: 5px -2px 10px rgba(101,102,104,.8);
+  transition:none;
+
+  &:hover{
+    background-color:$color-blue;
+    color:$color-blue;
+    text-shadow:0px 0px 10px $color-offblack;
+  }
+  &:active{
+    outline:0;
+    transition:none;
+    background-color:$color-offblack;
+  }
+  &:focus{
+    outline:0;
+  }
+}
+
+// outer box
+
+.infobox{
+  @include media($tablet) {
+  }
+
+  @include media($mobile){
+    display:none;
+  }
+
+  @include span-columns(2);
+  position:relative;
+  float:none;
+  height:100vh;
+  padding-left:10px;
+  padding-right:10px;
+  z-index:99;
+
+  background-color:$color-lightgrey;
+
+  #infoheader{
+    padding-top:.5rem;
+    margin-bottom:2rem;
+  }
+// content
+  .infocontent{
+    @include span-columns(1.5 of 1.5);
+
+    position:absolute;
+    width:100%;
+    padding-right:12%;
+    word-wrap: break-word;
+
+// header
+    h1{
+      @include media($tablet){
+        font-size:4.1rem;
+      }
+
+      font-family:'PortraitCond-Light';
+      font-size:2.2rem;
+      font-weight:normal;
+    }
+    // body
+    p{
+      @include media($tablet){
+        font-size:2rem;
+      }
+      font-family:'PortraitText-Regular';
+      font-size:1.2rem;
+      line-height:1.25em;
+      a{
+        text-decoration:underline;
+        color:$color-offblack;
+        &:hover{
+          text-decoration:none;
+        }
+      }
+    }
+
+    // body alt
+
+    span{
+      @include media($tablet){
+        font-size:1.7rem;
+      }
+      font-size:1rem;
+      color:white;
+      font-family:'AtlasGrotesk-Regular';
+
+    }
+
+    // input field
+
+    input{
+      @include media($tablet){
+        font-size:1.7rem;
+      }
+      padding-right:1rem;
+      margin: 1rem 0rem 1rem 0rem;
+      display:inline-block;
+
+      background:none;
+      border:none;
+
+      border-bottom:1px solid $color-blue;
+      white-space:normal;
+
+      font-family:'PortraitText-RegularItalic';
+      line-height:1;
+      font-size:1.2rem;
+
+      @include placeholder{
+        color:white;
+      }
+
+      &:focus{
+        outline:0;
+      }
+    }
+    // button
+
+    button{
+      @include media($tablet){
+        font-size:1.75rem;
+      }
+      display:block;
+      width:70%;
+      margin-top:0px;
+      padding: 8px 0px 8px 0px;
+
+      background-color: $color-midgrey;
+      border:none;
+      border-bottom:2px solid $color-offwhite;
+
+      color: $color-offwhite;
+      font-family:'AtlasGrotesk-Regular';
+      text-align: center;
+      text-decoration: none;
+      font-size: 1rem;
+      text-shadow: 0px 0px 10px $color-offblack;
+      &:hover{
+        background-color:$color-offblack;
+        color:$color-offwhite;
+        border-bottom:2px solid $color-offblack;
+      }
+      &:active{
+        outline:0;
+
+      }
+      &:focus{
+        outline:0;
+      }
+
+    }
+  }
+}
+
+//hidden class
+.infobox-hidden{
+  @include media($mobile){
+    display:none;
+  }
+  @include span-columns(2);
+  @include shift(-1.65);
+
+  display:block;
+  float:none;
+
+  // flips the button arrows
+  .infobutton{
+    transform-origin:center;
+    transform:scaleX(-1);
+    transition:none;
+    box-shadow: -5px -2px 10px rgba(101,102,104,.8);
+  }
+}
+
+//footer
+.twitterfooter{
+  position:fixed;
+  width:100%;
+  height:auto;
+  z-index:99;
+  bottom:0;
+  background:$color-offwhite;
+
+  .twittercontent{
+    position:relative;
+    img{
+      width:16px;
+    }
+    font-family:'PortraitText-RegularItalic';
+    src:local('PortraitText-RegularItalic');
+    color:$color-midgrey;
+    font-size:15px;
+    padding: 12px;
+  }
+
+  @include media($tablet){
+  }
+  @include media($mobile){
+    display:none;
+  }
+}
+
+// mobile resource bulletin top preview shows only when in mobile
+.mobresourcebulletin{
+
+  position:fixed;
+  bottom:-999999;
+
+  @include media($desktop){
+    display:none;
+  }
+  @include media($tablet){
+    display:none;
+  }
+  @include media($mobile){
+    position:fixed;
+    bottom:0;
+    width:100%;
+    height:8rem;
+    padding:8px;
+    padding-top:13px;
+
+    background:white;
+    z-index:999;
+
+    border-top:1px $color-offblack solid;
+    border-bottom:1px solid $color-offblack;
+
+    a{
+      font-family:'PortraitText-Regular';
+      font-size:15px;
+      color:$color-offblack;
+    }
+
+    // refers to the button to make the bulletin slide up
+
+    .slideup{
+      position:fixed;
+      width:8rem;
+      height:8rem;
+      bottom:0;
+      right:0;
+      padding-top:4px;
+      text-align:center;
+
+      border:1px solid $color-offblack;
+      border-right:none;
+      background-position:center;
+      background-size:contain;
+      background-repeat:no-repeat;
+      z-index:9999;
+
+      img{
+        display:inline-block;
+        position:absolute;
+        width:80%;
+
+        right:2.8px;
+        animation: pulse .7s infinite;
+      }
+    }
+  }
+
+
+}
+
+// the following classes are toggled to open up the mobile resource bulletin
+.redbg{
+  @include media($desktop){
+    display:none;
+  }
+  @include media($tablet){
+    display:none;
+  }
+  @include media($mobile){
+    top:17.5rem;
+  }
+}
+
+.pushtop{
+  top:17.5rem;
+}
+
+
+// rotates the button when open so that it becomes a closed button
+.rotated {
+  z-index:99999;
+  // top:$mobheaderheight;
+  transform: rotate(180deg);
+  -ms-transform: rotate(180deg); /* IE 9 */
+  -moz-transform: rotate(180deg); /* Firefox */
+  -webkit-transform: rotate(180deg); /* Safari and Chrome */
+}
+
+// SPECIFIC IDs
+
+
+#bulletinheader{
+  @include media($desktop){
+    display:none;
+  }
+  @include media($tablet){
+    display:block;
+  }
+}
+
+#showbulletin{
+  display:block;
+  height:8rem;
+}
+
+#arrowcont{
+
+}
+
+
+// Animation
+@keyframes pulse{
+  0%{
+    bottom:0px;
+
+  }
+
+  50%{
+    bottom:8px;
+
+  }
+
+  100%{
+    bottom:0px;
+
+  }
+}

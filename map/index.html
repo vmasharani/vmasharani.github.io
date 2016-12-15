@@ -1,51 +1,127 @@
-
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <!-- import stylesheet, jquery, viewport w/-->
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width" />
 
   </head>
   <body>
+
+    <!-- container wraps entire page -->
     <div class="container">
 
+      <!-- contact modal section begins here -->
+
       <div id="contactModal" class="modal">
-        <div class="modal-content">
-          <span class="close">x</span>
-          <p>Test Content</p>
-        </div>
+          <div class="modal-content">
+            <!-- close button -->
+            <div class="close"><div class="line1"></div><div class="line2"></div></div>
+
+            <!-- inputs -->
+            <div class="inputwrapper">
+              <input type="text" name="name" placeholder="Name" />
+              <input type="email" name="email" placeholder="Email" />
+              <input type="phone" name="phone" placeholder="Phone #" />
+
+              <textarea class="longmessage" type="text" name="phone" placeholder="How did you enjoy our most recent exhibition? Interested in joining our team? Just saying hey? Whatever it is, put it here. We look forward to hearing from you."></textarea>
+              <button id="submitbutton" >Submit</button>
+            </div>
+
+            <!-- contact info -->
+            <div class="contactinfowrapper">
+              <div class='imagewrapper'>
+                <a href-"http://tumblr.com" title="maryland art place tumblr"><img src="images/tumblr.png"/ alt="tumblr icon"></a>
+                <a href-"http://twitter.com" title="maryland art place twitter"><img src="images/twitter.png"/ alt="twitter icon"></a>
+                <a href-"http://facebook.com" title="maryland art place facebook"><img src="images/like.png" alt='facebook icon'/></a>
+                <a href-"http://instagram.com" title="maryland art place instagram"><img src="images/insta.png" alt='instagram icon'/></a>
+              </div>
+              <p>
+                410 962 8565<br>218 West Saratoga Street<br>Baltimore, MD 21201 <br><span>Office hours</span><br> Tues-Sat 9am-5pm <br><span>Gallery hours</span><br> Tuesday-Saturday 12pm-4pm
+              </p>
+
+            </div>
+          </div>
       </div>
 
-      <div class="home">
-        <!-- <img src="images/logo-monoline-1.png"/> -->
+      <!-- header section begins here -->
+
+      <!-- logo uses text + styling -->
+      <div class="homewrapper">
+        <h1><a href="index.html" title="home page">maryland art place</a></h1>
       </div>
 
+
+      <!-- desktop navigation begins here -->
       <div class="navwrapper">
 
+        <!-- desktop navigation -->
         <ul>
           <div class="deskelements">
-          <li><a href="#">About</a></li>
-          <li><a href="#">Press</a></li>
-          <li><a href="event.html">Events</a></li>
-          <li><a href="#">Join</a></li>
-          <li><a href="#" id="openContact">Contact</a></li>
+          <li><a href="#" title="about">About</a></li>
+          <li><a href="#" title="press">Press</a></li>
+          <li><a href="event.html" title="events">Events</a></li>
+          <li><a href="#" title="join">Join</a></li>
+          <li><a href="#" id="openContact" title="contact us">Contact</a></li>
         </div>
+
+        <!--  responsive navigation shows different content -->
+
         <div class="mobnav">
-          <li><span onclick="openNav()">☰</span></li>
+          <li><span onclick="openNav()" title"open mobile nav">☰</span></li>
         </div>
         </ul>
-      <!-- </nav> -->
+
       </div>
 
+      <!-- responsive navigation -->
+
       <div id="respnav" class="overlaymenu">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
         <div class="overlaycontent">
-          <a href="#">TEST</a>
+          <!-- close button -->
+          <div class="close lighter" onclick="closeNav()"><div class="line1 lighter"></div><div class="line2 lighter"></div></div>
+          <!-- content -->
+          <h2>Maryland Art Place
+          <br>
+          <span>410 962 8565</span>
+          <br>
+          218 West Saratoga Street
+          <br>
+          <span>Baltimore, MD 21201</span>
+          <br>
+          Office hours
+          <br>
+          <span>Tues-Sat 9am-5pm</span>
+          <br>
+          Gallery hours
+          <br>
+          <span>Tuesday-Saturday 12pm-4pm</span></h2>
+          <div class="rule"></div>
+          <!-- links -->
+          <a href="#" title='about'>About</a>
+          <a href="#" title='press'>Press</a>
+          <a href="#" title='events'>Events</a>
+          <a href="#" title='join'>Join</a>
+          <a href="#" title='contact'>Contact</a>
+          <a href="#" title='history'>History</a>
+          <a href="#" title='staff'>Staff</a>
+          <a href="#" title='directions'>Directions</a>
+          <a href="#" title='resource bulletin'>Resource Bulletin</a>
+          <a href="#" title='reviews'>Reviews</a>
+          <a href="#" title='imprint'>Imprint</a>
+          <a href="#" title='donate'>Donate</a>
+          <a href="#" title='volunteer'>Volunteer</a>
+          <a href="#" title='internships'>Internships</a>
         </div>
       </div>
 
-      </div>
+      <!-- page content begins here -->
+
+      <!-- wraps content -->
       <div class="contentwrapper">
 
+      <!-- content headers (separate so that divs are independently scrollable) -->
       <div class="contheaderswrapper">
         <div class="contheaders">
           <h3>Events+Exhibitions</h3>
@@ -55,123 +131,125 @@
         </div>
       </div>
 
-        <div class="content">
-          <div class="eventfeed">
+      <!--feeds begin here-->
 
+        <div class="content">
+
+          <!-- events and exhibitions feed -->
+          <div class="eventfeed">
             <div class="feedcontent">
-              <img src="images/feedimage1.png"/>
-              <h1>35th Anniversary Exhibition</h1>
-              <h2>10/6–10/27</h2>
-              <img src="images/feedimage2.jpg"/>
-              <h1>Impact 2016</h1>
-              <h2>8/9–9/3</h2>
+              <img src="images/feedimage3.jpg" id='first' alt="Abhidnya Ghuge Heather Harvey show image"/>
+              <h1><a href="event.html" title="Abhidnya Ghuge + Heather Harvey show link">Abhidnya Ghuge + Heather Harvey</a></h1>
+              <h2>1/19/17–3/11/17</h2>
+
+              <img src="images/feedimage4.jpg" alt="ACCR Show image"/>
+              <h1><a href="event.html" title="ACCR show link">ACCR Art + Community Series</a></h1>
+              <h2>11/8/16-11/19/16</h2>
+
+              <img src="images/feedimage1.png" alt="35th Anniversary show image"/>
+              <h1><a href="event.html" title="35th anniversary show link">35th Anniversary Exhibition</a></h1>
+              <h2>10/6/16–10/27/16</h2>
+
+              <img src="images/feedimage2.jpg" alt="Impact show image"/>
+              <h1><a href="#" title="impact 2016 show link">Impact 2016</a></h1>
+              <h2>8/9/16–9/3/16</h2>
             </div>
 
           </div>
 
+          <!-- resource bulletin feed -->
           <div class="resourcefeed" id="bulletin">
             <h3>call for entries</h3>
-            <h1><a href="">Towson Arts Collective: Anything Goes Salon!</a><h1>
-            <h2>due 10/21</h2>
+            <h1><a href="" title='Visarts Challenge Campaign'>Visarts Challenge Campaign: </a><h1>
+            <h2>due 12/16</h2>
+            <br>
+            <h3>job listing</h3>
+            <h1><a href="" title='Maryland Citizens for the Arts'>Maryland Citizens for the Arts</a><h1>
+            <h2>due 12/31</h2>
             <br>
             <h3>call for entries</h3>
-            <h1><a href="">Coming About: ACCR Art and Community Series</a><h1>
-            <h2>due 10/21</h2>
+            <h1><a href="" title='So to Speak (non)Fiction Poetry Contest'>So to Speak (non)Fiction Poetry Contest</a><h1>
+            <h2>due 12/31</h2>
+            <br>
+            <h3>call for entries</h3>
+            <h1><a href="" title='Spectacular Skies'>Spectacular Skies</a><h1>
+            <h2>due 1/4</h2>
+            <br>
+            <h3>call for entries</h3>
+            <h1><a href="" title='Bethesda Film Festival'>Bethesda Film Festival</a><h1>
+            <h2>due 1/4</h2>
+            <br>
+            <h3>call for entries</h3>
+            <h1><a href="" title='Pyramid Atlantic Art Center'>Pyramid Atlantic Art Center</a><h1>
+            <h2>due 1/6</h2>
+            <br>
+            <h3>call for entries</h3>
+            <h1><a href="" title='Towson Arts Collective: Anything Goes Salon!'>Towson Arts Collective: Anything Goes Salon!</a><h1>
+            <h2>due 1/21</h2>
+            <br>
+            <h3>call for entries</h3>
+            <h1><a href="" title='Coming About: ACCR Art and Community Series'>Coming About: ACCR Art and Community Series</a><h1>
+            <h2>due 1/21</h2>
             <br>
             <h3>open call</h3>
-            <h1><a href="">Points of View: The Lazy Susan Gallery</a><h1>
-            <h2>due 10/30</h2>
+            <h1><a href="" title='Points of View: The Lazy Susan Gallery'>Points of View: The Lazy Susan Gallery</a><h1>
+            <h2>due 1/30</h2>
           </div>
         </div>
+
+        <!-- information slide-over window -->
+
+
         <div class="infobox" id="mybox">
-          <button class="infobutton" id="infobutton"></button>
+
+          <!-- large toggle button -->
+          <button class="infobutton" id="infobutton">⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎<br>⬅︎</button>
+
+          <!-- visiting information -->
           <div class="infocontent">
-            <div class="infoheader">
+
+            <!--  header -->
+            <div id="infoheader">
             <h1>Visiting</h1>
             </div>
+
+            <!-- content -->
             <div class="infobody">
-              <h2>We’re located at</h2>
-              <h3>218 West Saratoga Street, Baltimore, MD 21201.</h3>
-              <h2>Click <a href="">here</a> for directions.<br>Our office hours are</h2>
-              <h3>Tues-Sat 9am–5pm.</h3>
-              <h2>Our gallery hours are</h2>
-              <h3>Tues-Sat 12pm–4pm.</h3>
-              <h2>To keep in touch, subscribe to our newsletter.</h2>
+              <p>We’re located at<br>
+              <span>218 West Saratoga Street, Baltimore, MD 21201.</span><br>
+              Click <a href="" title="get directions">here</a> for directions.<br>Our office hours are<br>
+              <span>Tues-Sat 9am–5pm.</span><br>
+              Our gallery hours are<br>
+              <span>Tues-Sat 12pm–4pm.</span><br><br>
+              To keep in touch, subscribe to our newsletter.</p>
               <input type="email" name="email" placeholder="bouazizi@hotmail.com"/>
+              <button>Subscribe</button>
             </div>
-
-
           </div>
         </div>
       </div>
-      <div class="mobresourcebulletin">
+
+      <!--END PAGE CONTENT-->
+
+      <!-- MOBILE RESOURCE BULLETIN PREVIEW DIV -->
+      <div class="mobresourcebulletin" id="bulletinheader">
+        <!--link-hover-->
         <a href="#">Resource Bulletin</a>
-        <a href="#" id="showBulletin"><div class="slideup"><img id="arrowbutton"src="images/slideup5.png"/></div></a>
+        <!--button-->
+        <a href="#" id="showBulletin" title="show resource bulletin mobile"><div class="slideup" id="arrowcont"><img id="arrowbutton" src="images/slideup5.png" alt="show button arrow"/></div></a>
       </div>
+
+      <!-- FOOTER -->
       <div class="twitterfooter">
         <div class="twittercontent">
-          <img src="images/twfeed.png"/> 5  days left to apply to “UNDER $500”, our upcoming winter benefit exhibition! Don't miss out on this #MAPortunity!
+          <img src="images/twfeed.png" alt="twitter footer logo"/> 5  days left to apply to “UNDER $500”, our upcoming winter benefit exhibition! Don't miss out on this #MAPortunity!
         </div>
       </div>
 
     </div>
 
-
-
-    <script>
-      $(function(){
-        $("#infobutton").click(function(){
-          $('#mybox').toggleClass("infobox infobox-hidden");
-        })
-
-      });
-
-      $(function(){
-        $("#showBulletin").click(function(){
-          $('#bulletin').toggleClass("resourcefeed resourcefeed show");
-          $('#arrowbutton').toggleClass("rotated");
-;
-        })
-
-      });
-
-      function openNav(){
-        document.getElementById("respnav").style.width="100%";
-      }
-      function closeNav(){
-        document.getElementById("respnav").style.width="0%";
-      }
-
-
-      // Get the modal
-      var modal = document.getElementById('contactModal');
-
-      // Get the button that opens the modal
-      var btn = document.getElementById("openContact");
-
-      // Get the <span> element that closes the modal
-      var span = document.getElementsByClassName("close")[0];
-
-      // When the user clicks on the button, open the modal
-      btn.onclick = function() {
-          modal.style.display = "block";
-      }
-
-      // When the user clicks on <span> (x), close the modal
-      span.onclick = function() {
-          modal.style.display = "none";
-      }
-
-      // When the user clicks anywhere outside of the modal, close it
-      window.onclick = function(event) {
-          if (event.target == modal) {
-              modal.style.display = "none";
-          }
-      }
-
-    </script>
-
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 
   </body>
 

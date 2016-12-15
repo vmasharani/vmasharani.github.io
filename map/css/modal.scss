@@ -1,0 +1,258 @@
+@import 'shared';
+
+
+// overall screen cover
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 99999;
+  left: 0;
+  top: 0;
+  bottom:0;
+  right:0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+
+//window
+.modal-content {
+  @include media($tablet){
+    @include span-columns(5);
+    @include shift(.5);
+  }
+  @include media($mobile){
+    @include span-columns(5);
+    margin-top:14vh;
+  }
+  @include span-columns(5);
+  @include shift(1.5);
+
+  padding:.75rem;
+  margin-top:20vh;
+
+  background-color:#ffffff;
+  border:2px solid $color-offblack;
+  -webkit-box-shadow: 2px 2px 7px 3px rgba(35,32,33,0.4);
+  -moz-box-shadow: 2px 2px 7px 3px rgba(35,32,33,0.4);
+  box-shadow: 2px 2px 7px 3px rgba(35,32,33,0.4);
+
+// inputs column structure
+  .inputwrapper{
+    @include media($mobile){
+      @include span-columns(4 of 4);
+    }
+    @include span-columns(3 of 6);
+  }
+
+  // contact info
+  .contactinfowrapper{
+
+
+    @include media($mobile){
+      width:100%;
+    }
+    @include span-columns(3 of 6);
+    // text styles for contact
+    p{
+      @include media($tablet){
+        font-size:1.8rem;
+        line-height:1.5em;
+      }
+      @include media($mobile){
+        font-size:2.1rem;
+        text-align:center;
+      }
+      font-family:'PortraitText-Regular';
+      text-align:right;
+      color:$color-offblack;
+      font-size:1rem;
+    }
+
+    line-height:1.5em;
+
+    span{
+      color:$color-blue;
+      font-weight:normal;
+      margin:0rem 0rem 0rem 0rem;
+    }
+
+    // column structure for contact
+    .contactinfocontent{
+      @include media($mobile){
+        margin:0rem 0rem 0rem 0rem;
+
+      }
+      @include span-columns(2 of 3);
+      @include shift(1);
+      margin-top:2.5rem;
+    }
+
+    .imagewrapper{
+      @include media($mobile){
+        @include span-columns(5 of 5);
+        @include shift(0);
+        text-align:center;
+      }
+      @include span-columns(1.5 of 3);
+      @include shift(1.5);
+      margin-top:2.5rem;
+      text-align:right;
+      img{
+        @include media($mobile){
+          width:10%;
+        }
+        display:inline-block;
+        width:20%;
+      }
+    }
+  }
+
+  // input styles
+
+  input{
+    @include media($tablet){
+      font-size:2.2rem;
+    }
+    @include media($mobile){
+      @include span-columns(4 of 4);
+      font-size:4rem;
+    }
+    @include span-columns(3 of 3);
+    display:block;
+    margin-bottom:1.2rem;
+  	border-bottom:1px solid $color-offblack;
+    border-left:none;
+    border-top:none;
+    border-right:none;
+  	padding:0;
+  	vertical-align:middle;
+  	white-space:normal;
+  	background:none;
+  	line-height:1;
+    font-size:1.5rem;
+    color:$color-offblack;
+    &:focus{
+      outline:0;
+    }
+    font-family:'AtlasGrotesk-Regular';
+    @include placeholder {
+        color: $color-midgrey;
+    }
+
+  }
+
+  .longmessage{
+    @include media($tablet){
+      font-size:1.6rem;
+      height:11rem;
+      margin:1rem 0rem 1rem 0rem;
+    }
+    @include media($mobile){
+      @include span-columns(4 of 4);
+      height:26rem;
+      font-size:2.8rem;
+    }
+    @include span-columns(3 of 3);
+    height:8rem;
+
+    background:$color-offwhite;
+    color:$color-offblack;
+    font-size:1.25rem;
+    resize:none;
+    font-family:'AtlasGrotesk-Regular';
+    border:none;
+    &:focus{
+      outline:0;
+    }
+
+    @include placeholder {
+        color: $color-lightgrey;
+    }
+  }
+
+  // button styles
+  button{
+    @include media($mobile){
+      @include span-columns(4 of 4);
+    }
+    @include span-columns(3 of 3);
+    margin-top:1.5rem;
+    background-color: $color-offwhite;
+    border-top:none;
+    border-right:none;
+    border-left:none;
+    border-bottom:2px solid $color-midgrey;
+    color: $color-offwhite;
+    padding: 15px 32px;
+    font-family:'AtlasGrotesk-Regular';
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    text-shadow: 0px 0px 10px $color-offblack;
+    &:hover{
+      background-color:$color-offblack;
+      color:$color-offwhite;
+      border-bottom:2px solid $color-offblack;
+    }
+    &:active{
+      outline:0;
+
+    }
+    &:focus{
+      outline:0;
+    }
+  }
+}
+
+// close button
+.close {
+  float: right;
+  font-size: 28px;
+  width:$closeboxdim;
+  height:$closeboxdim;
+  border: 1px solid $color-offblack;
+  &.lighter{
+    border:1px solid $color-offwhite;
+  }
+  padding:auto;
+  .line1{
+    height: 67.5px;
+    border-right: 1px solid $color-offblack;
+    &.lighter{
+      border:1px solid $color-offwhite;
+    }
+    transform-origin: top;
+    margin-left: 48px;
+    transform: rotate(45deg);
+    position: absolute;
+    float: right;
+
+  }
+  .line2{
+    height: 67.5px;
+    border-left: 1px solid $color-offblack;
+
+    transform: rotate(-45deg);
+    transform-origin:top;
+
+    position:absolute;
+    float:right;
+
+    &.lighter{
+      border:1px solid $color-offwhite;
+    }
+  }
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    cursor:hand;
+}

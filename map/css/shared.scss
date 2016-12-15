@@ -1,0 +1,46 @@
+// SHARED VARIABLES
+
+$color-blue:#5284ff;
+$color-lightgrey:#c2c4c6;
+$color-offwhite:#f8f8f9;
+$color-midgrey:#999b9e;
+$color-offblack:#232021;
+$text: #333;
+$feedheights:480px;
+$scrollcorner:4px;
+$mobheaderheight:80px;
+$closeboxdim:50px;
+
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}
+}
+
+.twitterfooter{
+  position:fixed;
+  width:100%;
+  height:40px;
+  z-index:9999;
+  bottom:0;
+  background:$color-offwhite;
+  .twittercontent{
+    position:relative;
+    img{
+      width:16px;
+    }
+    font-family:'PortraitText-RegularItalic';
+    src:local('PortraitText-RegularItalic');
+    color:$color-midgrey;
+    font-size:15px;
+    padding: 12px;
+  }
+
+  @include media($tablet){
+  }
+  @include media($mobile){
+    display:none;
+  }
+}

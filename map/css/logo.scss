@@ -1,0 +1,73 @@
+// home logo
+
+.homewrapper {
+  // column restructuring
+  @include span-columns(4);
+
+  @include media($tablet){
+    @include span-columns(4);
+  }
+
+  @include media($mobile){
+    @include span-columns(6);
+    position:fixed;
+    z-index:1;
+    border-bottom:1px solid $color-offblack;
+    text-align:left;
+    background-color:$color-offwhite;
+
+  }
+
+  // styling
+  h1{
+    @include media($mobile){
+      @include span-columns(3);
+      @include shift(.75);
+    }
+    margin-top:3.4rem;
+    margin-left:3rem;
+
+    a{
+      @include media($tablet){
+        font-size:5.7rem;
+        line-height:1.2em;
+
+      }
+      @include media($mobile){
+        font-size:6rem;
+        line-height:1.2em;
+      }
+
+      color:#fff;
+
+      font-family:'AtlasGrotesk-Light';
+      font-size:2.5rem;
+
+      text-transform:uppercase;
+      font-weight:normal;
+
+      text-shadow: 0 0 20px $color-blue, 0 0 50px $color-blue, 0 0 80px $color-blue,;
+      -webkit-text-shadow: 0 0 20px $color-blue, 0 0 50px $color-blue, 0 0 80px $color-blue,;
+
+      text-decoration:none;
+// hover interaction
+      &:hover{
+        transition: 1s ease;
+        text-shadow:
+        0 0 50px $color-blue,
+        0 0 80px $color-blue,
+        0 0 80px $color-blue,
+        0 0 90px $color-blue,
+        0 0 100px $color-blue,
+        0 0 110px $color-blue;
+        -webkit-text-shadow:
+        0 0 50px $color-blue,
+        0 0 80px $color-blue,
+        0 0 80px $color-blue,
+        0 0 90px $color-blue,
+        0 0 100px $color-blue,
+        0 0 110px $color-blue;
+      }
+    }
+  }
+}

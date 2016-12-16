@@ -1,7 +1,8 @@
 @font-face{
   font-family: 'AtlasGrotesk-Bold';
-  src: local('../fonts/AtlasGrotesk-Bold');
+  src: url('fonts/AtlasGrotesk-Bold.otf') format('otf');
 }
+
 
 @font-face{
   font-family: 'AtlasGrotesk-Medium';

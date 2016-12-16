@@ -19,6 +19,7 @@
 @font-face {
   font-family: 'PortraitText-RegularItalic';
   src: url("fonts/PortraitText-RegularItalic.otf"); }
+
 html {
   box-sizing: border-box; }
 

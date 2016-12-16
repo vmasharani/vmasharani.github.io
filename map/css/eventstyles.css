@@ -3,7 +3,7 @@
   src: url("fonts/AtlasGrotesk-Bold.otf"); }
 @font-face {
   font-family: 'AtlasGrotesk-Medium';
-  src: url("fonts/AtlasGrotesk-Medium"); }
+  src: url("fonts/AtlasGrotesk-Medium.otf"); }
 @font-face {
   font-family: 'AtlasGrotesk-Regular';
   src: url("fonts/AtlasGrotesk-Regular.otf"); }
@@ -625,7 +625,7 @@ table {
   src: url("fonts/AtlasGrotesk-Bold.otf"); }
 @font-face {
   font-family: 'AtlasGrotesk-Medium';
-  src: url("fonts/AtlasGrotesk-Medium"); }
+  src: url("fonts/AtlasGrotesk-Medium.otf"); }
 @font-face {
   font-family: 'AtlasGrotesk-Regular';
   src: url("fonts/AtlasGrotesk-Regular.otf"); }

@@ -85,6 +85,7 @@ var tooltipSpan2 = document.getElementById('tooltip-span2');
 var toolTips = [];
 
 // adds all tooltips to an array
+// add target to change according to the list of artist names
 $(document).ready(function(){
   for(var i=1;i<33;i++){
     toolTips[i]=$('#tooltip-span'+i);

@@ -5,30 +5,30 @@
 
 @font-face{
   font-family: 'AtlasGrotesk-Medium';
-  src: local('../fonts/AtlasGrotesk-Medium');
+  src: url('../fonts/AtlasGrotesk-Medium');
 }
 
 @font-face{
   font-family: 'AtlasGrotesk-Regular';
-  src: local('../fonts/AtlasGrotesk-Regular.otf');
+  src: url('../fonts/AtlasGrotesk-Regular.otf');
 }
 
 @font-face{
   font-family: 'AtlasGrotesk-Light';
-  src: local('../fonts/AtlasGrotesk-Light.otf');
+  src: url('../fonts/AtlasGrotesk-Light.otf');
 }
 
 @font-face{
     font-family: 'PortraitCond-Light';
-    src: local('../fonts/PortraitCond-Light.otf');
+    src: url('../fonts/PortraitCond-Light.otf');
 }
 
 @font-face{
   font-family:'PortraitText-Regular';
-  src:local('../fonts/PortraitText-Regular.otf');
+  src:url('../fonts/PortraitText-Regular.otf');
 }
 
 @font-face{
   font-family:'PortraitText-RegularItalic';
-  src:local('../fonts/PortraitText-RegularItalic.otf');
+  src:url('../fonts/PortraitText-RegularItalic.otf');
 }

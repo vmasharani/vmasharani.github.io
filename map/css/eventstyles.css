@@ -1,24 +1,24 @@
 @font-face {
   font-family: 'AtlasGrotesk-Bold';
-  src: local("AtlasGrotesk-Bold"); }
+  src: url("fonts/AtlasGrotesk-Bold.otf"); }
 @font-face {
   font-family: 'AtlasGrotesk-Medium';
-  src: local("AtlasGrotesk-Medium"); }
+  src: url("fonts/AtlasGrotesk-Medium"); }
 @font-face {
   font-family: 'AtlasGrotesk-Regular';
-  src: local("AtlasGrotesk-Regular"); }
+  src: url("fonts/AtlasGrotesk-Regular.otf"); }
 @font-face {
   font-family: 'AtlasGrotesk-Light';
-  src: local("AtlasGrotesk-Light"); }
+  src: url("fonts/AtlasGrotesk-Light.otf"); }
 @font-face {
   font-family: 'PortraitCond-Light';
-  src: local("PortraitCond-Light"); }
+  src: url("fonts/PortraitCond-Light.otf"); }
 @font-face {
   font-family: 'PortraitText-Regular';
-  src: local("PortraitText-Regular"); }
+  src: url("fonts/PortraitText-Regular.otf"); }
 @font-face {
   font-family: 'PortraitText-RegularItalic';
-  src: local("PortraitText-RegularItalic"); }
+  src: url("fonts/PortraitText-RegularItalic.otf"); }
 html {
   box-sizing: border-box; }
 
@@ -622,25 +622,25 @@ table {
 
 @font-face {
   font-family: 'AtlasGrotesk-Bold';
-  src: local("AtlasGrotesk-Bold"); }
+  src: url("fonts/AtlasGrotesk-Bold.otf"); }
 @font-face {
   font-family: 'AtlasGrotesk-Medium';
-  src: local("AtlasGrotesk-Medium"); }
+  src: url("fonts/AtlasGrotesk-Medium"); }
 @font-face {
   font-family: 'AtlasGrotesk-Regular';
-  src: local("AtlasGrotesk-Regular"); }
+  src: url("fonts/AtlasGrotesk-Regular.otf"); }
 @font-face {
   font-family: 'AtlasGrotesk-Light';
-  src: local("AtlasGrotesk-Light"); }
+  src: url("fonts/AtlasGrotesk-Light.otf"); }
 @font-face {
   font-family: 'PortraitCond-Light';
-  src: local("PortraitCond-Light"); }
+  src: url("fonts/PortraitCond-Light.otf"); }
 @font-face {
   font-family: 'PortraitText-Regular';
-  src: local("PortraitText-Regular"); }
+  src: url("fonts/PortraitText-Regular.otf"); }
 @font-face {
   font-family: 'PortraitText-RegularItalic';
-  src: local("PortraitText-RegularItalic"); }
+  src: url("fonts/PortraitText-RegularItalic.otf"); }
 html {
   box-sizing: border-box; }
 

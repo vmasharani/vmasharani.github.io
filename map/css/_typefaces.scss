@@ -1,12 +1,12 @@
 @font-face{
   font-family: 'AtlasGrotesk-Bold';
-  src: url('fonts/AtlasGrotesk-Bold.otf') format('otf');
+  src: url('fonts/AtlasGrotesk-Bold.otf') format('otf'), url('fonts/AtlasGrotesk-Bold.WOFF') format('woff');
 }
 
 
 @font-face{
   font-family: 'AtlasGrotesk-Medium';
-  src: url('fonts/AtlasGrotesk-Medium.otf');
+  src: url('fonts/AtlasGrotesk-Medium');
 }
 
 @font-face{

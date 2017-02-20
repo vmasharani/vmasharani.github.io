@@ -1,0 +1,193 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+h1 {
+  font-family: "Hind";
+  font-weight: 600;
+  font-size: 7rem;
+  position: relative;
+  color: grey; }
+  @media screen and (max-width: 660px) {
+    h1 {
+      font-size: 9rem; } }
+
+h2 {
+  padding: 1rem;
+  font-family: "Hind";
+  font-weight: 300;
+  background-color: #e7e8dd;
+  border-bottom: 1px solid #191919;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  color: black;
+  visibility: hidden; }
+  @media screen and (max-width: 660px) {
+    h2 {
+      font-size: 4rem; } }
+  h2 a {
+    color: blue; }
+    h2 a:hover {
+      text-decoration: none; }
+    h2 a:active {
+      color: black;
+      font-style: italic; }
+    h2 a:visited {
+      color: blue; }
+
+.visible {
+  visibility: visible; }
+
+#trigger {
+  width: 100%;
+  height: 0; }
+
+svg circle {
+  transition: .4s ease-in-out; }
+
+.label {
+  font-family: "Hind";
+  font-weight: 400;
+  width: 100%;
+  position: fixed;
+  bottom: 3rem;
+  left: 10rem;
+  width: 40%;
+  font-size: 5rem;
+  color: red; }
+
+.mobilelabel {
+  width: 100%;
+  position: fixed;
+  bottom: 3rem;
+  font-size: 9rem;
+  font-family: "Hind";
+  font-weight: 600;
+  color: red;
+  text-align: center;
+  z-index: -1; }
+
+#buttons {
+  position: fixed;
+  top: 4rem;
+  left: 4rem;
+  width: 30%; }
+  @media screen and (max-width: 660px) {
+    #buttons {
+      top: 12rem; } }
+  #buttons button {
+    border-radius: 2%;
+    border: none;
+    outline: none;
+    position: relative;
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 49%;
+    padding-bottom: 8rem;
+    margin-bottom: 4rem; }
+    @media screen and (max-width: 660px) {
+      #buttons button {
+        width: 100%;
+        padding-bottom: 9rem;
+        margin-bottom: 6rem; } }
+    #buttons button:hover {
+      cursor: pointer;
+      -webkit-filter: drop-shadow(0px 0px 3px rgba(255, 25, 182, 0.86));
+      -moz-filter: drop-shadow(0px 0px 3px rgba(255, 25, 182, 0.86));
+      -ms-filter: drop-shadow(0px 0px 3px rgba(255, 25, 182, 0.86));
+      -o-filter: drop-shadow(0px 0px 3px rgba(255, 25, 182, 0.86));
+      filter: drop-shadow(0px 0px 3px rgba(255, 25, 182, 0.86)); }
+      #buttons button:hover .buttonlabel {
+        visibility: visible;
+        text-align: center;
+        -webkit-filter: none;
+        -moz-filter: none;
+        -ms-filter: none;
+        -o-filter: none;
+        filter: none; }
+  #buttons .buttonlabel {
+    color: black;
+    font-size: 2rem;
+    font-weight: 500;
+    visibility: hidden;
+    position: absolute;
+    top: 110%;
+    left: 0%; }
+    @media screen and (max-width: 660px) {
+      #buttons .buttonlabel {
+        position: absolute;
+        visibility: visible;
+        left: 50%;
+        top: 100%;
+        font-size: 3.6rem; } }
+  #buttons .active {
+    border: 1px solid yellow;
+    background-color: rgba(255, 255, 0, 0.25); }
+  #buttons #budget {
+    background-image: url("../images/dollarsign-neutral.png"); }
+    #buttons #budget:active {
+      background-image: url("../images/dollarsign-active.png"); }
+  #buttons #ships {
+    background-image: url("../images/ship-neutral.png"); }
+    #buttons #ships:active {
+      background-image: url("../images/ship-active.png"); }
+  #buttons #plane {
+    background-image: url("../images/plane-neutral.png"); }
+    #buttons #plane:active {
+      background-image: url("../images/plane-active.png"); }
+  #buttons #troops {
+    background-image: url("../images/troop-neutral.png"); }
+    #buttons #troops:active {
+      background-image: url("../images/troop-active.png"); }
+
+/*# sourceMappingURL=styles.css.map */

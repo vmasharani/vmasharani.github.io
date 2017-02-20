@@ -1,0 +1,196 @@
+@import 'reset.scss';
+@import "../neat/neat"; // or "neat" when in Rails
+
+
+$mobile: new-breakpoint(max-width 660px);
+
+
+
+h1{
+  @include media($mobile){
+    font-size:9rem;
+  }
+  font-family:"Hind";
+  font-weight:600;
+  font-size:7rem;
+  position:relative;
+  color:grey;
+}
+
+h2{
+  @include media($mobile){
+    font-size:4rem;
+  }
+  padding:1rem;
+  font-family:"Hind";
+  font-weight:300;
+  background-color:#e7e8dd;
+  border-bottom:1px solid rgb(25,25,25);
+  position:fixed;
+  top:0;
+  width:100%;
+  text-align:center;
+  font-size:2rem;
+  color:black;
+  visibility:hidden;
+  a{
+    color:rgba(0,0,255,1);
+    &:hover{
+      text-decoration:none;
+    }
+    &:active{
+      color:rgba(0,0,0,1);
+      font-style:italic;
+        }
+    &:visited{
+      color:rgba(0,0,255,1);
+    }
+  }
+}
+
+.visible{
+  visibility:visible;
+}
+
+
+#trigger{
+  width:100%;
+  height:0;
+}
+
+svg circle{
+  transition:.4s ease-in-out;
+}
+
+
+
+.label{
+  font-family:"Hind";
+  font-weight:400;
+  width:100%;
+  position:fixed;
+  bottom:3rem;
+  left:10rem;
+  width:40%;
+  font-size:5rem;;
+  color:red;
+}
+
+
+.mobilelabel{
+  width:100%;
+    position:fixed;
+    bottom:3rem;
+    font-size:9rem;
+    font-family:"Hind";
+    font-weight:600;
+    color:red;
+    text-align:center;
+    z-index:-1;
+
+}
+
+
+
+#buttons{
+  @include media($mobile){
+    top:12rem;
+  }
+  position:fixed;
+  top:4rem;
+  left:4rem;
+  width:30%;
+
+  button{
+    border-radius:2%;
+    @include media($mobile){
+      width:100%;
+      padding-bottom:9rem;
+      margin-bottom:6rem;
+
+    }
+    border:none;
+    outline:none;
+    position:relative;
+    background-color:rgba(0,0,0,0);
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:contain;
+    width:49%;
+    padding-bottom:8rem;
+    margin-bottom:4rem;
+    &:hover{
+      cursor:pointer;
+      -webkit-filter: drop-shadow(0px 0px 3px rgba(255, 25, 182, 0.86));
+      -moz-filter: drop-shadow(0px 0px 3px rgba(255, 25, 182, 0.86));
+      -ms-filter: drop-shadow(0px 0px 3px rgba(255, 25, 182, 0.86));
+      -o-filter: drop-shadow(0px 0px 3px rgba(255, 25, 182, 0.86));
+      filter: drop-shadow(0px 0px 3px rgba(255, 25, 182, 0.86));
+
+      .buttonlabel{
+        visibility: visible;
+        text-align:center;
+        -webkit-filter:none;
+        -moz-filter:none;
+        -ms-filter: none;
+        -o-filter:none;
+        filter:none;
+      }
+    }
+
+  }
+  .buttonlabel{
+    @include media($mobile){
+      position:absolute;
+      visibility:visible;
+      left:50%;
+      top:100%;
+      font-size:3.6rem;
+
+    }
+    color:black;
+    font-size:2rem;
+    font-weight:500;
+    visibility:hidden;
+    position:absolute;
+    top:110%;
+    left:0%;
+
+
+  }
+  .active{
+    border:1px solid yellow;
+    background-color:rgba(255,255,0,.25);
+  }
+
+  #budget{
+    background-image:url("../images/dollarsign-neutral.png");
+    &:active{
+      background-image:url("../images/dollarsign-active.png");
+    }
+  }
+
+  #ships{
+      background-image:url("../images/ship-neutral.png");
+      &:active{
+        background-image:url("../images/ship-active.png");
+      }
+    }
+
+  #plane{
+
+      background-image:url("../images/plane-neutral.png");
+      &:active{
+        background-image:url("../images/plane-active.png");
+      }
+
+  }
+
+  #troops{
+      background-image:url("../images/troop-neutral.png");
+      &:active{
+        background-image:url("../images/troop-active.png");
+      }
+
+  }
+}

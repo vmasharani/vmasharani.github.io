@@ -238,6 +238,7 @@ $(window).resize(function() {
 
 
   $(document).ready(function() {
+    $("#troops").addClass("active");
       $("button").click(function(){
         var id=this.id;
         $(".active").removeClass("active");
@@ -252,9 +253,6 @@ $(window).resize(function() {
           resetLists();
           activelist=plane;
           $("#plane").addClass("active");
-
-
-
         }
         if (id=="ships"){
           json.sort(sortByProperty('shp'));

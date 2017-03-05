@@ -1,0 +1,124 @@
+body{
+  margin:0;
+  padding:0;
+
+}
+
+h1{
+  margin:0;
+  padding:0;
+}
+
+li{
+  display:inline-block;
+}
+
+@media(min-width:700px){
+  li.album{
+    width:85%;
+    padding: 0 0 0 0;
+  }
+}
+
+@media(min-width:0px) and (max-width:699px){
+  li.album{
+    width:96%;
+    padding: 0 0 0 0;
+  }
+}
+
+
+li.label{
+  width:185px;
+  margin:2% 3% 2% 3%;
+}
+
+@media(min-width:700px){
+  li.towelphoto{
+    width:75%;
+  }
+}
+
+@media(min-width:0px) and (max-width:699px){
+  li.towelphoto{
+    width:90%;
+  }
+}
+
+@media (min-width:600px){
+  li.illustration{
+    width:400px;
+    margin:0 2% 0 2%;
+  }
+}
+
+@media (min-width:0px) and (max-width:599px){
+  li.illustration{
+    width:300px;
+    margin:0 2% 0 2%;
+  }
+}
+
+@media (min-width:600px){
+  li.gym{
+    width:75%;
+    margin:20px 0 20px 0;
+  }
+}
+
+@media (min-width:0) and (max-width:599px){
+  li.gym{
+    width:100%;
+    margin:20px 0 20px 0;
+  }
+}
+
+img{
+  width:inherit;
+}
+
+img.equalheight{
+    height:inherit;
+}
+
+ul{
+  list-style-type: none;
+  margin: 100px 0 100px 0;
+  padding: 0 0 0 0;
+}
+
+div{
+  width:100%;
+  padding:0px 0px 0px 0px;
+  overflow:auto;
+}
+
+
+div.grey{
+  background-color:#d9e6e6;;
+}
+
+div.yellow{
+  background-color:#ddb32a;
+}
+
+div.blanket{
+  background-image:url("images/blanket.jpg");
+  background-size:cover;
+}
+
+div.brown{
+  background-color:#ba906a;
+}
+
+div.center{
+  text-align:center;
+}
+
+div.spacer{
+  height:40%;
+}
+
+div.labelwrapper{
+  margin: 0 0 0 0;
+}

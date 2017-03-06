@@ -6,6 +6,8 @@
 $mobile: new-breakpoint(max-width 480px);
 $desktop:new-breakpoint(max-width 960px);
 
+
+
 body{
   @include media($mobile) {
   }
@@ -14,12 +16,19 @@ body{
 
 #wrapper{
   width:100%;
-  padding:.5rem;
+  padding:1rem;
 
   #info{
     @include media($mobile){
       width:100%;
       font-size:12px;
+    }
+
+    box-shadow:0px 0px 10px black;
+
+    #name{
+      font-family:'Kumar One', cursive;
+      font-size:36px;
     }
     width:28%;
     display:inline-block;
@@ -49,7 +58,6 @@ body{
         width:100%;
       }
       width:100%;
-      text-decoration:none;
       margin-top:.5rem;
       color:black;
       display:block;
@@ -75,7 +83,7 @@ body{
       color:white;
       text-shadow:0px 0px 2px black;
       background-color:grey;
-      background-image:url('../images/inspire.png');
+      background-image:url('../images/inspire.jpg');
       text-transform:uppercase;
     }
 
@@ -83,5 +91,9 @@ body{
       color:green;
       text-shadow:0px 0px 4px yellow;
       }
+
+    #military{
+      background-image:url('../images/military2.png');
+    }
   }
 }

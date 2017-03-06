@@ -45,6 +45,13 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+a {
+  text-decoration: none; }
+  a:active {
+    color: black; }
+  a:visited {
+    color: black; }
+
 html {
   box-sizing: border-box; }
 
@@ -61,8 +68,9 @@ body {
 
 #wrapper {
   width: 100%;
-  padding: .5rem; }
+  padding: 1rem; }
   #wrapper #info {
+    box-shadow: 0px 0px 10px black;
     width: 28%;
     display: inline-block;
     vertical-align: top; }
@@ -70,6 +78,9 @@ body {
       #wrapper #info {
         width: 100%;
         font-size: 12px; } }
+    #wrapper #info #name {
+      font-family: 'Kumar One', cursive;
+      font-size: 36px; }
   #wrapper #projectlist {
     width: 60%;
     display: inline-block;
@@ -86,7 +97,6 @@ body {
       font-style: italic; }
     #wrapper #projectlist a {
       width: 100%;
-      text-decoration: none;
       margin-top: .5rem;
       color: black;
       display: block;
@@ -108,10 +118,12 @@ body {
       color: white;
       text-shadow: 0px 0px 2px black;
       background-color: grey;
-      background-image: url("../images/inspire.png");
+      background-image: url("../images/inspire.jpg");
       text-transform: uppercase; }
     #wrapper #projectlist #slow {
       color: green;
       text-shadow: 0px 0px 4px yellow; }
+    #wrapper #projectlist #military {
+      background-image: url("../images/military2.png"); }
 
 /*# sourceMappingURL=styles.css.map */

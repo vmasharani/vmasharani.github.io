@@ -1,14 +1,87 @@
 @import 'reset.scss';
 @import 'shared.scss';
 @import '../neat/neat';
+@import 'fonts.scss';
 
 $mobile: new-breakpoint(max-width 480px);
-
+$desktop:new-breakpoint(max-width 960px);
 
 body{
   @include media($mobile) {
-    background-color:red;
-    font-size:36px;
   }
-  background-color:grey;
+  background-color:white;
+}
+
+#wrapper{
+  width:100%;
+  padding:.5rem;
+
+  #info{
+    @include media($mobile){
+      width:100%;
+      font-size:12px;
+    }
+    width:28%;
+    display:inline-block;
+    vertical-align:top;
+
+  }
+
+  #projectlist{
+    @include media($mobile){
+      width:100%;
+    }
+    width:60%;
+    display:inline-block;
+    text-align:left;
+    float:right;
+    padding-right:10px;
+
+    h3{
+      font-family:sans-serif;
+      margin-top:.8rem;
+      font-size:36px;
+      font-style:italic;
+    }
+
+    a{
+      @include media($mobile){
+        width:100%;
+      }
+      width:100%;
+      text-decoration:none;
+      margin-top:.5rem;
+      color:black;
+      display:block;
+      font-size:48px;
+      background-size:contain;
+      padding-bottom:2rem;
+      background-position:right;
+      &:hover{
+        color:yellow;
+      }
+    }
+    #reflexive{
+      background-image:url('../images/reflexive.gif');
+    }
+
+    #map{
+      color:white;
+    filter:drop-shadow(0px 0px 3px #5284ff);
+
+    }
+
+    #inspire{
+      color:white;
+      text-shadow:0px 0px 2px black;
+      background-color:grey;
+      background-image:url('../images/inspire.png');
+      text-transform:uppercase;
+    }
+
+    #slow{
+      color:green;
+      text-shadow:0px 0px 4px yellow;
+      }
+  }
 }

@@ -46,7 +46,8 @@ table {
   border-spacing: 0; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: black; }
   a:active {
     color: black; }
   a:visited {
@@ -63,68 +64,90 @@ html {
   src: url("fonts/leaguegothic-italic-webfont.woff2") format("woff2"), url("fonts/leaguegothic-italic-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
+@font-face {
+  font-family: 'SFTextRegular';
+  src: url("http://files.cargocollective.com/336335/SFUIText-Regular.ttf"); }
+@font-face {
+  font-family: 'SFTextRegularItalic';
+  src: url("http://files.cargocollective.com/336335/SFUIText-RegularItalic.ttf"); }
+@font-face {
+  font-family: 'SFTextBold';
+  src: url("http://files.cargocollective.com/336335/SFUIText-Bold.ttf"); }
 body {
   background-color: grey; }
 
 #wrapper {
   width: 100%;
-  padding: 1rem; }
+  padding: 1rem;
+  float: left; }
   #wrapper #info {
-    box-shadow: 0px 0px 10px black;
     width: 28%;
     display: inline-block;
     vertical-align: top; }
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 768px) {
       #wrapper #info {
         width: 100%;
         font-size: 12px; } }
     #wrapper #info #name {
       font-family: 'Kumar One', cursive;
-      font-size: 36px; }
+      font-size: 36px;
+      color: black;
+      margin-bottom: 1rem; }
+    #wrapper #info .contactlink {
+      color: blue;
+      text-decoration: underline; }
+      #wrapper #info .contactlink:hover {
+        text-decoration: none; }
+    #wrapper #info #infobox {
+      font-family: 'SFTextRegular';
+      font-size: 1rem;
+      color: black; }
+      @media screen and (max-width: 768px) {
+        #wrapper #info #infobox {
+          display: none; } }
   #wrapper #projectlist {
     width: 60%;
-    display: inline-block;
     text-align: left;
     float: right;
     padding-right: 10px; }
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 768px) {
       #wrapper #projectlist {
         width: 100%; } }
+    #wrapper #projectlist .subjectwrapper {
+      margin: 2rem 0rem 2rem 0rem; }
+    #wrapper #projectlist #first {
+      margin-top: 0 !important; }
+    #wrapper #projectlist .linkwrapper {
+      display: block;
+      margin: .5rem 0rem .5rem 0rem; }
     #wrapper #projectlist h3 {
-      font-family: sans-serif;
-      margin-top: .8rem;
+      font-family: 'SFTextRegular';
       font-size: 36px;
-      font-style: italic; }
+      font-style: italic;
+      color: red; }
     #wrapper #projectlist a {
-      width: 100%;
+      font-family: 'SFTextRegular';
       margin-top: .5rem;
       color: black;
-      display: block;
-      font-size: 48px;
+      font-size: 2.8rem;
       background-size: contain;
       background-repeat: no-repeat;
-      padding-bottom: 2rem;
+      padding-bottom: 4rem;
       background-position: right; }
-      @media screen and (max-width: 480px) {
+      @media screen and (max-width: 768px) {
         #wrapper #projectlist a {
-          width: 100%; } }
+          font-size: 1.8rem; } }
       #wrapper #projectlist a:hover {
         color: yellow; }
-    #wrapper #projectlist #reflexive {
+    #wrapper #projectlist #reflexive:hover {
       background-image: url("../images/reflexive.gif"); }
-    #wrapper #projectlist #map {
-      color: white;
-      filter: drop-shadow(0px 0px 3px #5284ff); }
-    #wrapper #projectlist #inspire {
-      color: white;
-      text-shadow: 0px 0px 2px black;
-      background-color: grey;
-      background-image: url("../images/inspire.jpg");
-      text-transform: uppercase; }
-    #wrapper #projectlist #slow {
-      color: green;
-      text-shadow: 0px 0px 4px yellow; }
-    #wrapper #projectlist #military {
+    #wrapper #projectlist #map:hover {
+      background-image: url("../images/map.png"); }
+    #wrapper #projectlist #inspire:hover {
+      background-image: url("../images/inspire.jpg"); }
+    #wrapper #projectlist #slow:hover {
+      background-image: url("../images/slowplace.gif"); }
+    #wrapper #projectlist #military:hover {
       background-image: url("../images/military2.png"); }
 
 /*# sourceMappingURL=styles.css.map */

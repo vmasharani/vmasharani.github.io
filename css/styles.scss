@@ -3,8 +3,9 @@
 @import '../neat/neat';
 @import 'fonts.scss';
 
-$mobile: new-breakpoint(max-width 480px);
-$desktop:new-breakpoint(max-width 960px);
+
+$mobile: new-breakpoint(max-width 768px);
+
 
 
 
@@ -17,6 +18,7 @@ body{
 #wrapper{
   width:100%;
   padding:1rem;
+  float:left;
 
   #info{
     @include media($mobile){
@@ -24,15 +26,36 @@ body{
       font-size:12px;
     }
 
-    box-shadow:0px 0px 10px black;
+    width:28%;
+    display:inline-block;
+    vertical-align:top;
 
     #name{
       font-family:'Kumar One', cursive;
       font-size:36px;
+      color:black;
+      margin-bottom:1rem;
     }
-    width:28%;
-    display:inline-block;
-    vertical-align:top;
+
+    .contactlink{
+      color:blue;
+
+        text-decoration:underline;
+      &:hover{
+        text-decoration:none;
+      }
+    }
+
+
+    #infobox{
+      @include media($mobile){
+        display:none;
+      }
+      font-family:'SFTextRegular';
+      font-size:1rem;
+      color:black;
+
+    }
 
   }
 
@@ -41,60 +64,76 @@ body{
       width:100%;
     }
     width:60%;
-    display:inline-block;
     text-align:left;
     float:right;
     padding-right:10px;
 
-    h3{
-      font-family:sans-serif;
-      margin-top:.8rem;
-      font-size:36px;
-      font-style:italic;
+    .subjectwrapper{
+      margin:2rem 0rem 2rem 0rem;
     }
 
+
+
+    #first{
+      margin-top:0!important;
+    }
+
+    .linkwrapper{
+      display:block;
+      margin:.5rem 0rem .5rem 0rem;
+
+    }
+    h3{
+      font-family:'SFTextRegular';
+      font-size:36px;
+      font-style:italic;
+      color:red;
+    }
     a{
       @include media($mobile){
-        width:100%;
+        font-size:1.8rem;
       }
-      width:100%;
+      font-family:'SFTextRegular';
       margin-top:.5rem;
       color:black;
-      display:block;
-      font-size:48px;
+      font-size:2.8rem;
       background-size:contain;
       background-repeat:no-repeat;
-      padding-bottom:2rem;
+      padding-bottom:4rem;
       background-position:right;
       &:hover{
         color:yellow;
       }
     }
     #reflexive{
-      background-image:url('../images/reflexive.gif');
+      &:hover{
+        background-image:url('../images/reflexive.gif');
+      }
     }
 
     #map{
-      color:white;
-    filter:drop-shadow(0px 0px 3px #5284ff);
+      &:hover{
+        background-image:url('../images/map.png');
+      }
 
     }
 
     #inspire{
-      color:white;
-      text-shadow:0px 0px 2px black;
-      background-color:grey;
-      background-image:url('../images/inspire.jpg');
-      text-transform:uppercase;
+      &:hover{
+        background-image:url('../images/inspire.jpg');
+      }
     }
 
     #slow{
-      color:green;
-      text-shadow:0px 0px 4px yellow;
+      &:hover{
+        background-image:url('../images/slowplace.gif');
+      }
       }
 
     #military{
-      background-image:url('../images/military2.png');
+      &:hover{
+        background-image:url('../images/military2.png');
+      }
     }
   }
 }

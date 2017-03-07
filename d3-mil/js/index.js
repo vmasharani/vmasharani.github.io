@@ -121,7 +121,7 @@ var activelist=militarynum;
 // d3.select("body")
 
 var svg = d3.select("body").append("svg");
-var scalefac=2.3;
+var scalefac=2.1;
 var positions = new Array();
 
 svg.attr("width", w);

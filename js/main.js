@@ -1,44 +1,40 @@
 $(document).ready(function(){
-  console.log("test");
-  var modtest = document.getElementById("reflexive");
 
+  var modtest = document.getElementById("reflexive");
   var modal = document.getElementById("contentmodal");
   var close = document.getElementsByClassName("close")[0];
   var cover = document.getElementById("cover");
   var projects = document.getElementsByClassName("projectlink");
+  var info = document.getElementsByClassName("infobut");
 
 
 
-  // projects.onclick = function(){
-  // }
 
-  close.onclick = function() {
-      modal.style.display = "none";
-      cover.style.display="none";
-
+  function clearView(){
+    modal.style.display = "none";
+    cover.style.display="none";
+    $('#projectcontainer').empty();
   }
 
-  window.onclick = function(event) {
-    for (var i=0;i<projects.length;i++){
 
-      if (event.target.id == projects[i].id){
-          modal.style.display = "block";
-          cover.style.display="block";
-          $('#projectcontainer').load(event.target.id + '.html');
-      } else {
-        console.log("dumb");
-      }
-    }
-    // modal.append(event.target.id);
+  close.addEventListener('click',function(e){
+    clearView();
+  });
 
-      if (event.target == cover) {
-          modal.style.display = "none";
-          cover.style.display="none";
-          $('#projectcontainer').empty();
+  cover.addEventListener('click',function(e){
+    clearView();
+  });
 
 
-      }
+  for (var i=0;i<projects.length;i++){
+    projects[i].addEventListener('click', function(e) {
+        modal.style.display="block";
+        cover.style.display="block";
+        $('#projectcontainer').load(e.target.id+'.html');
 
+    }, false);
   }
+
+
 
 });

@@ -4,17 +4,88 @@
   overflow-y: scroll; }
 
 .projectcontent {
-  padding: 4rem; }
+  padding: 4rem;
+  position: relative; }
+
+.description {
+  display: none;
+  transition: 2s; }
+
+.visible {
+  display: block; }
+
+.infobut {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  background-color: red; }
 
 #reflexivepage {
   width: 100%; }
   #reflexivepage h2 {
     color: red; }
-  #reflexivepage .alpha {
-    width: 100%; }
-  #reflexivepage .beta {
-    width: 70%; }
-  #reflexivepage .gamma {
-    width: 48%; }
+
+.alpha {
+  width: 100%; }
+
+.beta {
+  width: 70%; }
+
+.gamma {
+  width: 48%; }
+
+.documentation {
+  text-align: center; }
+
+.label {
+  opacity: 0;
+  font-size: 140px;
+  text-align: center;
+  width: 100%; }
+
+.laptopentrance {
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 2; }
+  .laptopentrance:hover .label {
+    opacity: 1;
+    font-size: 140px;
+    font-family: sans-serif;
+    transition: .2s ease-in-out; }
+
+#mappage {
+  height: 100%; }
+  #mappage #maplabel {
+    color: blue; }
+  #mappage #mapentrance {
+    background-image: url("/images/map/map-01.png"); }
+    #mappage #mapentrance:hover {
+      background-image: url("/images/map/map-02.png");
+      transition: .2s ease-in-out; }
+
+#inspirepage {
+  height: 100%; }
+  #inspirepage #inspirelabel {
+    color: red; }
+  #inspirepage #inspireentrance {
+    background-image: url("/images/inspire/inspire-01.png"); }
+    #inspirepage #inspireentrance:hover {
+      background-image: url("/images/inspire/inspire-02.png");
+      transition: .2s ease-in-out; }
+
+#militarypage {
+  height: 100%; }
+  #militarypage #millabel {
+    color: green; }
+  #militarypage #milentrance {
+    background-image: url("/images/military/military-01.png"); }
+    #militarypage #milentrance:hover {
+      background-image: url("/images/military/military-02.png");
+      transition: .2s ease-in-out; }
 
 /*# sourceMappingURL=projectstyles.css.map */

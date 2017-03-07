@@ -2,6 +2,7 @@
 @import 'shared.scss';
 @import '../neat/neat';
 @import 'fonts.scss';
+@import 'projectstyles.scss';
 
 
 $mobile: new-breakpoint(max-width 768px);
@@ -25,40 +26,52 @@ body{
   right:0;
   width: 100%;
   height: 100%;
-  overflow: auto;
+  // overflow: auto;
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0,0.4);
+}
+
+.visible{
+  display:block;
 }
 
 #modalwrapper{
   padding:0% 10% 0% 10%;
   position:relative;
 
-
   #contentmodal{
-
+    @include media($mobile){
+      width:92%;
+      height:92%;
+    }
+    display:none;
     position: fixed;
+    width:95%;
+    height:95%;
+
     top:50%;
     left:50%;
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
-    width:80%;
-    height:80%;
-    background-color:red;
+
     font-size:25px;
     z-index:2;
-    display:none;
-    #projectpage{
-      
-    }
+
+    background-color:white;
+
+
+
+
 
   }
   // close button
   .close {
-    float: right;
+    position:fixed;
     font-size: 28px;
     width:50px;
     height:50px;
+    right:1rem;
+    top:1rem;
     .line1{
       height: 67.5px;
       border-right: 1px solid black;

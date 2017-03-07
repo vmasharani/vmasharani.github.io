@@ -25,7 +25,7 @@ $(document).ready(function(){
           modal.style.display = "block";
           cover.style.display="block";
           $('#contentmodal').load(event.target.id + '.html');
-      } else if (event.target==cover){
+      } else {
         console.log("dumb");
       }
     }

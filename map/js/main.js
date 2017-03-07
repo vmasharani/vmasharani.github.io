@@ -44,8 +44,6 @@ function closeNav(){
 }
 
 
-// FOUND CODE FROM W3SCHOOLS FOR MODAL
-// Get the modal
 var modal = document.getElementById('contactModal');
 
 // Get the button that opens the modal

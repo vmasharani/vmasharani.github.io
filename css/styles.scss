@@ -15,6 +15,78 @@ body{
   background-color:grey;
 }
 
+#cover {
+  display: none;
+  position: fixed;
+  z-index: 0;
+  left: 0;
+  top: 0;
+  bottom:0;
+  right:0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+#modalwrapper{
+  padding:0% 10% 0% 10%;
+  position:relative;
+
+
+  #contentmodal{
+
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    width:80%;
+    height:80%;
+    background-color:red;
+    font-size:25px;
+    z-index:2;
+    display:none;
+
+  }
+  // close button
+  .close {
+    float: right;
+    font-size: 28px;
+    width:50px;
+    height:50px;
+    .line1{
+      height: 67.5px;
+      border-right: 1px solid black;
+      transform-origin: top;
+      margin-left: 48px;
+      transform: rotate(45deg);
+      position: absolute;
+      float: right;
+
+    }
+    .line2{
+      height: 67.5px;
+      border-left: 1px solid black;
+      transform: rotate(-45deg);
+      transform-origin:top;
+      position:absolute;
+      float:right;
+    }
+  }
+
+  .close:hover,
+  .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+      cursor:hand;
+  }
+}
+
+
+
 #wrapper{
   width:100%;
   padding:1rem;
@@ -72,8 +144,6 @@ body{
       margin:2rem 0rem 2rem 0rem;
     }
 
-
-
     #first{
       margin-top:0!important;
     }
@@ -128,7 +198,8 @@ body{
       &:hover{
         background-image:url('../images/slowplace.gif');
       }
-      }
+    }
+
 
     #military{
       &:hover{

@@ -24,7 +24,7 @@ $(document).ready(function(){
       if (event.target.id == projects[i].id){
           modal.style.display = "block";
           cover.style.display="block";
-          $('#contentmodal').load(event.target.id + '.html');
+          $('#projectpage').load(event.target.id + '.html');
       } else {
         console.log("dumb");
       }
@@ -34,7 +34,7 @@ $(document).ready(function(){
       if (event.target == cover) {
           modal.style.display = "none";
           cover.style.display="none";
-          $('#contentmodal').empty();
+          $('#projectpage').empty();
 
 
       }

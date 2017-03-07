@@ -24,12 +24,10 @@ $(document).ready(function(){
       if (event.target.id == projects[i].id){
           modal.style.display = "block";
           cover.style.display="block";
+          $('#contentmodal').load(event.target.id + '.html');
       }
     }
     // modal.append(event.target.id);
-
-    $('#contentmodal').load(event.target.id + '.html');
-
 
       if (event.target == cover) {
           modal.style.display = "none";

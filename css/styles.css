@@ -287,10 +287,14 @@ body {
         width: 100%; } }
     #wrapper #projectlist .subjectwrapper {
       margin: 2rem 0rem 2rem 0rem; }
+      @media screen and (max-width: 768px) {
+        #wrapper #projectlist .subjectwrapper {
+          line-height: .9; } }
     #wrapper #projectlist #first {
       margin-top: 0 !important; }
     #wrapper #projectlist .linkwrapper {
       display: block;
+      width: 100%;
       margin: .5rem 0rem .5rem 0rem; }
     #wrapper #projectlist h3 {
       font-family: 'SFTextRegular';
@@ -310,7 +314,9 @@ body {
         #wrapper #projectlist a {
           font-size: 1.8rem;
           background-position: right;
-          padding-bottom: .5rem; } }
+          padding-bottom: 1.2rem;
+          width: 100%;
+          float: right; } }
       #wrapper #projectlist a:hover {
         color: yellow; }
     @media screen and (max-width: 768px) {

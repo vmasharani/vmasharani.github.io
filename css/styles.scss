@@ -169,6 +169,10 @@ body{
     padding-right:10px;
 
     .subjectwrapper{
+      @include media($mobile){
+        line-height:.9;
+
+      }
       margin:2rem 0rem 2rem 0rem;
     }
 
@@ -178,6 +182,7 @@ body{
 
     .linkwrapper{
       display:block;
+      width:100%;
       margin:.5rem 0rem .5rem 0rem;
 
     }
@@ -191,7 +196,9 @@ body{
       @include media($mobile){
         font-size:1.8rem;
         background-position:right;
-        padding-bottom:.5rem;
+        padding-bottom:1.2rem;
+        width:100%;
+        float:right;
       }
       font-family:'SFTextRegular';
       margin-top:.5rem;

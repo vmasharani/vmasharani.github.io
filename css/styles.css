@@ -127,37 +127,46 @@ html {
   width: 100%; }
   #reflexivepage h2 {
     color: red; }
-  #reflexivepage img {
-    margin: 3rem 0rem 3rem 0rem;
-    display: inline-block; }
+
+img {
+  margin: 3rem 0rem 3rem 0rem;
+  display: inline-block; }
 
 .alpha {
-  width: 90%; }
+  width: 92%; }
+
+.betaplus {
+  width: 74%; }
+  @media screen and (max-width: 768px) {
+    .betaplus {
+      width: 92%; } }
 
 .beta {
   width: 70%; }
   @media screen and (max-width: 768px) {
     .beta {
-      width: 90%; } }
+      width: 92%; } }
 
 .gamma {
   width: 58%; }
   @media screen and (max-width: 768px) {
     .gamma {
-      width: 90%; } }
+      width: 92%; } }
 
 .delta {
   width: 47%; }
   @media screen and (max-width: 768px) {
     .delta {
-      width: 90%; } }
+      width: 92%; } }
 
 .documentation {
   text-align: center; }
 
 .laptopentrance {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
   width: 100%;
-  height: 100%;
+  height: 95%;
   position: relative;
   background-size: contain;
   background-position: center;
@@ -261,37 +270,38 @@ body {
     width: 30px;
     height: 30px;
     transition: transform .25s ease-in-out;
-    z-index: 6; }
-  #modalwrapper .close:hover {
-    transform: rotate(180deg); }
-  #modalwrapper .close:before {
-    content: "";
-    position: absolute;
-    display: block;
-    margin: auto;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 30px;
-    height: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.5);
-    transform: rotate(45deg);
-    transform-origin: center; }
-  #modalwrapper .close:after {
-    content: "";
-    position: absolute;
-    display: block;
-    margin: auto;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 30px;
-    height: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.5);
-    transform: rotate(-45deg);
-    transform-origin: center; }
+    z-index: 6;
+    padding: 0; }
+    #modalwrapper .close:hover {
+      cursor: pointer; }
+    #modalwrapper .close:before {
+      content: "";
+      position: absolute;
+      display: block;
+      margin: auto;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 30px;
+      height: 0;
+      border-top: 1px solid blue;
+      transform: rotate(45deg);
+      transform-origin: center; }
+    #modalwrapper .close:after {
+      content: "";
+      position: absolute;
+      display: block;
+      margin: auto;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 30px;
+      height: 0;
+      border-top: 1px solid blue;
+      transform: rotate(-45deg);
+      transform-origin: center; }
 
 #wrapper {
   width: 100%;

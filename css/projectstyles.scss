@@ -69,34 +69,41 @@
     color:red;
   }
 
-  img{
-    margin: 3rem 0rem 3rem 0rem;
-    display:inline-block;
-  }
+}
 
+img{
+  margin: 3rem 0rem 3rem 0rem;
+  display:inline-block;
 }
 
 .alpha{
-  width:90%;
+  width:92%;
+}
+
+.betaplus{
+  @include media($mobile){
+    width:92%;
+  }
+  width:74%
 }
 
 .beta{
   @include media($mobile){
-    width:90%
+    width:92%
   }
   width:70%;
 }
 
 .gamma{
   @include media($mobile){
-    width:90%
+    width:92%
   }
   width:58%;
 }
 
 .delta{
   @include media($mobile){
-    width:90%
+    width:92%
   }
   width:47%;
 }
@@ -108,9 +115,10 @@
 
 
 .laptopentrance{
-  @include media($mobile);
+  margin-top:3rem;
+  margin-bottom:3rem;
   width:100%;
-  height:100%;
+  height:95%;
   position:relative;
   background-size:contain;
   background-position:center;

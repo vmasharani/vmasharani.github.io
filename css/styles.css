@@ -81,6 +81,9 @@ html {
 .projectcontent {
   padding: 4rem;
   position: relative; }
+  @media screen and (max-width: 768px) {
+    .projectcontent {
+      padding: 1rem; } }
 
 .description {
   display: none;
@@ -162,6 +165,20 @@ html {
     #militarypage #milentrance:hover {
       background-image: url("/images/military/military-02.png");
       transition: .2s ease-in-out; }
+
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%; }
+
+.embed-container iframe, .embed-container object, .embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
 
 body {
   background-color: grey; }
@@ -287,22 +304,44 @@ body {
       font-size: 2.8rem;
       background-size: contain;
       background-repeat: no-repeat;
-      padding-bottom: 4rem;
+      padding-bottom: 7rem;
       background-position: right; }
       @media screen and (max-width: 768px) {
         #wrapper #projectlist a {
-          font-size: 1.8rem; } }
+          font-size: 1.8rem;
+          background-position: right;
+          padding-bottom: .5rem; } }
       #wrapper #projectlist a:hover {
         color: yellow; }
+    @media screen and (max-width: 768px) {
+      #wrapper #projectlist #reflexive {
+        background-image: url("../images/reflexive-transparent-big.gif"); } }
     #wrapper #projectlist #reflexive:hover {
-      background-image: url("../images/reflexive.gif"); }
+      background-image: url("../images/reflexive-transparent-big.gif"); }
+    @media screen and (max-width: 768px) {
+      #wrapper #projectlist #map {
+        background-image: url("../images/map.png"); } }
     #wrapper #projectlist #map:hover {
       background-image: url("../images/map.png"); }
+    @media screen and (max-width: 768px) {
+      #wrapper #projectlist #inspire {
+        background-image: url("../images/inspire.jpg"); } }
     #wrapper #projectlist #inspire:hover {
       background-image: url("../images/inspire.jpg"); }
+    @media screen and (max-width: 768px) {
+      #wrapper #projectlist #slow {
+        background-image: url("../images/slowplace.gif"); } }
     #wrapper #projectlist #slow:hover {
       background-image: url("../images/slowplace.gif"); }
+    @media screen and (max-width: 768px) {
+      #wrapper #projectlist #military {
+        background-image: url("../images/military2.png"); } }
     #wrapper #projectlist #military:hover {
       background-image: url("../images/military2.png"); }
+    @media screen and (max-width: 768px) {
+      #wrapper #projectlist #post {
+        background-image: url("../images/poster.gif"); } }
+    #wrapper #projectlist #post:hover {
+      background-image: url("../images/poster.gif"); }
 
 /*# sourceMappingURL=styles.css.map */

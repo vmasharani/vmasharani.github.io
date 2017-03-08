@@ -5,10 +5,21 @@
 @import 'projectstyles.scss';
 
 
-$mobile: new-breakpoint(max-width 768px);
 
 
-
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow:hidden;
+  max-width:100%;
+}
+.embed-container iframe, .embed-container object, .embed-container embed{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;}
 
 body{
   @include media($mobile) {
@@ -179,6 +190,8 @@ body{
     a{
       @include media($mobile){
         font-size:1.8rem;
+        background-position:right;
+        padding-bottom:.5rem;
       }
       font-family:'SFTextRegular';
       margin-top:.5rem;
@@ -186,19 +199,25 @@ body{
       font-size:2.8rem;
       background-size:contain;
       background-repeat:no-repeat;
-      padding-bottom:4rem;
+      padding-bottom:7rem;
       background-position:right;
       &:hover{
         color:yellow;
       }
     }
     #reflexive{
+      @include media($mobile){
+        background-image:url('../images/reflexive-transparent-big.gif');
+      }
       &:hover{
-        background-image:url('../images/reflexive.gif');
+        background-image:url('../images/reflexive-transparent-big.gif');
       }
     }
 
     #map{
+      @include media($mobile){
+        background-image:url('../images/map.png');
+      }
       &:hover{
         background-image:url('../images/map.png');
       }
@@ -206,12 +225,18 @@ body{
     }
 
     #inspire{
+      @include media($mobile){
+        background-image:url('../images/inspire.jpg');
+      }
       &:hover{
         background-image:url('../images/inspire.jpg');
       }
     }
 
     #slow{
+      @include media($mobile){
+        background-image:url('../images/slowplace.gif');
+      }
       &:hover{
         background-image:url('../images/slowplace.gif');
       }
@@ -219,8 +244,20 @@ body{
 
 
     #military{
+      @include media($mobile){
+        background-image:url('../images/military2.png');
+      }
       &:hover{
         background-image:url('../images/military2.png');
+      }
+    }
+
+    #post{
+      @include media($mobile){
+        background-image:url('../images/poster.gif');
+      }
+      &:hover{
+        background-image:url('../images/poster.gif');
       }
     }
   }

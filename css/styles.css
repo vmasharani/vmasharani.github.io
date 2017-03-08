@@ -114,7 +114,7 @@ html {
   position: relative; }
   @media screen and (max-width: 768px) {
     .projectcontent {
-      padding: 1rem; } }
+      padding: 3rem 1rem 1rem 1rem; } }
 
 .description {
   display: block;
@@ -191,6 +191,9 @@ html {
     #mappage #mapentrance:hover {
       background-image: url("/images/map/map-02.png");
       transition: .2s ease-in-out; }
+      @media screen and (max-width: 768px) {
+        #mappage #mapentrance:hover {
+          background-image: url("/images/map/map-01.png"); } }
 
 #inspirepage {
   height: 100%; }
@@ -253,8 +256,8 @@ body {
   #modalwrapper .close {
     display: block;
     position: fixed;
-    right: 0;
-    top: 0;
+    right: -3px;
+    top: -3px;
     width: 30px;
     height: 30px;
     transition: transform .25s ease-in-out;

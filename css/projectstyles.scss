@@ -36,7 +36,7 @@
 
 .projectcontent{
   @include media($mobile){
-    padding:1rem;
+    padding:3rem 1rem 1rem 1rem;
   }
   padding:4rem;
   position:relative;
@@ -148,6 +148,9 @@
 
     background-image:url('/images/map/map-01.png');
     &:hover{
+      @include media ($mobile){
+        background-image:url('/images/map/map-01.png');
+      }
       background-image:url('/images/map/map-02.png');
       transition:.2s ease-in-out;
     }

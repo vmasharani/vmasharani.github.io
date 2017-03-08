@@ -39,7 +39,7 @@ html {
   position: relative; }
   @media screen and (min-width: new-breakpoint(max-width 768px)) {
     .projectcontent {
-      padding: 1rem; } }
+      padding: 3rem 1rem 1rem 1rem; } }
 
 .description {
   display: block;
@@ -116,6 +116,9 @@ html {
     #mappage #mapentrance:hover {
       background-image: url("/images/map/map-02.png");
       transition: .2s ease-in-out; }
+      @media screen and (min-width: new-breakpoint(max-width 768px)) {
+        #mappage #mapentrance:hover {
+          background-image: url("/images/map/map-01.png"); } }
 
 #inspirepage {
   height: 100%; }

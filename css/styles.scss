@@ -11,7 +11,7 @@
 body{
   @include media($mobile) {
   }
-  background-color:grey;
+  background-color:$color-brown;
 }
 
 #cover {
@@ -30,6 +30,9 @@ body{
 }
 
 .visible{
+  @include media($mobile){
+    display:block;
+  }
   display:block;
 }
 
@@ -105,14 +108,15 @@ body{
   .close {
     display: block;
     position: fixed;
-    right: -3px;
-    top: -3px;
+    right: 4px;
+    top: 4px;
     width: 30px;
     height: 30px;
     transition: transform .25s ease-in-out;
     z-index:6;
     padding:0;
     &:hover{
+      transform:scaleY(1.5);
       cursor:pointer;
     }
     &:before{
@@ -126,7 +130,7 @@ body{
       bottom: 0;
       width: 30px;
       height: 0;
-      border-top: 1px solid rgba(0,0,255,1);
+      border-top: 2px solid $color-green;
       transform: rotate(45deg);
       transform-origin: center;
 
@@ -142,7 +146,7 @@ body{
       bottom: 0;
       width: 30px;
       height: 0;
-      border-top: 1px solid rgba(0,0,255,1);
+      border-top: 2px solid $color-green;
       transform: rotate(-45deg);
       transform-origin: center;
     }
@@ -156,6 +160,7 @@ body{
   padding:1rem;
   float:left;
 
+
   #info{
     @include media($mobile){
       width:100%;
@@ -167,14 +172,27 @@ body{
     vertical-align:top;
 
     #name{
-      font-family:'Kumar One', cursive;
+      font-family:'Kumar One Outline', cursive;
       font-size:36px;
-      color:black;
+      a{
+        color:$color-black;
+        text-decoration:none;
+        transition:.25s ease-in-out;
+        &:active{
+
+        }
+        &:visited{
+
+        }
+        &:hover{
+
+        }
+      }
       margin-bottom:1rem;
     }
 
     .contactlink{
-      color:blue;
+      color:$color-yellow;
 
         text-decoration:underline;
       &:hover{
@@ -184,12 +202,13 @@ body{
 
 
     #infobox{
-      @include media($mobile){
-        display:none;
-      }
-      font-family:'SFTextRegular';
+
+      font-family:'Work Sans';
+      font-weight:400;
       font-size:1rem;
-      color:black;
+      color:$color-black;
+      margin-bottom:1rem;
+
 
     }
 
@@ -222,10 +241,10 @@ body{
 
     }
     h3{
-      font-family:'SFTextRegular';
+      font-family:'Work Sans';
       font-size:36px;
       font-style:italic;
-      color:red;
+      color:$color-grey;
     }
     a{
       @include media($mobile){
@@ -235,16 +254,18 @@ body{
         width:100%;
         float:right;
       }
-      font-family:'SFTextRegular';
+      font-family:'Work Sans';
+      font-weight:300;
       margin-top:.5rem;
-      color:black;
+      color:$color-black;
       font-size:2.8rem;
+      text-decoration:none;
       background-size:contain;
       background-repeat:no-repeat;
       padding-bottom:7rem;
       background-position:right;
       &:hover{
-        color:yellow;
+        color:$color-yellow;
       }
     }
     #reflexive{

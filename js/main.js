@@ -6,6 +6,7 @@ $(document).ready(function(){
   var cover = document.getElementById("cover");
   var projects = document.getElementsByClassName("projectlink");
   var info = document.getElementsByClassName("infobut");
+  var mobinfo = document.getElementById("mobileinfoprompter");
 
 
 
@@ -23,6 +24,11 @@ $(document).ready(function(){
 
   cover.addEventListener('click',function(e){
     clearView();
+  });
+
+  $('#mobileinfoprompter').click(function() {
+    console.log("test");
+    $('#infobox').toggleClass('visible');
   });
 
 

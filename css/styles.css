@@ -45,14 +45,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-a {
-  text-decoration: none;
-  color: black; }
-  a:active {
-    color: black; }
-  a:visited {
-    color: black; }
-
 html {
   box-sizing: border-box; }
 
@@ -100,17 +92,22 @@ html {
   overflow-y: scroll; }
 
 #header {
+  padding-top: .4rem;
+  padding-bottom: .4rem;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: yellow;
+  font-family: 'Work Sans';
+  font-weight: 500;
+  background-color: white;
   text-align: center;
-  border-bottom: 1px solid black;
+  border-bottom: 6px solid #ba906a;
   z-index: 5; }
 
 .projectcontent {
-  padding: 4rem;
+  padding: 4rem 4rem 4rem 4rem;
+  margin-top: 1rem;
   position: relative; }
   @media screen and (max-width: 768px) {
     .projectcontent {
@@ -118,7 +115,8 @@ html {
 
 .description {
   display: block;
-  transition: 2s; }
+  font-family: 'Work Sans';
+  font-weight: 400; }
 
 .visible {
   display: block; }
@@ -171,9 +169,14 @@ img {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  z-index: 2; }
+  z-index: 2;
+  text-align: center; }
+  @media screen and (max-width: 768px) {
+    .laptopentrance {
+      height: 40%; } }
   .laptopentrance .label {
-    font-family: sans-serif;
+    font-family: "Work Sans";
+    font-weight: 700;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -181,20 +184,18 @@ img {
     width: 50%;
     margin: -15% 0 0 -25%;
     opacity: 0;
-    font-size: 50px;
-    text-align: center; }
+    font-size: 16vw; }
     @media screen and (max-width: 768px) {
       .laptopentrance .label {
         opacity: 1; } }
   .laptopentrance:hover .label {
     opacity: 1;
-    font-size: 50px;
     transition: .2s ease-in-out; }
 
 #mappage {
   height: 100%; }
   #mappage #maplabel {
-    color: blue; }
+    color: #d9e6e6; }
   #mappage #mapentrance {
     background-image: url("/images/map/map-01.png"); }
     #mappage #mapentrance:hover {
@@ -207,7 +208,7 @@ img {
 #inspirepage {
   height: 100%; }
   #inspirepage #inspirelabel {
-    color: red; }
+    color: #ba906a; }
   #inspirepage #inspireentrance {
     background-image: url("/images/inspire/inspire-01.png"); }
     #inspirepage #inspireentrance:hover {
@@ -217,7 +218,7 @@ img {
 #militarypage {
   height: 100%; }
   #militarypage #millabel {
-    color: green; }
+    color: #ffe02d; }
   #militarypage #milentrance {
     background-image: url("/images/military/military-01.png"); }
     #militarypage #milentrance:hover {
@@ -225,7 +226,7 @@ img {
       transition: .2s ease-in-out; }
 
 body {
-  background-color: grey; }
+  background-color: #ba906a; }
 
 #cover {
   display: none;
@@ -242,6 +243,9 @@ body {
 
 .visible {
   display: block; }
+  @media screen and (max-width: 768px) {
+    .visible {
+      display: block; } }
 
 #modalwrapper {
   padding: 0% 16% 0% 16%;
@@ -265,14 +269,15 @@ body {
   #modalwrapper .close {
     display: block;
     position: fixed;
-    right: -3px;
-    top: -3px;
+    right: 4px;
+    top: 4px;
     width: 30px;
     height: 30px;
     transition: transform .25s ease-in-out;
     z-index: 6;
     padding: 0; }
     #modalwrapper .close:hover {
+      transform: scaleY(1.5);
       cursor: pointer; }
     #modalwrapper .close:before {
       content: "";
@@ -285,7 +290,7 @@ body {
       bottom: 0;
       width: 30px;
       height: 0;
-      border-top: 1px solid blue;
+      border-top: 2px solid #519d4f;
       transform: rotate(45deg);
       transform-origin: center; }
     #modalwrapper .close:after {
@@ -299,7 +304,7 @@ body {
       bottom: 0;
       width: 30px;
       height: 0;
-      border-top: 1px solid blue;
+      border-top: 2px solid #519d4f;
       transform: rotate(-45deg);
       transform-origin: center; }
 
@@ -316,22 +321,24 @@ body {
         width: 100%;
         font-size: 12px; } }
     #wrapper #info #name {
-      font-family: 'Kumar One', cursive;
+      font-family: 'Kumar One Outline', cursive;
       font-size: 36px;
-      color: black;
       margin-bottom: 1rem; }
+      #wrapper #info #name a {
+        color: #29181f;
+        text-decoration: none;
+        transition: .25s ease-in-out; }
     #wrapper #info .contactlink {
-      color: blue;
+      color: #ffe02d;
       text-decoration: underline; }
       #wrapper #info .contactlink:hover {
         text-decoration: none; }
     #wrapper #info #infobox {
-      font-family: 'SFTextRegular';
+      font-family: 'Work Sans';
+      font-weight: 400;
       font-size: 1rem;
-      color: black; }
-      @media screen and (max-width: 768px) {
-        #wrapper #info #infobox {
-          display: none; } }
+      color: #29181f;
+      margin-bottom: 1rem; }
   #wrapper #projectlist {
     width: 60%;
     text-align: left;
@@ -352,15 +359,17 @@ body {
       width: 100%;
       margin: .5rem 0rem .5rem 0rem; }
     #wrapper #projectlist h3 {
-      font-family: 'SFTextRegular';
+      font-family: 'Work Sans';
       font-size: 36px;
       font-style: italic;
-      color: red; }
+      color: #d9e6e6; }
     #wrapper #projectlist a {
-      font-family: 'SFTextRegular';
+      font-family: 'Work Sans';
+      font-weight: 300;
       margin-top: .5rem;
-      color: black;
+      color: #29181f;
       font-size: 2.8rem;
+      text-decoration: none;
       background-size: contain;
       background-repeat: no-repeat;
       padding-bottom: 7rem;
@@ -373,7 +382,7 @@ body {
           width: 100%;
           float: right; } }
       #wrapper #projectlist a:hover {
-        color: yellow; }
+        color: #ffe02d; }
     @media screen and (max-width: 768px) {
       #wrapper #projectlist #reflexive {
         background-image: url("../images/reflexive-transparent-big.gif"); } }

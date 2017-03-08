@@ -112,7 +112,7 @@ html {
   padding: 4rem 4rem 4rem 4rem;
   margin-top: 1rem;
   position: relative; }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 771px) {
     .projectcontent {
       padding: 3rem 1rem 1rem 1rem; } }
 
@@ -144,25 +144,25 @@ img {
 
 .betaplus {
   width: 74%; }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 771px) {
     .betaplus {
       width: 92%; } }
 
 .beta {
   width: 70%; }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 771px) {
     .beta {
       width: 92%; } }
 
 .gamma {
   width: 58%; }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 771px) {
     .gamma {
       width: 92%; } }
 
 .delta {
   width: 47%; }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 771px) {
     .delta {
       width: 92%; } }
 
@@ -180,7 +180,7 @@ img {
   background-repeat: no-repeat;
   z-index: 2;
   text-align: center; }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 771px) {
     .laptopentrance {
       height: 40%; } }
   .laptopentrance .label {
@@ -194,7 +194,7 @@ img {
     margin: -15% 0 0 -25%;
     opacity: 0;
     font-size: 16vw; }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 771px) {
       .laptopentrance .label {
         opacity: 1; } }
   .laptopentrance:hover .label {
@@ -210,7 +210,7 @@ img {
     #mappage #mapentrance:hover {
       background-image: url("/images/map/map-02.png");
       transition: .2s ease-in-out; }
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 771px) {
         #mappage #mapentrance:hover {
           background-image: url("/images/map/map-01.png"); } }
 
@@ -252,7 +252,7 @@ body {
 
 .visible {
   display: block; }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 771px) {
     .visible {
       display: block; } }
 
@@ -272,7 +272,7 @@ body {
     z-index: 2;
     background-color: white;
     border: 6px solid #ba906a; }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 771px) {
       #modalwrapper #contentmodal {
         width: 92%;
         height: 92%; } }
@@ -326,7 +326,7 @@ body {
     width: 28%;
     display: inline-block;
     vertical-align: top; }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 771px) {
       #wrapper #info {
         width: 100%;
         font-size: 12px; } }
@@ -353,7 +353,7 @@ body {
       font-size: 1rem;
       color: #29181f;
       margin-bottom: 1rem; }
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 771px) {
         #wrapper #info #infobox {
           display: none; } }
     #wrapper #info #infolinks, #wrapper #info #infolinks a {
@@ -366,12 +366,12 @@ body {
     text-align: left;
     float: right;
     padding-right: 10px; }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 771px) {
       #wrapper #projectlist {
         width: 100%; } }
     #wrapper #projectlist .subjectwrapper {
       margin: 2rem 0rem 2rem 0rem; }
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 771px) {
         #wrapper #projectlist .subjectwrapper {
           line-height: .9; } }
     #wrapper #projectlist #first {
@@ -396,7 +396,7 @@ body {
       background-repeat: no-repeat;
       padding-bottom: 7rem;
       background-position: right; }
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 771px) {
         #wrapper #projectlist a {
           font-size: 1.8rem;
           background-position: right;
@@ -405,32 +405,32 @@ body {
           float: right; } }
       #wrapper #projectlist a:hover {
         color: #ffe02d; }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 771px) {
       #wrapper #projectlist #reflexive {
         background-image: url("../images/reflexive-transparent-big.gif"); } }
     #wrapper #projectlist #reflexive:hover {
       background-image: url("../images/reflexive-transparent-big.gif"); }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 771px) {
       #wrapper #projectlist #map {
         background-image: url("../images/map.png"); } }
     #wrapper #projectlist #map:hover {
       background-image: url("../images/map.png"); }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 771px) {
       #wrapper #projectlist #inspire {
         background-image: url("../images/inspire.jpg"); } }
     #wrapper #projectlist #inspire:hover {
       background-image: url("../images/inspire.jpg"); }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 771px) {
       #wrapper #projectlist #slow {
         background-image: url("../images/slowplace.gif"); } }
     #wrapper #projectlist #slow:hover {
       background-image: url("../images/slowplace.gif"); }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 771px) {
       #wrapper #projectlist #military {
         background-image: url("../images/military2.png"); } }
     #wrapper #projectlist #military:hover {
       background-image: url("../images/military2.png"); }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 771px) {
       #wrapper #projectlist #post {
         background-image: url("../images/poster.gif"); } }
     #wrapper #projectlist #post:hover {

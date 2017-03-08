@@ -45,7 +45,7 @@ html {
   padding: 4rem 4rem 4rem 4rem;
   margin-top: 1rem;
   position: relative; }
-  @media screen and (min-width: new-breakpoint(max-width 768px)) {
+  @media screen and (min-width: new-breakpoint(max-width 771px)) {
     .projectcontent {
       padding: 3rem 1rem 1rem 1rem; } }
 
@@ -77,25 +77,25 @@ img {
 
 .betaplus {
   width: 74%; }
-  @media screen and (min-width: new-breakpoint(max-width 768px)) {
+  @media screen and (min-width: new-breakpoint(max-width 771px)) {
     .betaplus {
       width: 92%; } }
 
 .beta {
   width: 70%; }
-  @media screen and (min-width: new-breakpoint(max-width 768px)) {
+  @media screen and (min-width: new-breakpoint(max-width 771px)) {
     .beta {
       width: 92%; } }
 
 .gamma {
   width: 58%; }
-  @media screen and (min-width: new-breakpoint(max-width 768px)) {
+  @media screen and (min-width: new-breakpoint(max-width 771px)) {
     .gamma {
       width: 92%; } }
 
 .delta {
   width: 47%; }
-  @media screen and (min-width: new-breakpoint(max-width 768px)) {
+  @media screen and (min-width: new-breakpoint(max-width 771px)) {
     .delta {
       width: 92%; } }
 
@@ -113,7 +113,7 @@ img {
   background-repeat: no-repeat;
   z-index: 2;
   text-align: center; }
-  @media screen and (min-width: new-breakpoint(max-width 768px)) {
+  @media screen and (min-width: new-breakpoint(max-width 771px)) {
     .laptopentrance {
       height: 40%; } }
   .laptopentrance .label {
@@ -127,7 +127,7 @@ img {
     margin: -15% 0 0 -25%;
     opacity: 0;
     font-size: 16vw; }
-    @media screen and (min-width: new-breakpoint(max-width 768px)) {
+    @media screen and (min-width: new-breakpoint(max-width 771px)) {
       .laptopentrance .label {
         opacity: 1; } }
   .laptopentrance:hover .label {
@@ -143,7 +143,7 @@ img {
     #mappage #mapentrance:hover {
       background-image: url("/images/map/map-02.png");
       transition: .2s ease-in-out; }
-      @media screen and (min-width: new-breakpoint(max-width 768px)) {
+      @media screen and (min-width: new-breakpoint(max-width 771px)) {
         #mappage #mapentrance:hover {
           background-image: url("/images/map/map-01.png"); } }
 

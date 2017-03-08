@@ -353,7 +353,7 @@ body {
       @media screen and (max-width: 768px) {
         #wrapper #info #infobox {
           display: none; } }
-    #wrapper #info #infolinks {
+    #wrapper #info #infolinks, #wrapper #info #infolinks a {
       font-family: 'Work Sans';
       font-weight: 400;
       font-size: 1rem;

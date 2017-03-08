@@ -50,6 +50,12 @@ html {
   display: block;
   font-family: 'Work Sans';
   font-weight: 400; }
+  .description a {
+    font-weight: 200;
+    color: #519d4f;
+    text-decoration: underline; }
+    .description a:hover {
+      text-decoration: none; }
 
 .visible {
   display: block; }
@@ -57,7 +63,7 @@ html {
 #reflexivepage {
   width: 100%; }
   #reflexivepage h2 {
-    color: red; }
+    color: #29181f; }
 
 img {
   margin: 3rem 0rem 3rem 0rem;

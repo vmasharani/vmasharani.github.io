@@ -53,6 +53,14 @@ $header-height:1rem;
   display:block;
   font-family:'Work Sans';
   font-weight:400;
+  a{
+    font-weight:200;
+    color:$color-green;
+    text-decoration:underline;
+    &:hover{
+      text-decoration:none;
+    }
+  }
   // display:none;
 }
 
@@ -74,7 +82,7 @@ $header-height:1rem;
   width:100%;
 
   h2{
-    color:red;
+    color:$color-black;
   }
 
 }

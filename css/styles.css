@@ -71,6 +71,9 @@ html {
 *, *::after, *::before {
   box-sizing: inherit; }
 
+#slapping {
+  padding-bottom: 62.5%; }
+
 .embed-container {
   position: relative;
   padding-bottom: 56.25%;
@@ -421,5 +424,15 @@ body {
         background-image: url("../images/poster.gif"); } }
     #wrapper #projectlist #post:hover {
       background-image: url("../images/poster.gif"); }
+
+::-webkit-scrollbar {
+  width: 0px;
+  /* remove scrollbar space */
+  background: transparent;
+  /* optional: just make scrollbar invisible */ }
+
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #FF0000; }
 
 /*# sourceMappingURL=styles.css.map */

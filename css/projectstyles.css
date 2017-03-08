@@ -4,6 +4,9 @@ html {
 *, *::after, *::before {
   box-sizing: inherit; }
 
+#slapping {
+  padding-bottom: 62.5%; }
+
 .embed-container {
   position: relative;
   padding-bottom: 56.25%;

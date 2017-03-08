@@ -350,6 +350,14 @@ body {
       font-size: 1rem;
       color: #29181f;
       margin-bottom: 1rem; }
+      @media screen and (max-width: 768px) {
+        #wrapper #info #infobox {
+          display: none; } }
+    #wrapper #info #infolinks {
+      font-family: 'Work Sans';
+      font-weight: 400;
+      font-size: 1rem;
+      margin-bottom: 1rem; }
   #wrapper #projectlist {
     width: 60%;
     text-align: left;

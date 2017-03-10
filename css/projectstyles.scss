@@ -129,9 +129,24 @@ img{
 
 .delta{
   @include media($mobile){
-    width:92%
+    width:92%;
   }
   width:47%;
+}
+
+.wflap{
+  @include media($mobile){
+    width:92%;
+  }
+  width:72.7%;
+  margin-right:4vw;
+}
+
+.wfmob{
+  @include media($mobile){
+    width:68%;
+  }
+  width:20.5%;
 }
 
 .documentation{

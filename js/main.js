@@ -26,6 +26,21 @@ $(document).ready(function(){
     clearView();
   });
 
+
+  $(document).keypress(function(e) {
+    if (e.keyCode == 27) {
+      clearView();
+    }
+  });
+
+  $(document).on('keyup',function(evt) {
+      if (evt.keyCode == 27) {
+        console.log("keyprese");
+  clearView();
+      }
+  });
+
+
   $('#mobileinfoprompter').click(function() {
     console.log("test");
     $('#infobox').toggleClass('visible');

@@ -374,3 +374,8 @@ body{
 ::-webkit-scrollbar-thumb {
     background: #FF0000;
 }
+
+::selection{
+    color:$color-black;
+    background:$color-green;
+}

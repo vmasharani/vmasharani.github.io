@@ -4,6 +4,9 @@
 
 $mobile: new-breakpoint(max-width 660px);
 
+body{
+  background-color:white;
+}
 
 
 h1{
@@ -57,6 +60,8 @@ h2{
   width:100%;
   height:0;
 }
+
+
 
 svg circle{
   transition:.4s ease-in-out;

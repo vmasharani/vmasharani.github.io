@@ -169,6 +169,19 @@ img {
     .delta {
       width: 92%; } }
 
+.wflap {
+  width: 72.7%;
+  margin-right: 4vw; }
+  @media screen and (max-width: 771px) {
+    .wflap {
+      width: 92%; } }
+
+.wfmob {
+  width: 20.5%; }
+  @media screen and (max-width: 771px) {
+    .wfmob {
+      width: 68%; } }
+
 .documentation {
   text-align: center; }
 
@@ -460,5 +473,9 @@ body {
 /* optional: show position indicator in red */
 ::-webkit-scrollbar-thumb {
   background: #FF0000; }
+
+::selection {
+  color: #29181f;
+  background: #519d4f; }
 
 /*# sourceMappingURL=styles.css.map */

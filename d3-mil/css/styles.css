@@ -47,6 +47,9 @@ html {
 *, *::after, *::before {
   box-sizing: inherit; }
 
+body {
+  background-color: white; }
+
 h1 {
   font-family: "Hind";
   font-weight: 600;

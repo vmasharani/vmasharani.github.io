@@ -102,6 +102,19 @@ img {
     .delta {
       width: 92%; } }
 
+.wflap {
+  width: 72.7%;
+  margin-right: 4vw; }
+  @media screen and (min-width: new-breakpoint(max-width 771px)) {
+    .wflap {
+      width: 92%; } }
+
+.wfmob {
+  width: 20.5%; }
+  @media screen and (min-width: new-breakpoint(max-width 771px)) {
+    .wfmob {
+      width: 68%; } }
+
 .documentation {
   text-align: center; }
 

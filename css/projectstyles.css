@@ -50,7 +50,7 @@ html {
   position: relative; }
   @media screen and (min-width: new-breakpoint(max-width 771px)) {
     .projectcontent {
-      padding: 3rem 1rem 1rem 1rem; } }
+      padding: 4rem 1rem 1rem 1rem; } }
 
 .description {
   display: block;

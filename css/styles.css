@@ -117,7 +117,7 @@ html {
   position: relative; }
   @media screen and (max-width: 771px) {
     .projectcontent {
-      padding: 3rem 1rem 1rem 1rem; } }
+      padding: 4rem 1rem 1rem 1rem; } }
 
 .description {
   display: block;
@@ -442,14 +442,14 @@ body {
       background-image: url("../images/poster.gif"); }
     @media screen and (max-width: 771px) {
       #wrapper #projectlist #gym {
-        background-image: url("../images/gym.png"); } }
+        background-image: url("../images/gym3.png"); } }
     #wrapper #projectlist #gym:hover {
-      background-image: url("../images/gym.png"); }
+      background-image: url("../images/gym3.png"); }
     @media screen and (max-width: 771px) {
       #wrapper #projectlist #spaces {
-        background-image: url("../images/spaces2.png"); } }
+        background-image: url("../images/spaces4.png"); } }
     #wrapper #projectlist #spaces:hover {
-      background-image: url("../images/spaces2.png"); }
+      background-image: url("../images/spaces4.png"); }
 
 ::-webkit-scrollbar {
   width: 0px;

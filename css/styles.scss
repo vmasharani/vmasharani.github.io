@@ -347,20 +347,20 @@ body{
 
     #gym{
       @include media($mobile){
-        background-image:url('../images/gym.png');
+        background-image:url('../images/gym3.png');
       }
       &:hover{
-        background-image:url('../images/gym.png');
+        background-image:url('../images/gym3.png');
       }
 
     }
 
     #spaces{
       @include media($mobile){
-        background-image:url('../images/spaces2.png');
+        background-image:url('../images/spaces4.png');
       }
       &:hover{
-        background-image:url('../images/spaces2.png');
+        background-image:url('../images/spaces4.png');
       }
     }
   }

@@ -52,7 +52,7 @@ $header-height:1rem;
 
 .projectcontent{
   @include media($mobile){
-    padding:3rem 1rem 1rem 1rem;
+    padding:4rem 1rem 1rem 1rem;
   }
   padding:4rem 4rem 4rem 4rem;
   margin-top:$header-height;

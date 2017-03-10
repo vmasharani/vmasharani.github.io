@@ -7,6 +7,10 @@ $header-height:1rem;
   padding-bottom:62.5%;
 }
 
+#ook{
+  padding-bottom:62.25%;
+}
+
 .embed-container {
   position: relative;
   padding-bottom: 56.25%;
@@ -38,7 +42,7 @@ $header-height:1rem;
   top:0;
   left:0;
   width:100%;
-  font-family:'Work Sans';
+  font-family:'SFTextRegular';
   font-weight:500;
   background-color:white;
   text-align:center;
@@ -57,7 +61,7 @@ $header-height:1rem;
 
 .description{
   display:block;
-  font-family:'Work Sans';
+  font-family:'SFTextRegular';
   font-weight:400;
   a{
     font-weight:200;
@@ -152,7 +156,7 @@ img{
   text-align:center;
 
   .label{
-    font-family:"Work Sans";
+    font-family:"SFTextRegular";
     font-weight:700;
     @include media($mobile){
       opacity:1;

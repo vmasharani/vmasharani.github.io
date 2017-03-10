@@ -7,6 +7,9 @@ html {
 #slapping {
   padding-bottom: 62.5%; }
 
+#ook {
+  padding-bottom: 62.25%; }
+
 .embed-container {
   position: relative;
   padding-bottom: 56.25%;
@@ -34,7 +37,7 @@ html {
   top: 0;
   left: 0;
   width: 100%;
-  font-family: 'Work Sans';
+  font-family: 'SFTextRegular';
   font-weight: 500;
   background-color: white;
   text-align: center;
@@ -51,7 +54,7 @@ html {
 
 .description {
   display: block;
-  font-family: 'Work Sans';
+  font-family: 'SFTextRegular';
   font-weight: 400; }
   .description a {
     font-weight: 200;
@@ -117,7 +120,7 @@ img {
     .laptopentrance {
       height: 40%; } }
   .laptopentrance .label {
-    font-family: "Work Sans";
+    font-family: "SFTextRegular";
     font-weight: 700;
     position: absolute;
     top: 50%;

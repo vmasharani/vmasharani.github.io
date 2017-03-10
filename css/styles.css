@@ -355,6 +355,8 @@ body {
         text-decoration: none;
         transition: .25s ease-in-out;
         line-height: 1.3; }
+        #wrapper #info #name a:hover {
+          color: #d9e6e6; }
     #wrapper #info .contactlink {
       font-family: 'SFTextRegular';
       font-weight: 400;

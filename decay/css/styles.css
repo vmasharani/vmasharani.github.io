@@ -1,0 +1,196 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+@font-face {
+  font-family: 'Gustave';
+  src: url("fonts/Piegnot-Beta_1.1.web.woff2") format("woff2"), url("fonts/Piegnot-Beta_1.1.web.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+body {
+  font-family: 'Nunito Sans'; }
+
+#trigger {
+  width: 100%;
+  height: 0; }
+
+.embed-container {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  max-width: 100%; }
+
+.embed-container iframe, .embed-container object, .embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+.container {
+  width: 100%; }
+
+.videocontainer {
+  width: 50%;
+  background-color: green;
+  display: inline-block;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  vertical-align: center; }
+  @media screen and (max-width: 771px) {
+    .videocontainer {
+      width: 100%;
+      display: block;
+      position: fixed;
+      height: 30%; } }
+
+.articlewrapper {
+  display: inline-block;
+  width: 50%;
+  float: right; }
+  @media screen and (max-width: 771px) {
+    .articlewrapper {
+      display: block;
+      width: 100%;
+      height: 70%;
+      position: absolute;
+      overflow: scroll;
+      top: 30%;
+      border: 5px solid white; } }
+  .articlewrapper h1 {
+    font-family: 'Bungee Shade';
+    font-size: 6vw;
+    margin-bottom: 3rem;
+    hyphens: auto;
+    width: 100%;
+    padding-top: 4rem;
+    background: #02ff74;
+    /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover, #02ff74 0%, #6b5201 23%, #02b7ff 43%, #8c5701 65%, #8c5701 81%, #fff202 84%, #8c5701 86%, #8c5701 86%);
+    /* FF3.6-15 */
+    background: -webkit-radial-gradient(center, ellipse cover, #02ff74 0%, #6b5201 23%, #02b7ff 43%, #8c5701 65%, #8c5701 81%, #fff202 84%, #8c5701 86%, #8c5701 86%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at center, #02ff74 0%, #6b5201 23%, #02b7ff 43%, #8c5701 65%, #8c5701 81%, #fff202 84%, #8c5701 86%, #8c5701 86%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#02ff74', endColorstr='#8c5701',GradientType=1 );
+    /* IE6-9 fallback on horizontal gradient */ }
+    @media screen and (max-width: 771px) {
+      .articlewrapper h1 {
+        font-size: 8vw; } }
+  .articlewrapper h2 {
+    padding: 1rem;
+    font-weight: 300;
+    background-color: white;
+    border-bottom: 1px solid #191919;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    text-align: center;
+    font-size: 1.5vw;
+    color: white;
+    text-shadow: 0 0 2px black;
+    visibility: hidden;
+    display: none; }
+    @media screen and (max-width: 771px) {
+      .articlewrapper h2 {
+        display: none; } }
+    .articlewrapper h2 a {
+      text-shadow: none;
+      float: right;
+      text-decoration: none; }
+      .articlewrapper h2 a:hover {
+        font-style: italic; }
+      .articlewrapper h2 a:active {
+        background-color: black;
+        color: white; }
+  .articlewrapper .visible {
+    visibility: visible;
+    display: block; }
+  .articlewrapper h3 {
+    font-size: 2.3vw;
+    margin-bottom: 2rem;
+    text-shadow: 0px 0px 4px pink;
+    padding-left: 1.1rem;
+    color: grey; }
+    @media screen and (max-width: 771px) {
+      .articlewrapper h3 {
+        font-size: 6vw; } }
+  .articlewrapper .number {
+    color: #F20236;
+    font-weight: 600; }
+  .articlewrapper .alt {
+    color: grey;
+    text-shadow: -2px 2px 2px red; }
+  .articlewrapper .emph1 {
+    font-style: italic;
+    font-weight: 600; }
+  .articlewrapper .emph2 {
+    font-family: 'Gustave';
+    background-color: #9aef56; }
+  .articlewrapper .articleparagraph {
+    font-size: 1.9vw;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem; }
+    @media screen and (max-width: 771px) {
+      .articlewrapper .articleparagraph {
+        font-size: 4vw;
+        padding-left: 1.8rem;
+        padding-right: 1.8rem; } }
+  .articlewrapper .emphasis1 {
+    font-style: italic; }
+
+/*# sourceMappingURL=styles.css.map */

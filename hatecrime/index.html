@@ -1,18 +1,23 @@
 <html>
 <head>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script type="text/javascript" src="http://api.geonames.org/search?username=vmash">
   <link rel="stylesheet" type="text/css" href="css/styles.css">
-
-  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script type="text/javascript" src="http://api.geonames.org/search?username=vmash"></script>
 
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyD1zUbqL9CJoHuqY_u90CnDnK570O7fs"></script>
 
 </head>
 <body>
 
+  <div id="modal"></div>
+
+
   <div class="container">
+    <div class="myText">
+        <span>Move your cursor over the plots on the map in order to show information in this div.</span></div>
     <div class="mapcontainer">
+      <div class="myLegend"></div><span>Alternative content for the legend</span>
+
       <div class="map"><span>Alternative content for the map</span>
 </div>
 </div>

@@ -8,6 +8,7 @@ $(document).ready(function(){
 
 
 
+
 $.getJSON('data/testdata.json',function(data){
         console.log('success');
         dataType: 'json'
@@ -16,20 +17,16 @@ $.getJSON('data/testdata.json',function(data){
           if(ev.agencyname!="Total"){
             var longitude;
             var latitude;
-            var geocoder =  new google.maps.Geocoder();
-            geocoder.geocode( { 'address': ev.agencyname + ev.state}, function(results, status) {
-                  if (status == google.maps.GeocoderStatus.OK) {
-                    alert("location : " + results[0].geometry.location.lat() + " " +results[0].geometry.location.lng());
-                    latitude=results[0].geometry.location.lat();
-                    longitude=results[0].geometry.location.lng();
-                    ev.longitude=longitude;
-                    ev.latitude=latitude;
-                    data[i]=(JSON.parse(JSON.stringify(ev)));
-                    console.log(data[i]);
-                  } else {
-                    alert("Something got wrong " + status);
-                  }
-                });
+
+            var entrypoint = cities.indexOf(ev.state);
+            var stake = cities.indexOf(ev.agencyname,entrypoint);
+            console.log(cities[stake+1],cities[stake+2]);
+            latitude=parseFloat(cities[stake+1]);
+            longitude=parseFloat(cities[stake+2]);
+            ev.longitude=longitude;
+            ev.latitude=latitude;
+            data[i]=(JSON.parse(JSON.stringify(ev)));
+
               };
           });
       setTimeout(function(){

@@ -1,6 +1,6 @@
 [
    {
-      "state":"Alabama",
+      "state":"AL",
       "type":"Total",
       "agencyname":"Total",
       "rea":8,
@@ -12,7 +12,7 @@
       "population":333.091
    },
    {
-      "state":"Alabama",
+      "state":"AL",
       "type":"Cities",
       "agencyname":"Birmingham",
       "rea":3,
@@ -24,7 +24,7 @@
       "population":212.291
    },
    {
-      "state":"Alabama",
+      "state":"AL",
       "type":"Cities",
       "agencyname":"Hoover",
       "rea":4,
@@ -36,7 +36,7 @@
       "population":85.163
    },
    {
-      "state":"Alabama",
+      "state":"AL",
       "type":"Cities",
       "agencyname":"Prattville",
       "rea":1,
@@ -48,7 +48,7 @@
       "population":35.637
    },
    {
-      "state":"Alaska",
+      "state":"AK",
       "type":"Total",
       "agencyname":"Total",
       "rea":7,
@@ -60,7 +60,7 @@
       "population":311.245
    },
    {
-      "state":"Alaska",
+      "state":"AK",
       "type":"Cities",
       "agencyname":"Anchorage",
       "rea":4,
@@ -72,7 +72,7 @@
       "population":301.239
    },
    {
-      "state":"Alaska",
+      "state":"AK",
       "type":"Cities",
       "agencyname":"Kotzebue",
       "rea":1,
@@ -84,7 +84,7 @@
       "population":3.304
    },
    {
-      "state":"Alaska",
+      "state":"AK",
       "type":"Cities",
       "agencyname":"North Pole",
       "rea":1,
@@ -96,7 +96,7 @@
       "population":2.190
    },
    {
-      "state":"Alaska",
+      "state":"AK",
       "type":"Cities",
       "agencyname":"Soldotna",
       "rea":1,
@@ -108,7 +108,7 @@
       "population":4.512
    },
    {
-      "state":"Arizona",
+      "state":"AZ",
       "type":"Total",
       "agencyname":"Total",
       "rea":162,
@@ -120,7 +120,7 @@
       "population":null
    },
    {
-      "state":"Arizona",
+      "state":"AZ",
       "type":"Cities",
       "agencyname":"Apache Junction",
       "rea":2,
@@ -132,7 +132,7 @@
       "population":38.519
    },
    {
-      "state":"Arizona",
+      "state":"AZ",
       "type":"Cities",
       "agencyname":"Avondale",
       "rea":1,
@@ -144,7 +144,7 @@
       "population":80.533
    },
    {
-      "state":"Arizona",
+      "state":"AZ",
       "type":"Cities",
       "agencyname":"Chandler",
       "rea":1,
@@ -156,7 +156,7 @@
       "population":258.875
    },
    {
-      "state":"Arizona",
+      "state":"AZ",
       "type":"Cities",
       "agencyname":"El Mirage",
       "rea":0,
@@ -168,7 +168,7 @@
       "population":33.985
    },
    {
-      "state":"Arizona",
+      "state":"AZ",
       "type":"Cities",
       "agencyname":"Gilbert",
       "rea":3,
@@ -180,7 +180,7 @@
       "population":247.324
    },
    {
-      "state":"Arizona",
+      "state":"AZ",
       "type":"Cities",
       "agencyname":"Glendale",
       "rea":5,
@@ -192,7 +192,7 @@
       "population":240.374
    },
    {
-      "state":"Arizona",
+      "state":"AZ",
       "type":"Cities",
       "agencyname":"Holbrook",
       "rea":0,
@@ -204,7 +204,7 @@
       "population":5.007
    },
    {
-      "state":"Arizona",
+      "state":"AZ",
       "type":"Cities",
       "agencyname":"Mesa",
       "rea":2,
@@ -216,7 +216,7 @@
       "population":471.034
    },
    {
-      "state":"Arizona",
+      "state":"AZ",
       "type":"Cities",
       "agencyname":"Nogales",
       "rea":0,
@@ -228,7 +228,7 @@
       "population":20.312
    },
    {
-      "state":"Arizona",
+      "state":"AZ",
       "type":"Cities",
       "agencyname":"Phoenix",
       "rea":137,
@@ -240,7 +240,7 @@
       "population":1559.744
    },
    {
-      "state":"Arizona",
+      "state":"AZ",
       "type":"Cities",
       "agencyname":"Prescott",
       "rea":1,
@@ -252,7 +252,7 @@
       "population":41.393
    },
    {
-      "state":"Arizona",
+      "state":"AZ",
       "type":"Cities",
       "agencyname":"Scottsdale",
       "rea":1,
@@ -264,7 +264,7 @@
       "population":233.872
    },
    {
-      "state":"Arizona",
+      "state":"AZ",
       "type":"Cities",
       "agencyname":"Tucson",
       "rea":1,
@@ -276,7 +276,7 @@
       "population":529.675
    },
    {
-      "state":"Arizona",
+      "state":"AZ",
       "type":"Cities",
       "agencyname":"Williams",
       "rea":0,
@@ -288,7 +288,7 @@
       "population":3.110
    },
    {
-      "state":"Arizona",
+      "state":"AZ",
       "type":"Cities",
       "agencyname":"Yuma",
       "rea":3,
@@ -300,19 +300,7 @@
       "population":93.923
    },
    {
-      "state":"Arizona",
-      "type":"Cities",
-      "agencyname":"Arizona State University Main Campus",
-      "rea":2,
-      "religion":0,
-      "sexualorientation":0,
-      "disability":0,
-      "gender":0,
-      "genderidentity":0,
-      "population":83.260
-   },
-   {
-      "state":"Arizona",
+      "state":"AZ",
       "type":"Cities",
       "agencyname":"Maricopa",
       "rea":1,
@@ -324,7 +312,7 @@
       "population":48.602
    },
    {
-      "state":"Arizona",
+      "state":"AZ",
       "type":"Cities",
       "agencyname":"Pima",
       "rea":1,
@@ -336,31 +324,7 @@
       "population":996.554
    },
    {
-      "state":"Arizona",
-      "type":"Cities",
-      "agencyname":"Pinal",
-      "rea":1,
-      "religion":0,
-      "sexualorientation":0,
-      "disability":0,
-      "gender":0,
-      "genderidentity":0,
-      "population":389.350
-   },
-   {
-      "state":"Arizona",
-      "type":"Cities",
-      "agencyname":"Yavapai",
-      "rea":0,
-      "religion":1,
-      "sexualorientation":0,
-      "disability":0,
-      "gender":0,
-      "genderidentity":0,
-      "population":215.133
-   },
-   {
-      "state":"Arizona",
+      "state":"AZ",
       "type":"Cities",
       "agencyname":"Graham",
       "rea":0,

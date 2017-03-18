@@ -17,15 +17,19 @@ $.getJSON('data/testdata.json',function(data){
           if(ev.agencyname!="Total"){
             var longitude;
             var latitude;
-
             var entrypoint = cities.indexOf(ev.state);
             var stake = cities.indexOf(ev.agencyname,entrypoint);
+            if (cities[stake-1]!=ev.state){
+              latitude=undefined;
+              longitude=undefined;
+            } else{
             console.log(cities[stake+1],cities[stake+2]);
             latitude=parseFloat(cities[stake+1]);
             longitude=parseFloat(cities[stake+2]);
             ev.longitude=longitude;
             ev.latitude=latitude;
             data[i]=(JSON.parse(JSON.stringify(ev)));
+          }
 
               };
           });
@@ -42,7 +46,7 @@ $.getJSON('data/testdata.json',function(data){
           plots['location'+i]=(
 
                 {
-                    value: parseInt(data[i].population*1000),
+                    value: crimesper*100,
                     latitude: data[i].latitude,
                     longitude: data[i].longitude,
                     total: totalcrimes,
@@ -91,9 +95,9 @@ $.getJSON('data/testdata.json',function(data){
                     },
                     title: "French cities population",
                     slices: [{
-                        size: 4,
+                        size: 8,
                         type: "circle",
-                        max: 20000,
+                        max: 50,
                         attrs: {
                             fill: "#89ff72"
                         },
@@ -101,8 +105,8 @@ $.getJSON('data/testdata.json',function(data){
                     }, {
                         size: 6,
                         type: "circle",
-                        min: 20000,
-                        max: 100000,
+                        min: 50,
+                        max: 150,
                         attrs: {
                             fill: "#fffd72"
                         },
@@ -110,8 +114,8 @@ $.getJSON('data/testdata.json',function(data){
                     }, {
                         size: 20,
                         type: "circle",
-                        min: 100000,
-                        max: 200000,
+                        min: 150,
+                        max: 400,
                         attrs: {
                             fill: "#ffbd54"
                         },
@@ -119,7 +123,7 @@ $.getJSON('data/testdata.json',function(data){
                     }, {
                         size: 40,
                         type: "circle",
-                        min: 200000,
+                        min: 400,
                         attrs: {
                             fill: "#ff5454"
                         },

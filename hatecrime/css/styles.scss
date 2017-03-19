@@ -30,12 +30,13 @@ body{
     color: #343434;
 }
 
-.mapael .myLegend {
+.myLegend {
     width: 400px;
     border: 1px solid #bebeb4;
-    background-color: #f4f4e8;
+    background-color: grey;
     width: 600px;
     padding: 10px;
+    display:none!important;
 }
 
 #modal{

@@ -4,18 +4,62 @@
 
 $(document).ready(function(){
 
-    var plots={};
-    var slices=[];
-    var statetotals=[];
-    var dropdown=$("#statedropdown");
-    var lastpressed="perscale";
+  var modtest = document.getElementById("reflexive");
+  var modal = document.getElementById("contentmodal");
+  var close = document.getElementsByClassName("close")[0];
+  var cover = document.getElementById("cover");
+  var projects = document.getElementsByClassName("projectlink");
 
-    var states=["AK", "AL", "AR", "AZ", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "IA", "ID", "IL", "IN", "KS", "KY", "LA", "MA","MD", "ME", "MI", "MN", "MO", "MT", "NC", "NE", "NH", "NJ", "NM", "NV", "NY", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VA", "VT", "WA", "WI", "WV", "WY"];
-    var statedata=new Array();
+  function clearView(){
+    modal.style.display = "none";
+    cover.style.display="none";
+    $('#projectcontainer').empty();
+  }
 
-    for (var i=0;i<states.length;i++){
-       $('<option/>').val(states[i]).html(states[i]).appendTo('#statedropdown');
+
+  close.addEventListener('click',function(e){
+    clearView();
+  });
+
+  cover.addEventListener('click',function(e){
+    clearView();
+  });
+
+
+  $(document).keypress(function(e) {
+    if (e.keyCode == 27) {
+      clearView();
     }
+  });
+
+  $(document).on('keyup',function(evt) {
+      if (evt.keyCode == 27) {
+        console.log("keyprese");
+  clearView();
+      }
+  });
+
+  for (var i=0;i<projects.length;i++){
+  projects[i].addEventListener('click', function(e) {
+      modal.style.display="block";
+      cover.style.display="block";
+      $('#projectcontainer').load(e.target.id+'.html');
+
+  }, false);
+};
+
+  var plots={};
+  var slices=[];
+  var statetotals=[];
+  var dropdown=$("#statedropdown");
+  var lastpressed="perscale";
+
+  var states=["AK", "AL", "AR", "AZ", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "IA", "ID", "IL", "IN", "KS", "KY", "LA", "MA","MD", "ME", "MI", "MN", "MO", "MT", "NC", "NE", "NH", "NJ", "NM", "NV", "NY", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VA", "VT", "WA", "WI", "WV", "WY"];
+  var statedata=new Array();
+
+  for (var i=0;i<states.length;i++){
+     $('<option/>').val(states[i]).html(states[i]).appendTo('#statedropdown');
+  }
 
 
     function map_range(value, low1, high1, low2, high2) {
@@ -104,8 +148,10 @@ $.getJSON('data/testdata.json',function(data){
 
 
           if(i==data.length-1){
-            $('#conclusion').append("national ethnic hate crime total"+natlethnictotal+"<br>"+"national religious hate crime total"+natlreligiontotal+"<br>"+"national sexual orientation hate crime total"+natlsexualtotal+"<br>"+"national disability hate crime total"+natldisabletotal+"<br>"+"national gender hate crime total"+natlgendertotal);
+            $('#conclusion').append("<div class='conclusion'>In 2015, there were "+natlethnictotal+" hate crimes based on ethnicity, <br>"+natlreligiontotal+" hate crimes based on religion, <br>"+natlsexualtotal+" hate crimes based on sexual orientation, <br>"+natldisabletotal+" hate crimes based on disability, and <br>"+natlgendertotal+" hate crimes based on gender.</div>");
           };
+
+
 
 
           var currentstate=data[i].state;
@@ -450,7 +496,6 @@ $.getJSON('data/testdata.json',function(data){
             data: {
       labels: ["Ethnicity", "Religion", "Sexual Orientation", "Disability", "Gender"],
       datasets: [{
-          label: '# of Votes',
           data: statedata,
           backgroundColor: [
               'rgba(165, 114, 89, 0.8)',

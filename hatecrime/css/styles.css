@@ -41,14 +41,132 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+.description {
+  font-family: sans-serif; }
+
+h1 {
+  font-size: 36px;
+  font-family: sans-serif;
+  font-weight: bold; }
+
+#contentmodal {
+  overflow: scroll; }
+
+#projectlinkwrapper {
+  width: 100%;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  text-align: center; }
+
+.rule {
+  border-bottom: 1px solid black;
+  width: 100%;
+  margin-top: 4rem;
+  margin-bottom: 4rem; }
+
+#cover {
+  display: none;
+  position: fixed;
+  z-index: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  background-color: rgba(217, 230, 230, 0.6); }
+
+.visible {
+  display: block; }
+  @media screen and (max-width: 771px) {
+    .visible {
+      display: block; } }
+
+#modalwrapper {
+  padding: 0% 16% 0% 16%;
+  position: relative; }
+  #modalwrapper #contentmodal {
+    display: none;
+    position: fixed;
+    width: 90%;
+    padding: 20px;
+    height: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    font-size: 25px;
+    z-index: 2;
+    background-color: white;
+    border: 1px solid black; }
+    @media screen and (max-width: 771px) {
+      #modalwrapper #contentmodal {
+        width: 92%;
+        height: 92%; } }
+  #modalwrapper .close {
+    display: block;
+    position: fixed;
+    right: 4px;
+    top: 4px;
+    width: 30px;
+    height: 30px;
+    transition: transform .25s ease-in-out;
+    z-index: 6;
+    padding: 0; }
+    #modalwrapper .close:hover {
+      transform: rotateZ(90deg);
+      cursor: pointer; }
+    #modalwrapper .close:before {
+      content: "";
+      position: absolute;
+      display: block;
+      margin: auto;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 30px;
+      height: 0;
+      border-top: 1px solid black;
+      transform: rotate(45deg);
+      transform-origin: center; }
+    #modalwrapper .close:after {
+      content: "";
+      position: absolute;
+      display: block;
+      margin: auto;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 30px;
+      height: 0;
+      border-top: 1px solid black;
+      transform: rotate(-45deg);
+      transform-origin: center; }
+
 #chartwrapper {
   width: 70%; }
 
 h3 {
-  font-size: 36px; }
+  font-family: sans-serif;
+  font-size: 29px;
+  margin-bottom: 4rem; }
 
 #chartinterface {
   position: relative; }
+
+.conclusion {
+  font-size: 36px;
+  font-family: sans-serif;
+  line-height: 120%; }
 
 #chartselector {
   width: 25%;
@@ -56,23 +174,43 @@ h3 {
   top: 0;
   right: 0; }
   #chartselector select {
-    background-color: red;
+    background-color: #e0e2e5;
     font-size: 18px; }
   #chartselector button {
-    font-size: 18px; }
+    font-size: 18px;
+    background-color: #e0e2e5;
+    border: 1px solid black; }
 
 body {
   background-color: white; }
 
 .container {
+  width: 80%;
   max-width: 1000px;
-  margin: auto; }
+  margin: auto;
+  margin-top: 5rem;
+  margin-bottom: 5rem; }
+  @media screen and (max-width: 771px) {
+    .container {
+      width: 80%; } }
+
+a.projectlink {
+  font-family: sans-serif;
+  border: 1px solid black;
+  font-weight: bold;
+  padding: 4px;
+  color: black;
+  text-decoration: underline; }
+  a.projectlink:hover {
+    text-decoration: none;
+    background-color: #eaeaea; }
 
 /* Specific mapael css class are below
  * 'mapael' class is added by plugin
 */
 .mapael .map {
-  position: relative; }
+  position: relative;
+  margin: 4rem 0rem 4rem 0rem; }
 
 .mapael .mapTooltip {
   position: absolute;
@@ -136,14 +274,22 @@ body {
 .visible {
   display: block; }
 
+#scalebuttons {
+  text-align: center; }
+
 button.changescale {
   outline: 0;
   width: 15%;
   padding: 1rem 0rem 1rem 0rem;
+  margin-right: .2rem;
+  margin-top: .2rem;
   background-color: rgba(255, 255, 255, 0);
   border-radius: none;
   font-size: 20px;
   border: 1px solid black; }
+  @media screen and (max-width: 771px) {
+    button.changescale {
+      width: 100%; } }
   button.changescale.clicked {
     background-color: red; }
   button.changescale:hover {

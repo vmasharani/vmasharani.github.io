@@ -148,7 +148,7 @@ $.getJSON('data/testdata.json',function(data){
 
 
           if(i==data.length-1){
-            $('#conclusion').append("<div class='conclusion'>In 2015, there were "+natlethnictotal+" hate crimes based on ethnicity, <br>"+natlreligiontotal+" hate crimes based on religion, <br>"+natlsexualtotal+" hate crimes based on sexual orientation, <br>"+natldisabletotal+" hate crimes based on disability, and <br>"+natlgendertotal+" hate crimes based on gender.</div>");
+            $('#conclusion').append("<div class='conclusion'>In the USA, there were "+natlethnictotal+" hate crimes based on ethnicity, <br>"+natlreligiontotal+" hate crimes based on religion, <br>"+natlsexualtotal+" hate crimes based on sexual orientation, <br>"+natldisabletotal+" hate crimes based on disability, and <br>"+natlgendertotal+" hate crimes based on gender in 2015.</div>");
           };
 
 

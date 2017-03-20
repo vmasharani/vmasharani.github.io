@@ -42,7 +42,7 @@ table {
   border-spacing: 0; }
 
 #chartwrapper {
-  width: 50%; }
+  width: 70%; }
 
 h3 {
   font-size: 36px; }
@@ -51,10 +51,15 @@ h3 {
   position: relative; }
 
 #chartselector {
-  width: 35%;
+  width: 25%;
   position: absolute;
   top: 0;
   right: 0; }
+  #chartselector select {
+    background-color: red;
+    font-size: 18px; }
+  #chartselector button {
+    font-size: 18px; }
 
 body {
   background-color: white; }

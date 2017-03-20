@@ -2,7 +2,7 @@
 
 
 #chartwrapper{
-  width:50%;
+  width:70%;
 }
 
 h3{
@@ -15,10 +15,18 @@ h3{
 }
 
 #chartselector{
-  width:35%;
+  width:25%;
   position:absolute;
   top:0;
   right:0;
+  select{
+    background-color:red;
+    font-size:18px;
+
+  }
+  button{
+    font-size:18px;
+  }
 }
 body{
   background-color:white;

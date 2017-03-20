@@ -104,7 +104,7 @@ $.getJSON('data/testdata.json',function(data){
 
 
           if(i==data.length-1){
-            $('#conclusion').append(natlethnictotal);
+            $('#conclusion').append("national ethnic hate crime total"+natlethnictotal+"<br>"+"national religious hate crime total"+natlreligiontotal+"<br>"+"national sexual orientation hate crime total"+natlsexualtotal+"<br>"+"national disability hate crime total"+natldisabletotal+"<br>"+"national gender hate crime total"+natlgendertotal);
           };
 
 

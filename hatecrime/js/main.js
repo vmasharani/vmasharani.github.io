@@ -525,7 +525,7 @@ $.getJSON('data/testdata.json',function(data){
 
 
 
-        $('#viewdata').on('click',function(event){
+        $('#statedropdown').change(function(event){
 
 
           var pickedstate=($('#statedropdown :selected').text());

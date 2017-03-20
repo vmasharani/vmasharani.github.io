@@ -2,9 +2,7 @@
 <head>
   <link rel="stylesheet" type="text/css" href="css/styles.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script type="text/javascript" src="http://api.geonames.org/search?username=vmash"></script>
-
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyD1zUbqL9CJoHuqY_u90CnDnK570O7fs"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 
 </head>
 <body>
@@ -13,18 +11,21 @@
 
 
   <div class="container">
-    <button id="popscale" class="changescale">Scale By Population</button>
-    <button id="perscale" class="changescale">Scale By per1000</button>
-    <button id="crimescale" class="changescale">Scale By Number of Crimes</button>
 
 
     <div class="myText">
-        <span>Move your cursor over the plots on the map in order to show information in this div.</span></div>
+        <span>Move your cursor over individual points for details.</span></div>
     <div class="mapcontainer">
-      <div class="myLegend"></div><span></span>
+      <div class="myLegend"><span></span></div>
 
-      <div class="map"><span></span>
-</div>
+      <div class="map"><span></span></div>
+
+      <button id="popscale" class="changescale">Scale By Population</button>
+      <button id="perscale" class="changescale">Scale By per1000</button>
+      <button id="crimescale" class="changescale">Scale By Number of Crimes</button>
+      <canvas id="myChart" width="400" height="400"></canvas>
+      <select id="statedropdown"></select>
+      <button id="viewdata"></button>
 </div>
 
   <ul>

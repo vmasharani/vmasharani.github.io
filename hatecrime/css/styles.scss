@@ -1,5 +1,8 @@
+@import 'reset.scss';
+
+
 body{
-  background-color:red;
+  background-color:white;
 }
 
 .container {
@@ -18,16 +21,14 @@ body{
 .mapael .mapTooltip {
     position: absolute;
     font-family:sans-serif;
-    background-color: red;
-    moz-opacity: 0.70;
-    opacity: 0.70;
+    background-color: white;
     filter: alpha(opacity=70);
-    border-radius: 10px;
-    padding: 10px;
+    padding: 3px;
     z-index: 1000;
     max-width: 200px;
     display: none;
-    color: #343434;
+    color: black;
+    border:1px solid black;
 }
 
 .myLegend {
@@ -53,18 +54,17 @@ body{
 
 
 .myText {
-    background-color: #343434;
-    height: 100px;
     padding: 10px;
-    color: #fff;
-    overflow: auto;
+    height:200px;
+    color: black;
     margin: 10px;
     span{
       font-family:sans-serif;
-      font-size:12px;
+      font-size:14px;
     }
 }
 
 .numemph{
-  color:yellow;
+  color:#8e3c31;
+  font-weight:bold;
 }

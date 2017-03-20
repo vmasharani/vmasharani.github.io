@@ -7,6 +7,17 @@ $(document).ready(function(){
     var plots={};
     var slices=[];
 
+    var statetotals=[];
+
+    var dropdown=$("#statedropdown");
+
+    var states=["AK", "AL", "AR", "AZ", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "IA", "ID", "IL", "IN", "KS", "KY", "LA", "MA","MD", "ME", "MI", "MN", "MO", "MT", "NC", "NE", "NH", "NJ", "NM", "NV", "NY", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VA", "VT", "WA", "WI", "WV", "WY"];
+    var statedata=new Array();
+
+    for (var i=0;i<states.length;i++){
+       $('<option/>').val(states[i]).html(states[i]).appendTo('#statedropdown');
+    }
+
 
     function map_range(value, low1, high1, low2, high2) {
         return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
@@ -17,14 +28,16 @@ $(document).ready(function(){
 $.getJSON('data/testdata.json',function(data){
 
   var counter=0;
+  var ethnictotal=0;
+  var religiontotal=0;
+  var sexualtotal=0;
+  var disabletotal=0;
+  var gendertotal=0;
 
         console.log('success');
         dataType: 'json'
 
         $.each(data,function(i,ev){
-
-          var ethnictotal;
-          var sexualtotal;
 
 
           if(ev.agencyname!="Total"){
@@ -36,10 +49,11 @@ $.getJSON('data/testdata.json',function(data){
 
 
             if (cities[stake-1]!=ev.state){
-              console.log(ev.agencyname);
+              // console.log(ev.agencyname);
               latitude=-99999;
               longitude=-99999;
             } else{
+
             // console.log(cities[stake+1],cities[stake+2]);
 
             latitude=parseFloat(cities[stake+1]);
@@ -58,7 +72,8 @@ $.getJSON('data/testdata.json',function(data){
         for (var i=0;i<data.length;i++){
           var totalcrimes=parseInt(data[i].rea)+parseInt(data[i].religion)+parseInt(data[i].sexualorientation)+parseInt(data[i].disability)+parseInt(data[i].gender)+parseInt(data[i].genderidentity);
           var truepop=data[i].population*1000;
-          var crimesper=parseFloat((totalcrimes*10000)/truepop);
+          var crimesper=(parseFloat((totalcrimes*10000)/truepop)).toFixed(2);
+
           plots['location'+i]=(
                 {
                     value: crimesper*100,
@@ -68,12 +83,59 @@ $.getJSON('data/testdata.json',function(data){
                     per1000: crimesper,
                     href: "#",
                     tooltip: {
-                        content: data[i].agencyname+" total crimes: "+totalcrimes,
+                        content: data[i].agencyname+" ("+totalcrimes+" total crimes)",
                     },
-                    blurb: "hate crimes based on ethnicity: "+"<span class='numemph'>"+data[i].rea+"</span>"+"<br/>"+"hate crimes based on religion: "+data[i].religion+"<br/>"+"hate crimes based on sexual orientation: "+data[i].sexualorientation+"<br/>"+"hate crimes based on disability: "+data[i].disability+"<br/>"+"hate crimes based on gender: "+parseInt(data[i].genderidentity+data[i].gender)+"<br/>"+"total hate crimes: "+totalcrimes+"<br/>"+"hate crimes per 10000: "+crimesper,
+                    blurb: "Hate crimes based on ethnicity: "+data[i].rea+"<br/>"+"Hate crimes based on religion: "+data[i].religion+"<br/>"+"Hate crimes based on sexual orientation: "+data[i].sexualorientation+"<br/>"+"Hate crimes based on disability: "+data[i].disability+"<br/>"+"hate crimes based on gender: "+parseInt(data[i].genderidentity+data[i].gender)+"<br/>"+"<span class='numemph'>"+"Total hate crimes: "+totalcrimes+"</span> <br/>Hate crimes per 10000: "+crimesper,
                 }
           )
+
+          var currentstate=data[i].state;
+          if (data[i].state!="WY" && data[i].state==data[i+1].state){
+
+            ethnictotal+=data[i].rea;
+            religiontotal+=data[i].religion;
+            sexualtotal+=data[i].sexualorientation;
+            disabletotal+=data[i].disability;
+            gendertotal+=data[i].gender;
+
+          } else if (data[i].state!="WY" && data[i].state!=data[i+1].state){
+
+            ethnictotal+=data[i].rea;
+            religiontotal+=data[i].religion;
+            sexualtotal+=data[i].sexualorientation;
+            disabletotal+=data[i].disability;
+            gendertotal+=data[i].gender;
+
+            statetotals.push(data[i].state);
+            statetotals.push([ethnictotal,religiontotal,sexualtotal,disabletotal,gendertotal]);
+
+            ethnictotal=0;
+            religiontotal=0;
+            sexualtotal=0;
+            disabletotal=0;
+            gendertotal=0;
+          } else if (data[i].state=="WY"){
+            ethnictotal+=data[i].rea;
+            religiontotal+=data[i].religion;
+            sexualtotal+=data[i].sexualorientation;
+            disabletotal+=data[i].disability;
+            gendertotal+=data[i].gender;
+
+            statetotals.push(data[i].state);
+            statetotals.push([ethnictotal,religiontotal,sexualtotal,disabletotal,gendertotal]);
+            break
+
+          }
+
+
         };
+
+        statedata=statetotals[statetotals.indexOf("AK")+1];
+        myPieChart.data.datasets[0].data=statedata;
+        myPieChart.update();
+        console.log(statetotals);
+
+
         //
         // for (var i=0;i<data.length;i++){
         //
@@ -106,6 +168,18 @@ $.getJSON('data/testdata.json',function(data){
               name: "usa_states",
               zoom: {
                   enabled: true
+              },
+              defaultArea: {
+                attrs:{
+                  fill:'#f2f2f2'
+
+                },
+
+                attrsHover : {
+                  fill:"#f2f2f2"
+
+                }
+
               },
               defaultPlot: {
                   size: 3,
@@ -143,7 +217,7 @@ $.getJSON('data/testdata.json',function(data){
                         type: "circle",
                         max: 100,
                         attrs: {
-                            fill: "#89ff72"
+                            fill: "#7D7D7D"
                         },
                         label: "Less than 20000 inhabitants"
                     }, {
@@ -152,7 +226,7 @@ $.getJSON('data/testdata.json',function(data){
                         min: 100,
                         max: 200,
                         attrs: {
-                            fill: "#89ff72"
+                            fill: "#887574"
                         },
                         label: "Less than 20000 inhabitants"
                     }, {
@@ -161,7 +235,7 @@ $.getJSON('data/testdata.json',function(data){
                         min: 200,
                         max: 300,
                         attrs: {
-                            fill: "#89ff72"
+                            fill: "#8D716F"
                         },
                         label: "Less than 20000 inhabitants"
                     }, {
@@ -170,7 +244,7 @@ $.getJSON('data/testdata.json',function(data){
                         min: 300,
                         max: 400,
                         attrs: {
-                            fill: "#89ff72"
+                            fill: "#936D6B"
                         },
                         label: "Less than 20000 inhabitants"
                     }, {
@@ -179,7 +253,7 @@ $.getJSON('data/testdata.json',function(data){
                         min: 400,
                         max: 500,
                         attrs: {
-                            fill: "#89ff72"
+                            fill: "#996966"
                         },
                         label: "Less than 20000 inhabitants"
                     }, {
@@ -188,7 +262,7 @@ $.getJSON('data/testdata.json',function(data){
                         min: 400,
                         max: 500,
                         attrs: {
-                            fill: "#89ff72"
+                            fill: "#9E6562"
                         },
                         label: "Less than 20000 inhabitants"
                     }, {
@@ -197,7 +271,7 @@ $.getJSON('data/testdata.json',function(data){
                         min: 500,
                         max: 600,
                         attrs: {
-                            fill: "#89ff72"
+                            fill: "#A4615D"
                         },
                         label: "Less than 20000 inhabitants"
                     }, {
@@ -206,7 +280,7 @@ $.getJSON('data/testdata.json',function(data){
                         min: 600,
                         max: 700,
                         attrs: {
-                            fill: "#89ff72"
+                            fill: "#A95D59"
                         },
                         label: "Less than 20000 inhabitants"
                     }, {
@@ -215,7 +289,7 @@ $.getJSON('data/testdata.json',function(data){
                         min: 700,
                         max: 800,
                         attrs: {
-                            fill: "#89ff72"
+                            fill: "#AF5955"
                         },
                         label: "Less than 20000 inhabitants"
                     }, {
@@ -224,7 +298,7 @@ $.getJSON('data/testdata.json',function(data){
                         min: 800,
                         max:900,
                         attrs: {
-                            fill: "#89ff72"
+                            fill: "#B55550"
                         },
                         label: "Less than 20000 inhabitants"
                     }, {
@@ -233,7 +307,7 @@ $.getJSON('data/testdata.json',function(data){
                         min: 900,
                         max:1000,
                         attrs: {
-                            fill: "#89ff72"
+                            fill: "#BA514C"
                         },
                         label: "Less than 20000 inhabitants"
                     }, {
@@ -242,7 +316,7 @@ $.getJSON('data/testdata.json',function(data){
                         min: 1000,
                         max:1100,
                         attrs: {
-                            fill: "#89ff72"
+                            fill: "#C04D47"
                         },
                         label: "Less than 20000 inhabitants"
                     }, {
@@ -251,7 +325,7 @@ $.getJSON('data/testdata.json',function(data){
                         min: 1200,
                         max: 1300,
                         attrs: {
-                            fill: "#89ff72"
+                            fill: "#C54943"
                         },
                         label: "Less than 20000 inhabitants"
                     }, {
@@ -260,7 +334,7 @@ $.getJSON('data/testdata.json',function(data){
                         min: 1300,
                         max: 1400,
                         attrs: {
-                            fill: "#89ff72"
+                            fill: "#CB453E"
                         },
                         label: "Less than 20000 inhabitants"
                     }, {
@@ -269,18 +343,45 @@ $.getJSON('data/testdata.json',function(data){
                         min: 1400,
                         max: 1500,
                         attrs: {
-                            fill: "#89ff72"
+                            fill: "#D1413A"
                         },
                         label: "Less than 20000 inhabitants"
                     }, {
                         size: 61,
                         type: "circle",
                         min: 1500,
+                        max:1600,
                         attrs: {
-                            fill: "#89ff72"
+                            fill: "#D63D35"
                         },
                         label: "Less than 20000 inhabitants"
-                    } ]
+                    }, {
+                        size: 71,
+                        type: "circle",
+                        min: 1600,
+                        max:2000,
+                        attrs: {
+                            fill: "#DC3931"
+                        },
+                        label: "Less than 20000 inhabitants"
+                    }, {
+                        size: 81,
+                        type: "circle",
+                        min: 2000,
+                        max:2400,
+                        attrs: {
+                            fill: "#DC3931"
+                        },
+                        label: "Less than 20000 inhabitants"
+                    }, {
+                        size: 110,
+                        type: "circle",
+                        min: 2400,
+                        attrs: {
+                            fill: "#E2362D"
+                        },
+                        label: "Less than 20000 inhabitants"
+                    }  ]
                 }
             },
             plots: plots
@@ -313,6 +414,51 @@ $.getJSON('data/testdata.json',function(data){
               animDuration: 200
           }]);
         });
+
+        var ctx = document.getElementById("myChart");
+        var myPieChart = new Chart(ctx,{
+            type: 'pie',
+            data: {
+      labels: ["Ethnicity", "Religion", "Sexual Orientation", "Disability", "Gender"],
+      datasets: [{
+          label: '# of Votes',
+          data: statedata,
+          backgroundColor: [
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(54, 162, 235, 0.2)',
+              'rgba(255, 206, 86, 0.2)',
+              'rgba(75, 192, 192, 0.2)',
+              'rgba(153, 102, 255, 0.2)'
+          ],
+          borderColor: [
+              'rgba(255,99,132,1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)',
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)'
+          ],
+          borderWidth: 1
+      }]
+  },
+              options: {
+                cutoutPercentage: 0
+              }
+                });
+
+
+
+        $('#viewdata').on('click',function(event){
+
+
+          var pickedstate=($('#statedropdown :selected').text());
+          statedata=statetotals[statetotals.indexOf(pickedstate)+1]
+
+          myPieChart.data.datasets[0].data=statedata;
+          myPieChart.update();
+
+
+
+        })
   });
 });
 

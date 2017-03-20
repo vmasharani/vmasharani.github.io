@@ -180,6 +180,12 @@ h3 {
     font-size: 18px;
     background-color: #e0e2e5;
     border: 1px solid black; }
+    #chartselector button:hover {
+      cursor: pointer; }
+    #chartselector button:active {
+      background-color: black;
+      color: white;
+      outline: none; }
 
 body {
   background-color: white; }
@@ -291,10 +297,11 @@ button.changescale {
     button.changescale {
       width: 100%; } }
   button.changescale.clicked {
-    background-color: red; }
+    background-color: grey; }
   button.changescale:hover {
     color: white;
-    background-color: black; }
+    background-color: black;
+    cursor: pointer; }
 
 .myText {
   padding: 10px;

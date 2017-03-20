@@ -168,6 +168,15 @@ h3{
     font-size:18px;
     background-color:#e0e2e5;
     border:1px solid black;
+    &:hover{
+
+      cursor:pointer;
+    }
+    &:active{
+      background-color:black;
+      color:white;
+      outline:none;
+    }
   }
 }
 body{
@@ -307,11 +316,12 @@ button{
     font-size:20px;
     border:1px solid black;
     &.clicked{
-      background-color:red;
+      background-color:grey;
     }
     &:hover{
       color:white;
       background-color:black;
+      cursor:pointer;
     }
 
   }

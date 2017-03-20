@@ -1,12 +1,31 @@
 @import 'reset.scss';
 
 
+#chartwrapper{
+  width:50%;
+}
+
+h3{
+  font-size:36px;
+
+}
+
+#chartinterface{
+  position:relative;
+}
+
+#chartselector{
+  width:35%;
+  position:absolute;
+  top:0;
+  right:0;
+}
 body{
   background-color:white;
 }
 
 .container {
-    max-width: 800px;
+    max-width: 1000px;
     margin: auto;
 }
 
@@ -40,6 +59,43 @@ body{
     display:none!important;
 }
 
+.mapael .zoomButton {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    color: #000;
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    text-align: center;
+    border-radius: 3px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    font-weight: bold;
+    left: 10px;
+
+    -webkit-user-select: none;
+    -khtml-user-select : none;
+    -moz-user-select: none;
+    -o-user-select : none;
+    user-select: none;
+}
+
+/* Reset Zoom button first */
+.mapael .zoomReset {
+    top: 10px;
+}
+
+/* Then Zoom In button */
+.mapael .zoomIn {
+    top: 30px;
+}
+
+/* Then Zoom Out button */
+.mapael .zoomOut {
+    top: 50px;
+}
+
 #modal{
   position:fixed;
   width:100%;
@@ -53,10 +109,38 @@ body{
 }
 
 
+
+
+
+
+button{
+
+
+  &.changescale{
+    outline:0;
+    width:15%;
+    padding:1rem 0rem 1rem 0rem;
+    background-color:rgba(255,255,255,0);
+    border-radius:none;
+    font-size:20px;
+    border:1px solid black;
+    &.clicked{
+      background-color:red;
+    }
+    &:hover{
+      color:white;
+      background-color:black;
+    }
+
+  }
+
+}
+
 .myText {
     padding: 10px;
     height:200px;
     color: black;
+    border: 1px solid black;
     margin: 10px;
     span{
       font-family:sans-serif;

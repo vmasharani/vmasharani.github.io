@@ -6,10 +6,9 @@ $(document).ready(function(){
 
     var plots={};
     var slices=[];
-
     var statetotals=[];
-
     var dropdown=$("#statedropdown");
+    var lastpressed="perscale";
 
     var states=["AK", "AL", "AR", "AZ", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "IA", "ID", "IL", "IN", "KS", "KY", "LA", "MA","MD", "ME", "MI", "MN", "MO", "MT", "NC", "NE", "NH", "NJ", "NM", "NV", "NY", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VA", "VT", "WA", "WI", "WV", "WY"];
     var statedata=new Array();
@@ -33,6 +32,14 @@ $.getJSON('data/testdata.json',function(data){
   var sexualtotal=0;
   var disabletotal=0;
   var gendertotal=0;
+
+  var natlethnictotal=0;
+  var natlreligiontotal=0;
+  var natlsexualtotal=0;
+  var natldisabletotal=0;
+  var natlgendertotal=0;
+
+
 
         console.log('success');
         dataType: 'json'
@@ -88,6 +95,18 @@ $.getJSON('data/testdata.json',function(data){
                     blurb: "Hate crimes based on ethnicity: "+data[i].rea+"<br/>"+"Hate crimes based on religion: "+data[i].religion+"<br/>"+"Hate crimes based on sexual orientation: "+data[i].sexualorientation+"<br/>"+"Hate crimes based on disability: "+data[i].disability+"<br/>"+"hate crimes based on gender: "+parseInt(data[i].genderidentity+data[i].gender)+"<br/>"+"<span class='numemph'>"+"Total hate crimes: "+totalcrimes+"</span> <br/>Hate crimes per 10000: "+crimesper,
                 }
           )
+
+          natlethnictotal+=data[i].rea;
+          natlreligiontotal+=data[i].religion;
+          natlsexualtotal+=data[i].sexualorientation;
+          natldisabletotal+=data[i].disability;
+          natlgendertotal+=data[i].gender;
+
+
+          if(i==data.length-1){
+            $('#conclusion').append(natlethnictotal);
+          };
+
 
           var currentstate=data[i].state;
           if (data[i].state!="WY" && data[i].state==data[i+1].state){
@@ -390,6 +409,7 @@ $.getJSON('data/testdata.json',function(data){
 
 
         $('.changescale').on('click',function(event){
+          $('#'+lastpressed).removeClass('clicked');
           var which=event.target.id;
           var updatedOptions={'plots':{}};
 
@@ -399,12 +419,17 @@ $.getJSON('data/testdata.json',function(data){
             var crimesper=parseFloat((totalcrimes*10000)/truepop);
             if (which=='popscale'){
               plots['location'+i].value=data[i].population*.65;
+
             }
             if (which=='perscale'){
               plots['location'+i].value=crimesper*100;
+
             }
             if (which=='crimescale'){
               plots['location'+i].value=totalcrimes*10;
+            }
+            if (which=='equalscale'){
+              plots['location'+i].value=21;
             }
           }
 
@@ -413,6 +438,10 @@ $.getJSON('data/testdata.json',function(data){
               mapOptions:updatedOptions,
               animDuration: 200
           }]);
+
+          lastpressed=which;
+          $('#'+lastpressed).addClass('clicked');
+
         });
 
         var ctx = document.getElementById("myChart");
@@ -424,24 +453,28 @@ $.getJSON('data/testdata.json',function(data){
           label: '# of Votes',
           data: statedata,
           backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)',
-              'rgba(75, 192, 192, 0.2)',
-              'rgba(153, 102, 255, 0.2)'
+              'rgba(165, 114, 89, 0.8)',
+              'rgba(204, 132, 199, 0.8)',
+              'rgba(89, 219, 171, 0.8)',
+              'rgba(80, 104, 168, 0.8)',
+              'rgba(144, 135, 145, 0.8)'
           ],
           borderColor: [
-              'rgba(255,99,132,1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)'
+              'rgba(0,0,0,1)',
+              'rgba(0,0,0,1)',
+              'rgba(0,0,0,1)',
+              'rgba(0,0,0,1)',
+              'rgba(0,0,0,1)'
           ],
           borderWidth: 1
       }]
   },
               options: {
-                cutoutPercentage: 0
+                cutoutPercentage: 0,
+                legend :{
+                  position : "left"
+
+                }
               }
                 });
 

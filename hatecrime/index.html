@@ -7,10 +7,10 @@
 </head>
 <body>
 
-  <div id="modal"></div>
 
 
   <div class="container">
+    <h2>250 words narrating data</h2>
 
 
     <div class="myText">
@@ -20,12 +20,27 @@
 
       <div class="map"><span></span></div>
 
-      <button id="popscale" class="changescale">Scale By Population</button>
-      <button id="perscale" class="changescale">Scale By per1000</button>
-      <button id="crimescale" class="changescale">Scale By Number of Crimes</button>
-      <canvas id="myChart" width="400" height="400"></canvas>
-      <select id="statedropdown"></select>
-      <button id="viewdata"></button>
+      <div id="scalebuttons">
+        <button id="popscale" class="changescale">Scale by population</button>
+        <button id="perscale" class="changescale">Scale by per1000</button>
+        <button id="crimescale" class="changescale">Scale by number of crimes</button>
+        <button id="equalscale" class="changescale">Equalize scale</button>
+      </div>
+
+      <h3>State data</h3>
+      <div id="chartinterface">
+      <div id="chartwrapper">
+          <canvas id="myChart"></canvas>
+      </div>
+      <div id="chartselector">
+
+
+          <select id="statedropdown"></select>
+          <button id="viewdata">View data</button>
+      </div>
+    </div>
+
+    <div id="conclusion"></div>
 </div>
 
   <ul>

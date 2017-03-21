@@ -6,13 +6,13 @@ $mobile: new-breakpoint(max-width 771px);
 
 
 .description{
-  font-family:sans-serif;
+  font-family:'Work Sans', sans-serif;
 
 }
 
 h1{
   font-size:36px;
-  font-family:sans-serif;
+  font-family:'Work Sans', sans-serif;
   font-weight:bold;
 }
 
@@ -41,7 +41,7 @@ h1{
 #cover {
   display: none;
   position: fixed;
-  z-index: 0;
+  z-index: 1;
   left: 0;
   top: 0;
   bottom:0;
@@ -50,7 +50,7 @@ h1{
   height: 100%;
   // overflow: auto;
   background-color: rgb(0,0,0);
-  background-color: rgba(217,230,230,0.6);
+  background-color: rgba(255,0,0,.4);
 }
 
 .visible{
@@ -71,9 +71,9 @@ h1{
     }
     display:none;
     position: fixed;
-    width:90%;
+    width:70%;
     padding:20px;
-    height:90%;
+    height:70%;
     top:50%;
     left:50%;
     transform: translate(-50%, -50%);
@@ -134,11 +134,15 @@ h1{
 
 
 #chartwrapper{
+  @include media($mobile){
+    width:100%;
+    text-align:center;
+  }
   width:70%;
 }
 
 h3{
-  font-family:sans-serif;
+  font-family:'Work Sans', sans-serif;
   font-size:29px;
   margin-bottom:4rem;
 
@@ -149,12 +153,22 @@ h3{
 }
 
 .conclusion{
+  @include media($mobile){
+    font-size:16px;
+  }
   font-size:36px;
-  font-family:sans-serif;
+  font-family:'Work Sans', sans-serif;
   line-height:120%;
 }
 
 #chartselector{
+  @include media($mobile){
+    width:100%;
+    position:relative;
+    display:block;
+    margin-top:4rem;
+
+  }
   width:25%;
   position:absolute;
   top:0;
@@ -162,9 +176,11 @@ h3{
   select{
     background-color:#e0e2e5;
     font-size:18px;
+    font-family:'Work Sans',sans-serif;
 
   }
   button{
+
     font-size:18px;
     background-color:#e0e2e5;
     border:1px solid black;
@@ -197,7 +213,7 @@ body{
 
 a{
   &.projectlink{
-    font-family:sans-serif;
+    font-family:'Work Sans', sans-serif;
     border:1px solid black;
     font-weight:bold;
     padding: 4px;
@@ -219,11 +235,12 @@ a{
 .mapael .map {
     position: relative;
     margin:4rem 0rem 4rem 0rem;
+    z-index:0;
 }
 
 .mapael .mapTooltip {
     position: absolute;
-    font-family:sans-serif;
+    font-family:'Work Sans', sans-serif;
     background-color: white;
     filter: alpha(opacity=70);
     padding: 3px;
@@ -306,6 +323,7 @@ button{
     @include media($mobile){
       width:100%;
     }
+    font-family:'Work Sans',sans-serif;
     outline:0;
     width:15%;
     padding:1rem 0rem 1rem 0rem;
@@ -330,12 +348,12 @@ button{
 
 .myText {
     padding: 10px;
-    height:200px;
+    height:140px;
     color: black;
     border: 1px solid black;
     margin: 10px;
     span{
-      font-family:sans-serif;
+      font-family:'Work Sans', sans-serif;
       font-size:14px;
     }
 }

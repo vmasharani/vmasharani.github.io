@@ -4,6 +4,8 @@
 
 $(document).ready(function(){
 
+
+
   var modal = document.getElementById("contentmodal");
   var close = document.getElementsByClassName("close")[0];
   var cover = document.getElementById("cover");
@@ -484,7 +486,21 @@ $(document).ready(function(){
       options: {
         cutoutPercentage: 0,
         legend :{
-        position : "left"
+          position : "top",
+          labels:{
+            fontFamily: "'Work Sans', sans-serif",
+          }
+        },
+        tooltips:{
+          bodyFontFamily:"'Work Sans', sans-serif"
+
+        },
+        pieceLabel: {
+          mode: 'value',
+          fontSize: 14,
+          fontStyle: 'bold',
+          fontColor: '#000',
+          fontFamily:'Work Sans'
         }
       }
     });

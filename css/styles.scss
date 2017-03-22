@@ -309,6 +309,16 @@ body{
 
     }
 
+    #hatecrime{
+      @include media($mobile){
+        background-image:url('../images/hatecrimepreview.png');
+      }
+      &:hover{
+        background-image:url('../images/hatecrimepreview.png');
+      }
+
+    }
+
     #inspire{
       @include media($mobile){
         background-image:url('../images/inspire.jpg');

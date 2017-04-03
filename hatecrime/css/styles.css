@@ -161,8 +161,14 @@ h1 {
 
 h3 {
   font-family: 'Work Sans', sans-serif;
+  color: #E2362D;
   font-size: 29px;
   margin-bottom: 4rem; }
+  h3 a {
+    text-decoration: underline;
+    color: black; }
+    h3 a:hover {
+      text-decoration: none; }
 
 #chartinterface {
   position: relative; }
@@ -174,6 +180,16 @@ h3 {
   @media screen and (max-width: 771px) {
     .conclusion {
       font-size: 16px; } }
+
+#timecomp {
+  font-size: 20px;
+  font-family: 'Work Sans', sans-serif; }
+  #timecomp .column {
+    width: 10%;
+    display: inline-block; }
+  #timecomp .footnote {
+    font-size: 15px;
+    color: grey; }
 
 #chartselector {
   width: 25%;

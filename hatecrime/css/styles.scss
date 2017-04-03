@@ -143,14 +143,23 @@ h1{
 
 h3{
   font-family:'Work Sans', sans-serif;
+  color:#E2362D;
   font-size:29px;
   margin-bottom:4rem;
+  a{
+    text-decoration:underline;
+    color:black;
+    &:hover{
+      text-decoration:none;
+    }
+  }
 
 }
 
 #chartinterface{
   position:relative;
 }
+
 
 .conclusion{
   @include media($mobile){
@@ -159,6 +168,20 @@ h3{
   font-size:36px;
   font-family:'Work Sans', sans-serif;
   line-height:120%;
+}
+
+#timecomp{
+  font-size:20px;
+  font-family:'Work Sans', sans-serif;
+  .column{
+    width:10%;
+    display:inline-block;
+  }
+
+  .footnote{
+    font-size:15px;
+    color:grey;
+  }
 }
 
 #chartselector{

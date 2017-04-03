@@ -120,7 +120,7 @@ $(document).ready(function(){
               longitude: data[i].longitude,
               total: totalcrimes,
               per1000: crimesper,
-              href: "#",
+              href: "",
               tooltip: {
                   content: data[i].agencyname+" ("+totalcrimes+" total crimes)",
               },
@@ -178,35 +178,14 @@ $(document).ready(function(){
       statedata=statetotals[statetotals.indexOf("AK")+1];
       myPieChart.data.datasets[0].data=statedata;
       myPieChart.update();
-        //
-        // for (var i=0;i<data.length;i++){
-        //
-        //   if(data[i].population!=null){
-        //     console.log(data[i].agencyname);
-        //
-        //
-        //   var scaledvalue=map_range(data[i].population,1.1,8550,5,300);
-        //
-        //   var newslice={
-        //       size: parseInt(Math.floor(scaledvalue)),
-        //       type: "circle",
-        //       min: data[i].population-10,
-        //       max:data[i].population+10,
-        //       attrs: {
-        //           fill: "#89ff72"
-        //       },
-        //     }
-        //
-        //   slices.push(newslice);
-        //   console.log(data[i].agencyname,parseInt(Math.floor(scaledvalue)));
-        //   }
-        //
-        // }
+
       $(".mapcontainer").mapael({
         map: {
           name: "usa_states",
           zoom: {
-            enabled: true
+            enabled: true,
+            mousewheel: true,
+            animDuration: 250,
           },
           defaultArea: {
             attrs:{
@@ -423,6 +402,9 @@ $(document).ready(function(){
       });
     },1000);
 
+
+
+
     $('.changescale').on('click',function(event){
       $('#'+lastpressed).removeClass('clicked');
       var which=event.target.id;
@@ -445,7 +427,7 @@ $(document).ready(function(){
         }
 
         if (which=='equalscale'){
-          plots['location'+i].value=21;
+          plots['location'+i].value=16;
         }
       }
 
@@ -512,4 +494,36 @@ $(document).ready(function(){
       myPieChart.update();
     })
   });
+
+
+
+
+  var ctx2 = document.getElementById("myChart2");
+  var myLineChart = new Chart(ctx2, {
+    type: 'line',
+    data:{
+      labels:years,
+      datasets:[{
+      data:totals,
+
+      spanGaps:false,
+      lineTension:0,
+      backgroundColor:'rgba(0,0,0,0.0)',
+      borderColor:'rgba(0,0,0,1)',
+      borderWidth:1
+    }]},
+    options: {
+      legend:{
+        display: false
+      },
+      hover:{
+
+      }
+    }
+  });
+
+
+
+
+
 });

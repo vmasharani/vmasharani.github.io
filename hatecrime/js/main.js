@@ -68,13 +68,12 @@ $(document).ready(function(){
   }
 
   // MAPPING FUNCTION
-
   function map_range(value, low1, high1, low2, high2) {
       return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
   }
 
 
-
+  // GETS DATA
   $.getJSON('data/testdata.json',function(data){
 
     // CRIMECOUNTERS
@@ -86,8 +85,12 @@ $(document).ready(function(){
     console.log('success');
     dataType: 'json'
 
+// ITERATES THROUGH DATA
+
     $.each(data,function(i,ev){
 
+
+// GETS LONGITUDE, LATITUDE
       if(ev.agencyname!="Total"){
         var longitude;
         var latitude;
@@ -106,7 +109,10 @@ $(document).ready(function(){
       }
     });
 
+// TIMEOUT SO THAT AJAX REQUEST CAN COMPLETE.
     setTimeout(function(){
+
+// PLOTS DATA USING MAPAEL
 
       for (var i=0;i<data.length;i++){
         var totalcrimes=parseInt(data[i].rea)+parseInt(data[i].religion)+parseInt(data[i].sexualorientation)+parseInt(data[i].disability)+parseInt(data[i].gender)+parseInt(data[i].genderidentity);
@@ -132,6 +138,8 @@ $(document).ready(function(){
         natlsexualtotal+=data[i].sexualorientation;
         natldisabletotal+=data[i].disability;
         natlgendertotal+=data[i].gender;
+
+// WRITES CONCLUSION STATEMENT
 
         if(i==data.length-1){
           $('#conclusion').append("<div class='conclusion'>In the USA, there were "+natlethnictotal+" hate crimes based on ethnicity, <br>"+natlreligiontotal+" hate crimes based on religion, <br>"+natlsexualtotal+" hate crimes based on sexual orientation, <br>"+natldisabletotal+" hate crimes based on disability, and <br>"+natlgendertotal+" hate crimes based on gender in 2015.</div>");
@@ -178,6 +186,8 @@ $(document).ready(function(){
       statedata=statetotals[statetotals.indexOf("AK")+1];
       myPieChart.data.datasets[0].data=statedata;
       myPieChart.update();
+
+// CREATES MAPAEL UNDER MAP
 
       $(".mapcontainer").mapael({
         map: {
@@ -403,7 +413,7 @@ $(document).ready(function(){
     },1000);
 
 
-
+// EVENTS FOR CHANGING THE SCALE OF THE MAP
 
     $('.changescale').on('click',function(event){
       $('#'+lastpressed).removeClass('clicked');
@@ -440,6 +450,8 @@ $(document).ready(function(){
       lastpressed=which;
       $('#'+lastpressed).addClass('clicked');
     });
+
+// PIE CHART
 
     var ctx = document.getElementById("myChart");
     var myPieChart = new Chart(ctx,{
@@ -487,6 +499,8 @@ $(document).ready(function(){
       }
     });
 
+// DROPDOWN CHANGE EVENT FOR STATE PIE CHART
+
     $('#statedropdown').change(function(event){
       var pickedstate=($('#statedropdown :selected').text());
       statedata=statetotals[statetotals.indexOf(pickedstate)+1]
@@ -495,8 +509,7 @@ $(document).ready(function(){
     })
   });
 
-
-
+// LINE CHART
 
   var ctx2 = document.getElementById("myChart2");
   var myLineChart = new Chart(ctx2, {
@@ -505,7 +518,6 @@ $(document).ready(function(){
       labels:years,
       datasets:[{
       data:totals,
-
       spanGaps:false,
       lineTension:0,
       backgroundColor:'rgba(0,0,0,0.0)',
@@ -517,13 +529,7 @@ $(document).ready(function(){
         display: false
       },
       hover:{
-
       }
     }
   });
-
-
-
-
-
 });

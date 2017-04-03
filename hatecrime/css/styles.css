@@ -237,6 +237,11 @@ a.projectlink {
   padding: 4px;
   color: black;
   text-decoration: underline; }
+  @media screen and (max-width: 771px) {
+    a.projectlink {
+      width: 100%;
+      display: block;
+      margin-bottom: 10px; } }
   a.projectlink:hover {
     text-decoration: none;
     background-color: #eaeaea; }

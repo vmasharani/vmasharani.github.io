@@ -236,6 +236,11 @@ body{
 
 a{
   &.projectlink{
+    @include media($mobile){
+      width:100%;
+      display:block;
+      margin-bottom:10px;
+    }
     font-family:'Work Sans', sans-serif;
     border:1px solid black;
     font-weight:bold;

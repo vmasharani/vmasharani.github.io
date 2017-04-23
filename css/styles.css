@@ -161,6 +161,12 @@ img {
     .delta {
       width: 92%; } }
 
+.epsilon {
+  width: 34%; }
+  @media screen and (max-width: 771px) {
+    .epsilon {
+      width: 92%; } }
+
 .wflap {
   width: 72.7%;
   margin-right: 4vw; }

@@ -134,6 +134,13 @@ img{
   width:47%;
 }
 
+.epsilon{
+  @include media($mobile){
+    width:92%;
+  }
+  width:34%;
+}
+
 .wflap{
   @include media($mobile){
     width:92%;

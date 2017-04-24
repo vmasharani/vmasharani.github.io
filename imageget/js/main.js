@@ -32,5 +32,6 @@ $(function() {
         // console.log(a23string);
 
       var retrieve=localStorage.getItem('a23trend');
+      console.log("hello");
       console.log(JSON.parse(retrieve));
     });

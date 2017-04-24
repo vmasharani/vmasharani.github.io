@@ -32,6 +32,9 @@ $(function() {
         // console.log(a23string);
 
       var retrieve=localStorage.getItem('a23trend');
-      console.log("hello");
-      console.log(JSON.parse(retrieve));
-    });
+      var parsedretrieve=JSON.parse(retrieve);
+      // console.log(parsedretrieve.responseJSON.categories[0].tiles[0].image.contentUrl)
+       $("#test").append("<img src='"+parsedretrieve.responseJSON.categories[0].tiles[0].image.contentUrl+"'/>'");
+
+
+  });

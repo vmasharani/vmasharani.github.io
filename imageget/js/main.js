@@ -1,8 +1,8 @@
 $(function() {
-      var params = {
-            q:"Maryland Institute College of Art"
-                  };
-
+      // var params = {
+      //       q:"Maryland Institute College of Art"
+      //             };
+      //
       // var data=   $.ajax({
       //       url: "https://api.cognitive.microsoft.com/bing/v5.0/images/trending" ,
       //       beforeSend: function(xhrObj){
@@ -27,7 +27,7 @@ $(function() {
       //   // console.log(data);
       //   setTimeout(function(){
       //
-      //           saveText( JSON.stringify(data), "trendinga24.json" );
+      //           saveText( JSON.stringify(data), "trendinga27.json" );
       //   },1000);
       //
       //   function saveText(text, filename){
@@ -36,13 +36,48 @@ $(function() {
       //   a.setAttribute('download', filename);
       //   a.click()
       // }
-  var a24 = $.getJSON('data/trendinga24.json',function(data){
-    dataType: 'json'
-    return data
-    });
+
+
+      // $('#download-btn').click(function(){
+        var a28=$.getJSON('data/trendinga28.json',function(data){
+          console.log(data);
+          dataType: 'json'
+
+          // for (var i=2;i<3;i++){
+          //   for (var j=0;j<data.responseJSON.categories[0].tiles.length;j++){
+          //     var link = document.createElement('a');
+          //     console.log(data.responseJSON.categories[i].tiles[j].image.contentUrl);
+          //     link.download='a24'+'_'+data.responseJSON.categories[i].title+j;
+          //     link.target="blank";
+          //     link.href = data.responseJSON.categories[i].tiles[j].image.contentUrl;  // use realtive url
+          //     document.body.appendChild(link);
+          //     link.click();
+          //   }
+          // }
+
+
+          return data
+          });
+     //
+     //
+    //  });
+
+
+    var a27 = $.getJSON('data/trendinga27.json',function(data){
+      dataType: 'json'
+      return data
+      });
+      var a28 = $.getJSON('data/trendinga28.json',function(data){
+        dataType: 'json'
+        return data
+        });
+
+        console.log(a28);
+
+
 
     setTimeout(function(){
-      console.log()
+
 
       // var image = new Image();
       // image.crossOrigin = 'anonymous';
@@ -65,37 +100,90 @@ $(function() {
       //   var dataURL = canvas.toDataURL();
       //
       //   document.write(dataURL);
-      // };
+    //   // };
+    //
+    //   window.onload = function() {
+    //   var width = 400;
+    //   var height = 400;
+    //   var canvas = document.getElementById('canvas');
+    //   var context = canvas.getContext('2d');
+    //   var image = document.getElementById('image');
+    //   debugger
+    //   window.fastThreshold = 10;
+    //
+    //   var doFindFeatures = function() {
+    //     tracking.Fast.THRESHOLD = window.fastThreshold;
+    //     context.drawImage(image, 0, 0, width, height);
+    //     var imageData = context.getImageData(0, 0, width, height);
+    //     var gray = tracking.Image.grayscale(imageData.data, width, height);
+    //     var corners = tracking.Fast.findCorners(gray, width, height);
+    //     for (var i = 0; i < corners.length; i += 2) {
+    //       context.fillStyle = '#f00';
+    //       context.fillRect(corners[i], corners[i + 1], 3, 3);
+    //     }
+    //   };
+    //   doFindFeatures();
+    // }
+    //
+    //
+    //   var gui = new dat.GUI();
+    //   gui.add(window, 'fastThreshold', 0, 100).onChange(doFindFeatures);
+    // ;
 
-      function getDataUri(url, callback) {
-    var image = new Image();
-
-    image.onload = function () {
-        var canvas = document.createElement('canvas');
-        canvas.width = this.naturalWidth; // or 'width' if you want a special/scaled size
-        canvas.height = this.naturalHeight; // or 'height' if you want a special/scaled size
-
-        canvas.getContext('2d').drawImage(this, 0, 0);
-
-        // Get raw image data
-        callback(canvas.toDataURL('image/png').replace(/^data:image\/(png|jpg);base64,/, ''));
-
-        // ... or get as Data URI
-        callback(canvas.toDataURL('image/png'));
-    };
-
-    image.src = url;
-}
-
-// Usage
-getDataUri(a24.responseJSON.responseJSON.categories[0].tiles[0].image.contentUrl, function(dataUri) {
-    // Do whatever you'd like with the Data URI!
-});
+// create an app to download all images that i have saved as of now with a name that's easy to iterate through (date_category_number)
+// create arrays of images
+//
 
 
 
     },1000)
 
+
+//do some object processing (resort by date then by category)
+// a24, a27, a28, categories for each, images for each
+ // big array that creates canvases
+// big array that puts one image per canvas
+// creates a point list per image --> use objects? create an object with properties width, height, position, points
+// adds style to original image (copied)
+    window.onload = function() {
+      var width = 400;
+      var height = 400;
+      var canvas = document.getElementById('canvas');
+      var context = canvas.getContext('2d');
+      var image = document.getElementById('image');
+      window.fastThreshold = 50;
+      var doFindFeatures = function() {
+        tracking.Fast.THRESHOLD = window.fastThreshold;
+        context.drawImage(image, 0, 0, width, height);
+        var imageData = context.getImageData(0, 0, width, height);
+        var gray = tracking.Image.grayscale(imageData.data, width, height);
+        var corners = tracking.Fast.findCorners(gray, width, height);
+        for (var i = 0; i < corners.length; i += 2) {
+          context.fillStyle = '#f00';
+          context.fillRect(corners[i], corners[i + 1], 3, 3);
+        };
+
+        // polygon(0px 208px, 146.5px 207px, 147px 141.2px, ...)
+
+        var stylestring="polygon(";
+        for (var i=0;i<corners.length;i+=2){
+
+          stylestring+=corners[i]+"px "+corners[i+1]+"px, ";
+
+        }
+        console.log(stylestring);
+        stylestring = stylestring.slice(0,-2);
+        stylestring+=")";
+        document.getElementById("fix").setAttribute( "style", "clip-path:"+stylestring);
+
+
+      };
+      doFindFeatures();
+
+
+      // var gui = new dat.GUI();
+      // gui.add(window, 'fastThreshold', 0, 100).onChange(doFindFeatures);
+    }
 
 
   });

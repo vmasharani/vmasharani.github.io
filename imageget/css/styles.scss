@@ -1,14 +1,26 @@
+body{
+  background-color:red;
+}
 .demo-container {
-  background: #131112;
-}
-#image {
-  position: absolute;
-  left: -1000px;
-  top: -1000px;
-}
-#canvas {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin: -200px 0 0 -200px;
-}
+    background: #131112;
+
+  }
+  #image {
+    position: absolute;
+    left: -1000px;
+    top: -1000px;
+  }
+  #canvas {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -200px 0 0 -200px;
+    display:none;
+  }
+
+  #fix{
+    position:absolute;
+    width: 400px;
+    height: 400px;
+
+  }

@@ -89,7 +89,7 @@ $(function() {
       var canvas = document.getElementById('canvas');
       var context = canvas.getContext('2d');
       var image = document.getElementById('image');
-      window.fastThreshold = 30;
+      window.fastThreshold = 80;
       // var doFindFeatures = function() {
       //   tracking.Fast.THRESHOLD = window.fastThreshold;
       //   context.drawImage(image, 0, 0, width, height);
@@ -162,12 +162,17 @@ $(function() {
       // }
 
         for (var k=0;k<dates.length;k++){
+          idlist[k]=new Array();
+          pointlist[k]=new Array();
+
           for (var j=0;j<cats.length;j++){
             for (var i=0;i<9;i++){
               img= new Image();
 
               img.src="assets/"+dates[k]+"_"+cats[j]+"_"+(i+1)+".jpg"
+              console.log(k);
               img.onload=(function(){
+
 
 
                   var canvas = document.getElementById('canvas');
@@ -181,13 +186,22 @@ $(function() {
                   this.height=400;
                   // COULD POTENTIALLY CHANGE ID BASED ON CATEGORY
                   this.id="img"+totalcounter;
-                  idlist.push("img"+totalcounter);
 
+                  for (var l=0;l<idlist.length;l++){
+                    if(this.src.includes(dates[l])){
+                      idlist[l].push("img"+totalcounter);
+                    }
 
+                  }
+
+                  this.setAttribute("style","display:none;")
                   $('#wholeimages').append(this);
                   totalcounter++;
 
                   // console.log(this);
+
+
+
 
                   context.clearRect(0, 0, canvas.width, canvas.height);
                   var width = 400;
@@ -216,7 +230,12 @@ $(function() {
                   stylestring = stylestring.slice(0,-2);
                   stylestring+=")";
 
-                  pointlist.push(stylestring);
+                  for (var l=0;l<pointlist.length;l++){
+                    if(this.src.includes(dates[l])){
+                      pointlist[l].push(stylestring);
+                    }
+
+                  }
 
 
 
@@ -235,26 +254,49 @@ $(function() {
         }
 
         // console.log(pointlist);
-        console.log(idlist);
+        // console.log(idlist);
 
 
 
 
 
       setTimeout(function(){
+        var localcounter=0;
         for (var i=0;i<idlist.length;i++){
-          document.getElementById(idlist[i]).setAttribute("style","clip-path:"+pointlist[i]);
-          console.log("hello");
+
+          for(var j=0;j<idlist[i].length;j++){
+            // console.log(idlist[i]);
+            document.getElementById(idlist[i][j]).setAttribute("style","clip-path:"+pointlist[i][j]+";opacity:.5;display:inline-block;top:"+localcounter*50+";");
+            localcounter++;
+            // console.log(localcounter);
+          }
+
 
         }
-      }, 500);
+        var pieceheight=$('#wholeimages').height();
+        console.log(pieceheight);
+
+        var div = $('.columnwrapper');
+
+    setInterval(function(){
+            var pos = div.scrollTop();
+            div.scrollTop(++pos);
+            console.log(div.scrollTop());
+            if(div.scrollTop()>=(pieceheight-1000)){
+              div.scrollTop(0);
+            }
+        }, 1);
+
+
+
+      }, 4000);
 
         // console.log(pointlist);
 
+
+
       };
 
-// array of people, animal, nature, iterate through each number (a27_xxxxx_1) until stringname[4!=p], then move on to
-// progress to the next item in the array—each of these is logging an image to the dom with a custom ID.
 
 
     });

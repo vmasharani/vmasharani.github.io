@@ -1,5 +1,5 @@
 body {
-  background-color: red; }
+  background-color: #eac086; }
 
 .demo-container {
   background: #131112; }
@@ -24,5 +24,18 @@ body {
 img {
   width: 400px;
   height: 400px; }
+
+.columnwrapper {
+  height: 60vh;
+  overflow-y: scroll;
+  position: relative;
+  padding: 4rem;
+  width: 400px; }
+
+#wholeimages {
+  position: relative; }
+
+::-webkit-scrollbar {
+  display: none; }
 
 /*# sourceMappingURL=styles.css.map */

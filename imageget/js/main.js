@@ -76,16 +76,6 @@ $(function() {
 
 
 
-    setTimeout(function(){
-
-// create an app to download all images that i have saved as of now with a name that's easy to iterate through (date_category_number)
-// create arrays of images
-//
-
-
-
-    },1000)
-
 
 //do some object processing (resort by date then by category)
 // a24, a27, a28, categories for each, images for each
@@ -99,30 +89,31 @@ $(function() {
       var canvas = document.getElementById('canvas');
       var context = canvas.getContext('2d');
       var image = document.getElementById('image');
-      window.fastThreshold = 50;
-      var doFindFeatures = function() {
-        tracking.Fast.THRESHOLD = window.fastThreshold;
-        context.drawImage(image, 0, 0, width, height);
-        var imageData = context.getImageData(0, 0, width, height);
-        var gray = tracking.Image.grayscale(imageData.data, width, height);
-        var corners = tracking.Fast.findCorners(gray, width, height);
-        for (var i = 0; i < corners.length; i += 2) {
-          context.fillStyle = '#f00';
-          context.fillRect(corners[i], corners[i + 1], 3, 3);
-        };
-
-        // polygon(0px 208px, 146.5px 207px, 147px 141.2px, ...)
-
-        var stylestring="polygon(";
-        for (var i=0;i<corners.length;i+=2){
-
-          stylestring+=corners[i]+"px "+corners[i+1]+"px, ";
-
-        }
-        console.log(stylestring);
-        stylestring = stylestring.slice(0,-2);
-        stylestring+=")";
-        document.getElementById("fix").setAttribute( "style", "clip-path:"+stylestring);
+      window.fastThreshold = 30;
+      // var doFindFeatures = function() {
+      //   tracking.Fast.THRESHOLD = window.fastThreshold;
+      //   context.drawImage(image, 0, 0, width, height);
+      //   var imageData = context.getImageData(0, 0, width, height);
+      //   var gray = tracking.Image.grayscale(imageData.data, width, height);
+      //   var corners = tracking.Fast.findCorners(gray, width, height);
+      //   for (var i = 0; i < corners.length; i += 2) {
+      //     context.fillStyle = '#f00';
+      //     context.fillRect(corners[i], corners[i + 1], 3, 3);
+      //   };
+      //
+      //   // polygon(0px 208px, 146.5px 207px, 147px 141.2px, ...)
+      //
+      //   var stylestring="polygon(";
+      //   for (var i=0;i<corners.length;i+=2){
+      //
+      //     stylestring+=corners[i]+"px "+corners[i+1]+"px, ";
+      //
+      //   }
+      // }
+        // console.log(stylestring);
+        // stylestring = stylestring.slice(0,-2);
+        // stylestring+=")";
+        // document.getElementById("fix").setAttribute( "style", "clip-path:"+stylestring);
 
         var dates=["a24","a27","a28","a29"]
         var cats = ["people","animal","nature"];
@@ -130,48 +121,140 @@ $(function() {
         var daycounter=0;
         var catcounter = 0;
         var imgcounter = 1;
+        var totalcounter=0;
         var loading=false;
 
-        for (var i=0;i<10;i++){
-          img= new Image();
+        var pointlist=new Array();
+        var idlist=new Array();
 
-          img.src="assets/"+dates[daycounter]+"_"+cats[catcounter]+"_"+imgcounter+".jpg"
-          img.onload=(function(){
-            var imagecheck = img.width;
-            if (imagecheck.width!=0){
-              console.log("whole image");
-              $('#wholeimages').append(this);
+      //   var doFindFeatures = function() {
+      //     context.clearRect(0, 0, canvas.width, canvas.height);
+      //     var width = 400;
+      //     var height = 400;
+      //
+      //     tracking.Fast.THRESHOLD = window.fastThreshold;
+      //     context.drawImage(this.img, 0, 0, width, height);
+      //     var imageData = context.getImageData(0, 0, width, height);
+      //     var gray = tracking.Image.grayscale(imageData.data, width, height);
+      //     var corners = tracking.Fast.findCorners(gray, width, height);
+      //     for (var i = 0; i < corners.length; i += 2) {
+      //       context.fillStyle = '#f00';
+      //       // context.fillRect(corners[i], corners[i + 1], 3, 3);
+      //     };
+      //
+      //     // console.log(this.img);
+      //
+      //     // polygon(0px 208px, 146.5px 207px, 147px 141.2px, ...)
+      //
+      //     var stylestring="polygon(";
+      //     for (var i=0;i<corners.length;i+=2){
+      //
+      //       stylestring+=corners[i]+"px "+corners[i+1]+"px, ";
+      //
+      //     }
+      //     stylestring = stylestring.slice(0,-2);
+      //     stylestring+=")";
+      //
+      //     pointlist.push(stylestring);
+      //     // console.log(pointlist);
+      //
+      //
+      // }
+
+        for (var k=0;k<dates.length;k++){
+          for (var j=0;j<cats.length;j++){
+            for (var i=0;i<9;i++){
+              img= new Image();
+
+              img.src="assets/"+dates[k]+"_"+cats[j]+"_"+(i+1)+".jpg"
+              img.onload=(function(){
+
+
+                  var canvas = document.getElementById('canvas');
+                  var context = canvas.getContext('2d');
+
+
+                  var imagecheck = img.width;
+                  if (imagecheck.width!=0){
+                  // console.log("whole image");
+                  this.width=400;
+                  this.height=400;
+                  // COULD POTENTIALLY CHANGE ID BASED ON CATEGORY
+                  this.id="img"+totalcounter;
+                  idlist.push("img"+totalcounter);
+
+
+                  $('#wholeimages').append(this);
+                  totalcounter++;
+
+                  // console.log(this);
+
+                  context.clearRect(0, 0, canvas.width, canvas.height);
+                  var width = 400;
+                  var height = 400;
+
+                  tracking.Fast.THRESHOLD = window.fastThreshold;
+                  context.drawImage(this, 0, 0, width, height);
+                  var imageData = context.getImageData(0, 0, width, height);
+                  var gray = tracking.Image.grayscale(imageData.data, width, height);
+                  var corners = tracking.Fast.findCorners(gray, width, height);
+                  for (var i = 0; i < corners.length; i += 2) {
+                    context.fillStyle = '#f00';
+                    // context.fillRect(corners[i], corners[i + 1], 3, 3);
+                  };
+
+                  // console.log(this.img);
+
+                  // polygon(0px 208px, 146.5px 207px, 147px 141.2px, ...)
+
+                  var stylestring="polygon(";
+                  for (var i=0;i<corners.length;i+=2){
+
+                    stylestring+=corners[i]+"px "+corners[i+1]+"px, ";
+
+                  }
+                  stylestring = stylestring.slice(0,-2);
+                  stylestring+=")";
+
+                  pointlist.push(stylestring);
+
+
+
+
+                // var stylestring=doFindFeatures();
+                // console.log("img"+totalcounter);
+
+
+
+              }
+
+
+              });
             }
-          });
-
-
-
-          imgcounter++;
-
+          }
         }
 
+        // console.log(pointlist);
+        console.log(idlist);
+
+
+
+
+
+      setTimeout(function(){
+        for (var i=0;i<idlist.length;i++){
+          document.getElementById(idlist[i]).setAttribute("style","clip-path:"+pointlist[i]);
+          console.log("hello");
+
+        }
+      }, 500);
+
+        // console.log(pointlist);
+
       };
-      doFindFeatures();
 
 // array of people, animal, nature, iterate through each number (a27_xxxxx_1) until stringname[4!=p], then move on to
 // progress to the next item in the array—each of these is logging an image to the dom with a custom ID.
 
 
-    }
-
-    function IsImageOk(img) {
-
-    // However, they do have two very useful properties: naturalWidth and
-    // naturalHeight. These give the true size of the image. If it failed
-    // to load, either of these should be zero.
-
-    if (typeof img.naturalWidth !== "undefined" && img.naturalWidth === 0) {
-        return false;
-    }
-
-    // No other way of checking: assume it’s ok.
-    return true;
-}
-
-
-  });
+    });

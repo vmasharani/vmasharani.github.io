@@ -29,17 +29,23 @@ img{
   width: 400px;
   height: 400px;
 }
+div{
+  display:inline-block;
+}
 
-
+.pagewrapper{
+  width:100%;
+}
 .columnwrapper{
   height:60vh;
   overflow-y:scroll;
   position:relative;
   padding:4rem;
   width:400px;
+  display:inline-block;
 }
 
-#wholeimages{
+#wholeimagesa24, #wholeimagesa27{
   position:relative;
 }
 

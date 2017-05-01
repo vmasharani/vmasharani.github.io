@@ -27,7 +27,7 @@ $(function() {
       //   // console.log(data);
       //   setTimeout(function(){
       //
-      //           saveText( JSON.stringify(data), "trendinga29.json" );
+      //           saveText( JSON.stringify(data), "trendinga30.json" );
       //   },1000);
       //
       //   function saveText(text, filename){
@@ -39,11 +39,11 @@ $(function() {
 
 
       $('#download-btn').click(function(){
-        var a29=$.getJSON('data/trendinga29.json',function(data){
+        var a29=$.getJSON('data/trendinga30.json',function(data){
           console.log(data);
           dataType: 'json'
 
-          for (var i=2;i<3;i++){
+          for (var i=0;i<1;i++){
             for (var j=0;j<data.responseJSON.categories[0].tiles.length;j++){
               var link = document.createElement('a');
               console.log(data.responseJSON.categories[i].tiles[j].image.contentUrl);
@@ -115,7 +115,7 @@ $(function() {
         // stylestring+=")";
         // document.getElementById("fix").setAttribute( "style", "clip-path:"+stylestring);
 
-        var dates=["a24","a27","a28","a29"]
+        var dates=["a24","a27","a28","a29","a30"]
         var cats = ["people","animal","nature"];
         var imgArray = new Array();
         var daycounter=0;
@@ -266,27 +266,56 @@ $(function() {
         for (var i=0;i<idlist.length;i++){
 
           for(var j=0;j<idlist[i].length;j++){
-            // console.log(idlist[i]);
-            document.getElementById(idlist[i][j]).setAttribute("style","clip-path:"+pointlist[i][j]+";"+"-webkit-clip-path:"+pointlist[i][j]+";opacity:.5;display:inline-block;margin-top:-300px;");
+            //  console.log(idlist);
+            if (j==0){
+              document.getElementById(idlist[i][j]).setAttribute("style","clip-path:"+pointlist[i][j]+";"+"-webkit-clip-path:"+pointlist[i][j]+";opacity:.5;display:inline-block");
+
+            }else{
+              document.getElementById(idlist[i][j]).setAttribute("style","clip-path:"+pointlist[i][j]+";"+"-webkit-clip-path:"+pointlist[i][j]+";opacity:.5;display:inline-block;margin-top:-350px");
+
+            }
             localcounter++;
             // console.log(localcounter);
           }
 
 
         }
-        var pieceheight=$('#wholeimages_apr24').height();
-        console.log(pieceheight);
+        var heights = new Array();
 
-        var div = $('.columnwrapper');
+        for (var i=0;i<dates.length;i++){
+          heights.push($('#wholeimages_'+dates[i]).outerHeight());
+        }
+        console.log(heights);
+        // var pieceheight=$('#wholeimages_apr24').height();
+        // console.log(pieceheight);
+        // var div = $('.columnwrapper');
+
+
 
     setInterval(function(){
-            var pos = div.scrollTop();
-            div.scrollTop(++pos);
-            console.log(div.scrollTop());
-            if(div.scrollTop()>=(pieceheight-1000)){
-              div.scrollTop(0);
-            }
-        }, 1);
+      // console.log("hello");
+      for (var i=0;i<dates.length;i++){
+        var div=$('#column'+i);
+        var pos= div.scrollTop();
+        // console.log(pos);
+        // console.log(pos);
+        div.scrollTop(pos+2.5);
+        // console.log($('#wholeimages_'+dates[i]).scrollTop());
+        if(div.scrollTop()>=(heights[i])-div.height()){
+          // console.log("hitstatement");
+          div.scrollTop(0);
+        }
+      }
+
+    }, 20);
+
+    for (var i=0;i<dates.length;i++){
+      $('#labels').append('<span style="position:absolute;left:'+i*400+';">'+dates[i]+'</span>')
+    }
+    var bwidth=dates.length*410;
+    $('body').css("width",bwidth+"px")
+
+
 
 
 

@@ -1,5 +1,5 @@
 body {
-  background-color: #eac086; }
+  background-color: #b5e3d8; }
 
 .demo-container {
   background: #131112; }
@@ -32,17 +32,20 @@ div {
   width: 100%; }
 
 .columnwrapper {
-  height: 60vh;
+  height: 95vh;
   overflow-y: scroll;
   position: relative;
-  padding: 4rem;
   width: 400px;
   display: inline-block; }
 
-#wholeimagesa24, #wholeimagesa27 {
-  position: relative; }
+#wholeimages_a24, #wholeimages_a27, #wholeimages_a28, #wholeimages_a29, #wholeimages_a30 {
+  position: relative;
+  padding-top: 150%;
+  padding-bottom: 150%; }
 
-::-webkit-scrollbar {
-  display: none; }
+#labels span {
+  font-family: sans-serif;
+  font-size: 36px;
+  font-weight: bold; }
 
 /*# sourceMappingURL=styles.css.map */

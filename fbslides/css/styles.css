@@ -1,0 +1,96 @@
+@font-face {
+  font-family: 'SFTextBold';
+  src: url("http://files.cargocollective.com/336335/SFUIText-Bold.ttf"); }
+body {
+  background-color: white; }
+
+#slidewrapper {
+  width: 40%; }
+
+.slide {
+  text-align: center;
+  padding: 79.14px 0px 79.14px 0px;
+  width: 510px;
+  margin: 12px 0px 12px 0px; }
+
+.slidecontent {
+  font-size: 30px;
+  color: white;
+  font-family: sans-serif;
+  font-weight: bold;
+  line-height: 1.2000em;
+  padding: 50px 30px;
+  -webkit-font-smoothing: subpixel-antialiased; }
+
+.red {
+  background-color: #e2013b; }
+
+.blue {
+  background-color: #4a90e2; }
+
+.orangered {
+  background-image: -webkit-linear-gradient(45deg, #fcd872 0%, #f35369 100%);
+  background-image: -moz-linear-gradient(45deg, #fcd872 0%, #f35369 100%);
+  background-image: -ms-linear-gradient(45deg, #fcd872 0%, #f35369 100%);
+  background-image: -o-linear-gradient(45deg, #fcd872 0%, #f35369 100%);
+  background-image: -webkit-gradient(left bottom, color-stop(#fcd872 0%), color-stop(#f35369 100%));
+  background-image: linear-gradient(45deg, #fcd872 0%, #f35369 100%); }
+
+.salmon {
+  background-color: #f35369; }
+
+.grey {
+  background-color: #5f6673; }
+
+.hearts {
+  background-image: url(https://scontent-iad3-1.xx.fbcdn.net/v/t39.10873-6/18762917_1879686392292358_2641799122088099840_n.jpg?oh=cf698bcf0587418dd120b8ecea57f989&oe=59D68774);
+  background-size: cover; }
+
+.rwb {
+  background-image: url(https://scontent-iad3-1.xx.fbcdn.net/v/t39.10873-6/18309306_1705020923127344_2619798186474078208_n.jpg?oh=4617d760d71a742057f6820ca589e51b&oe=59D9F620);
+  background-size: cover; }
+
+.offblack {
+  background-color: #111111; }
+
+.yellowgreen {
+  background-image: -webkit-linear-gradient(45deg, #f8f023 0%, #05ae35 100%);
+  background-image: -moz-linear-gradient(45deg, #f8f023 0%, #05ae35 100%);
+  background-image: -ms-linear-gradient(45deg, #f8f023 0%, #05ae35 100%);
+  background-image: -o-linear-gradient(45deg, #f8f023 0%, #05ae35 100%);
+  background-image: -webkit-gradient(left bottom, color-stop(#f8f023 0%), color-stop(#05ae35 100%));
+  background-image: linear-gradient(45deg, #f8f023 0%, #05ae35 100%); }
+
+.leaves {
+  background-image: url("https://scontent-iad3-1.xx.fbcdn.net/v/t39.10873-6/19085368_135284887026080_128129336980013056_n.jpg?oh=6726ffac723036dbd26bdac305f3812f&oe=59E59D06");
+  background-size: cover; }
+
+.flowers {
+  background-image: url("https://scontent-iad3-1.xx.fbcdn.net/v/t39.10873-6/18847409_282723422131343_6498058113214578688_n.jpg?oh=c435b182f0fb97d539212d19317e009a&oe=59C7D4A1");
+  background-size: cover; }
+
+.greenteal {
+  background-image: linear-gradient(45deg, #66f485 0%, #17acff 100%);
+  background-size: cover; }
+
+.peace1 {
+  background-image: url("https://scontent-iad3-1.xx.fbcdn.net/v/t39.10873-6/18762849_478716799132537_4525974457067503616_n.jpg?oh=8c80e2e90b3748f7c80604f916161037&oe=599DC6F3");
+  background-size: cover; }
+
+.peace2 {
+  background-image: url("https://scontent-iad3-1.xx.fbcdn.net/v/t39.10873-6/18762814_118306785431619_8430349013328330752_n.jpg?oh=22f769cac459cfdd71aef47ea6676444&oe=59E37CC7");
+  background-size: cover; }
+
+.fetti {
+  background-image: url("https://scontent-iad3-1.xx.fbcdn.net/v/t39.10873-6/18678539_319468571816671_5511857785815433216_n.jpg?oh=9af9a9e43205c1dad0db568752fbc31d&oe=59D5512C");
+  background-size: cover; }
+
+.purplered {
+  background-image: linear-gradient(45deg, #ff0047 0%, #2c34c7 100%);
+  background-size: cover; }
+
+.pinkpurple {
+  background-image: linear-gradient(45deg, #fc36fd 0%, #5d3fda 100%);
+  background-size: cover; }
+
+/*# sourceMappingURL=styles.css.map */

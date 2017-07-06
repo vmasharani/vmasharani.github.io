@@ -100,7 +100,7 @@ html {
   font-weight: 500;
   background-color: white;
   text-align: center;
-  border-bottom: 1px solid #d2dfdf;
+  border-bottom: 1px solid #b1bcbc;
   z-index: 5; }
 
 .projectcontent {
@@ -255,7 +255,7 @@ img {
 #mappage {
   height: 100%; }
   #mappage #maplabel {
-    color: #d2dfdf; }
+    color: #b1bcbc; }
   #mappage #mapentrance {
     background-image: url("/images/map/map-01.png"); }
     #mappage #mapentrance:hover {
@@ -322,7 +322,7 @@ body {
     font-size: 25px;
     z-index: 2;
     background-color: white;
-    box-shadow: 0px 0px 5px #d2dfdf; }
+    box-shadow: 0px 0px 5px #b1bcbc; }
     @media screen and (max-width: 771px) {
       #modalwrapper #contentmodal {
         width: 92%;
@@ -351,7 +351,7 @@ body {
       bottom: 0;
       width: 30px;
       height: 0;
-      border-top: 2px solid #d2dfdf;
+      border-top: 2px solid #b1bcbc;
       transform: rotate(45deg);
       transform-origin: center; }
     #modalwrapper .close:after {
@@ -365,7 +365,7 @@ body {
       bottom: 0;
       width: 30px;
       height: 0;
-      border-top: 2px solid #d2dfdf;
+      border-top: 2px solid #b1bcbc;
       transform: rotate(-45deg);
       transform-origin: center; }
 
@@ -517,7 +517,7 @@ body {
   background: #FF0000; }
 
 ::selection {
-  color: #d2dfdf;
+  color: #b1bcbc;
   background: #fafafa; }
 
 /*# sourceMappingURL=styles.css.map */

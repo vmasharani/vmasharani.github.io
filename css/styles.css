@@ -286,7 +286,7 @@ img {
       transition: .2s ease-in-out; }
 
 body {
-  background-color: #fafafa; }
+  background-color: white; }
 
 #cover {
   display: none;
@@ -437,7 +437,7 @@ body {
       font-family: 'SFTextRegular';
       font-size: 36px;
       font-style: italic;
-      color: #fafafa;
+      color: white;
       text-shadow: 0px 0px 20px #ba906a;
       -webkit-text-shadow: 0px 0px 20px #ba906a; }
     #wrapper #projectlist a {
@@ -518,6 +518,6 @@ body {
 
 ::selection {
   color: #b1bcbc;
-  background: #fafafa; }
+  background: white; }
 
 /*# sourceMappingURL=styles.css.map */

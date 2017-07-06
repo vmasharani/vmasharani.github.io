@@ -11,7 +11,7 @@
 body{
   @include media($mobile) {
   }
-  background-color:$color-white;
+  background-color:white;
 }
 
 #cover {
@@ -265,7 +265,7 @@ body{
       font-family:'SFTextRegular';
       font-size:36px;
       font-style:italic;
-      color:$color-white;
+      color:white;
       text-shadow:0px 0px 20px $color-brown;
       -webkit-text-shadow:0px 0px 20px $color-brown;
     }
@@ -389,5 +389,5 @@ body{
 
 ::selection{
     color:$color-grey;
-    background:$color-white;
+    background:white;
 }

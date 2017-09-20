@@ -3,9 +3,31 @@
   src: url('http://files.cargocollective.com/336335/SFUIText-Regular.ttf');
 }
 
-
-
 @font-face{
   font-family: 'SFTextBold';
   src: url('http://files.cargocollective.com/336335/SFUIText-Bold.ttf');
+}
+
+@font-face{
+  font-family:'';
+  src:url('')
+}
+
+@font-face{
+  font-family: 'Post Grotesk';
+  src: url('https://files.cargocollective.com/c27929/PostGrotesk-Book.eot');
+  src: url('https://files.cargocollective.com/c27929/PostGrotesk-Book.eot?iefix') format('embedded-opentype'),
+    url('https://files.cargocollective.com/c27929/PostGrotesk-Book.woff') format('woff'),
+    url('https://files.cargocollective.com/c27929/PostGrotesk-Book.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Times Old Roman';
+	src: url('TimesOldRoman-Regular.eot');
+	src: url('TimesOldRoman-Regular.eot?#iefix') format('embedded-opentype'),
+		url('TimesOldRoman-Regular.woff2') format('woff2'),
+		url('TimesOldRoman-Regular.woff') format('woff'),
+		url('TimesOldRoman-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
 }

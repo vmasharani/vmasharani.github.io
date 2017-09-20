@@ -21,9 +21,9 @@ $(window).scroll(function(){
   var offset=headermarker.offset();
   console.log(offset.top)
   if(scroll>=offset.top){
-    $("h2").addClass("visible");
+    $(".info").addClass("smaller");
   } else if(scroll<offset.top){
-    $("h2").removeClass("visible");
+    $(".info").removeClass("smaller");
   }
 })
 });

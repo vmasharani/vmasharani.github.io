@@ -46,8 +46,7 @@ $header-height:1rem;
   font-weight:500;
   background-color:white;
   text-align:center;
-
-  border-bottom:1px solid $color-grey;
+  border-bottom:6px solid $color-brown;
   z-index:5;
 }
 
@@ -66,7 +65,7 @@ $header-height:1rem;
   font-weight:400;
   a{
     font-weight:200;
-    color:$color-brown;
+    color:$color-green;
     text-decoration:underline;
     &:hover{
       text-decoration:none;
@@ -140,49 +139,6 @@ img{
     width:92%;
   }
   width:34%;
-}
-
-.alpha-h{
-  width:92%;
-}
-
-.betaplus-h{
-  @include media($mobile){
-    width:92%;
-  }
-  width:74%
-}
-
-.beta-h{
-  @include media($mobile){
-    width:92%
-  }
-  width:70%;
-}
-
-.gamma-h{
-  @include media($mobile){
-    width:92%
-  }
-  width:58%;
-}
-
-.delta-h{
-  @include media($mobile){
-    width:auto;
-    height:42vw;
-  }
-  width:auto;
-  height:40vw;
-}
-
-.epsilon-h{
-  @include media($mobile){
-    width:auto;
-    height:59vw;
-  }
-  width:auto;
-  height:47vw;
 }
 
 .wflap{

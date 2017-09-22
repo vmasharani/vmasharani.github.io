@@ -85,7 +85,7 @@ body {
   @media screen and (max-width: 768px) {
     body {
       text-align: center;
-      padding: .3rem; } }
+      padding: 0rem; } }
 
 #workwrapper {
   display: inline-block;
@@ -94,7 +94,7 @@ body {
   margin-right: 2rem; }
   @media screen and (max-width: 768px) {
     #workwrapper {
-      width: 98%;
+      width: 100%;
       margin-right: 0; } }
 
 @keyframes glowing {
@@ -131,7 +131,7 @@ body {
       color: white; }
 
 .smaller {
-  width: 10%;
+  width: 14%;
   font-size: 2rem; }
   @media screen and (max-width: 768px) {
     .smaller {
@@ -180,11 +180,11 @@ body {
   width: 100%; }
   @media screen and (max-width: 768px) {
     .project {
-      width: 95%;
-      padding: 0rem .4rem 0rem .4rem; } }
+      width: 100%;
+      padding: 0rem 2rem 0rem 2rem; } }
 
 #slowplace {
-  background-color: #00f; }
+  background-color: #0f2af8; }
 
 .slowwrap {
   width: 100%; }
@@ -203,8 +203,8 @@ body {
 #superfeel img {
   vertical-align: middle; }
 
-#spaces {
-  background-color: #d2d8d8; }
+#spaces img {
+  border: 1px solid white; }
 
 #indiaposters {
   background-color: black; }

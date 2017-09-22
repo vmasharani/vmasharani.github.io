@@ -84,7 +84,8 @@ body {
   font-family: "Post Grotesk"; }
   @media screen and (max-width: 768px) {
     body {
-      text-align: center; } }
+      text-align: center;
+      padding: .3rem; } }
 
 #workwrapper {
   display: inline-block;
@@ -93,7 +94,7 @@ body {
   margin-right: 2rem; }
   @media screen and (max-width: 768px) {
     #workwrapper {
-      width: 95%;
+      width: 98%;
       margin-right: 0; } }
 
 @keyframes glowing {
@@ -112,13 +113,13 @@ body {
       width: 100%; } }
 
 .info {
-  width: 70%;
-  font-size: 8rem;
+  width: 100%;
+  font-size: 7.2rem;
   transition: .3s ease-in-out; }
   @media screen and (max-width: 768px) {
     .info {
       width: 90%;
-      font-size: 4rem; } }
+      font-size: 3.2rem; } }
   .info a {
     text-decoration: none;
     color: black;
@@ -179,7 +180,8 @@ body {
   width: 100%; }
   @media screen and (max-width: 768px) {
     .project {
-      width: 100%; } }
+      width: 95%;
+      padding: 0rem .4rem 0rem .4rem; } }
 
 #slowplace {
   background-color: #00f; }
@@ -204,6 +206,9 @@ body {
 #spaces {
   background-color: #d2d8d8; }
 
+#indiaposters {
+  background-color: black; }
+
 .project img {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -226,7 +231,7 @@ body {
   vertical-align: middle; }
   @media screen and (max-width: 768px) {
     .gamma {
-      width: 100%;
+      width: 98%;
       margin: 0; } }
 
 .epsilon {
@@ -235,7 +240,7 @@ body {
   margin-right: 1rem; }
   @media screen and (max-width: 768px) {
     .epsilon {
-      width: 100%;
+      width: 98%;
       margin: 0; } }
 
 .round {

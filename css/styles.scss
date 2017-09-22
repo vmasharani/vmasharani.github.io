@@ -13,6 +13,7 @@
 body{
   @include media($mobile){
     text-align:center;
+    padding:.3rem;
   }
   padding:1rem;
   width:100%;
@@ -25,7 +26,7 @@ body{
 
 #workwrapper{
   @include media($mobile){
-    width:95%;
+    width:98%;
     margin-right:0;
   }
   display:inline-block;
@@ -63,10 +64,10 @@ body{
 .info{
   @include media($mobile){
     width:90%;
-    font-size:4rem;
+    font-size:3.2rem;
   }
-  width:70%;
-  font-size:8rem;
+  width:100%;
+  font-size:7.2rem;
   transition:.3s ease-in-out;
 
   a{
@@ -137,7 +138,8 @@ body{
 .project{
   display:inline-block;
     @include media($mobile){
-      width:100%;
+      width:95%;
+      padding:0rem .4rem 0rem .4rem;
     }
 
   margin-top:3.2rem;
@@ -192,10 +194,13 @@ body{
 
 }
 
+#indiaposters{
+  background-color:black;
+}
+
 .project img{
   margin-top:2rem;
   margin-bottom:2rem;
-
   box-sizing:border-box;
 
 }
@@ -217,7 +222,7 @@ body{
 
 .gamma{
   @include media($mobile){
-    width: 100%;
+    width: 98%;
     margin:0;
   }
   width:43%;
@@ -229,7 +234,7 @@ body{
 
 .epsilon{
   @include media($mobile){
-    width: 100%;
+    width: 98%;
     margin:0;
   }
   width:25%;

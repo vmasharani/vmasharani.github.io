@@ -23,6 +23,21 @@ body{
 
 }
 
+.caption{
+  margin-top:1rem;
+  margin-bottom:2rem;
+  font-size:1.2rem;
+  a{
+    text-decoration:none;
+    color:black;
+    font-family:"Post Grotesk";
+    font-size:1.1rem;
+    transition: .2s ease-in-out;
+    &:hover{
+      color:white;
+    }
+  }
+}
 
 #workwrapper{
   @include media($mobile){
@@ -66,9 +81,12 @@ body{
     width:90%;
     font-size:3.2rem;
   }
-  width:100%;
+  width:80%;
   font-size:7.2rem;
   transition:.3s ease-in-out;
+
+    position:fixed;
+    text-align:left;
 
   a{
     text-decoration:none;
@@ -97,10 +115,6 @@ body{
   font-size:2rem;
 }
 
-#infowrapper{
-  position:fixed;
-  text-align:left;
-}
 
 .tor{
   font-family:'Times Old Roman';
@@ -197,6 +211,10 @@ body{
 
 #indiaposters{
   background-color:black;
+}
+
+#sun{
+  background-color:grey;
 }
 
 .project img{

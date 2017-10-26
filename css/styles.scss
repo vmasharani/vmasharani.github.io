@@ -217,6 +217,7 @@ body{
   background-color:grey;
 }
 
+
 .project img{
   margin-top:2rem;
   margin-bottom:2rem;
@@ -236,6 +237,16 @@ body{
     margin:0;
   }
   width:80%;
+
+}
+
+.beta-minus{
+  @include media($mobile){
+    width: 100%;
+    margin:0;
+  }
+  width:60%;
+
 
 }
 

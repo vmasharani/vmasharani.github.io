@@ -238,6 +238,13 @@ body {
       width: 100%;
       margin: 0; } }
 
+.beta-minus {
+  width: 60%; }
+  @media screen and (max-width: 768px) {
+    .beta-minus {
+      width: 100%;
+      margin: 0; } }
+
 .gamma {
   width: 43%;
   margin-left: 1rem;
